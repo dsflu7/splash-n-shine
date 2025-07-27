@@ -21,7 +21,7 @@
   <meta name="description" content="Discover cleaning tips, tricks, and insights from our professional cleaning experts. Learn how to keep your home spotless with our comprehensive guides." />
 </svelte:head>
 
-<div class="min-h-screen bg-gradient-to-b from-background to-muted/20">
+<div class="min-h-screen bg-gradient-to-b from-background to-muted/20 mt-24">
   <!-- Hero Section -->
   <section class="py-12 sm:py-16 lg:py-20">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -79,16 +79,7 @@
                     
                     <div class="flex items-center justify-between text-sm text-muted-foreground">
                       <div class="flex items-center space-x-4">
-                        <div class="flex items-center space-x-2">
-                          {#if blog.author.image}
-                            <img 
-                              src={blog.author.image} 
-                              alt={blog.author.name}
-                              class="h-6 w-6 rounded-full object-cover"
-                            />
-                          {/if}
-                          <span class="font-medium">{blog.author.name}</span>
-                        </div>
+                        <span class="font-medium">{blog.author.name}</span>
                         
                         <span>•</span>
                         <time datetime={blog.publishedAt}>

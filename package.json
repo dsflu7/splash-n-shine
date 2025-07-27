@@ -13,7 +13,7 @@
 		"lint": "prettier --check ."
 	},
 	"devDependencies": {
-		"@lucide/svelte": "^0.483.0",
+		"@lucide/svelte": "^0.482.0",
 		"@sveltejs/adapter-auto": "5.0.0",
 		"@sveltejs/enhanced-img": "^0.4.4",
 		"@sveltejs/kit": "^2.9.0",

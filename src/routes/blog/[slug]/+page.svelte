@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PageData } from './$types';
   import { Badge } from '$lib/components/ui/badge';
+  import * as Breadcrumb from '$lib/components/ui/breadcrumb';
   import { fadeIn } from '$lib/utils/anims';
 
   let { data }: { data: PageData } = $props();
@@ -42,6 +43,25 @@
   <!-- Article Content -->
   <article class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
     <div use:fadeIn>
+      <!-- Breadcrumbs -->
+      <div class="mb-8">
+        <Breadcrumb.Root>
+          <Breadcrumb.List>
+            <Breadcrumb.Item>
+              <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+            </Breadcrumb.Item>
+            <Breadcrumb.Separator />
+            <Breadcrumb.Item>
+              <Breadcrumb.Link href="/blog">Blog</Breadcrumb.Link>
+            </Breadcrumb.Item>
+            <Breadcrumb.Separator />
+            <Breadcrumb.Item>
+              <Breadcrumb.Page>{data.blog.title}</Breadcrumb.Page>
+            </Breadcrumb.Item>
+          </Breadcrumb.List>
+        </Breadcrumb.Root>
+      </div>
+
       <!-- Article Header -->
       <header class="mb-12">
         <!-- Categories -->
@@ -61,16 +81,7 @@
         <!-- Article Meta -->
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-muted-foreground text-sm space-y-4 sm:space-y-0">
           <div class="flex items-center space-x-4">
-            <div class="flex items-center space-x-2">
-              {#if data.blog.author.image}
-                <img 
-                  src={data.blog.author.image} 
-                  alt={data.blog.author.name}
-                  class="h-8 w-8 rounded-full object-cover"
-                />
-              {/if}
-              <span class="font-medium text-foreground">{data.blog.author.name}</span>
-            </div>
+            <span class="font-medium text-foreground">{data.blog.author.name}</span>
             
             <span>•</span>
             <time datetime={data.blog.publishedAt} class="text-sm">
