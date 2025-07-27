@@ -55,6 +55,18 @@
           <div use:fadeIn>
             <Card class="group overflow-hidden transition-all duration-300 hover:shadow-lg">
               <Link href="/blog/{blog.slug.current}" class="flex flex-col md:flex-row">
+                <!-- Blog Image -->
+                {#if blog.image?.asset?.url}
+                  <div class="md:w-80 lg:w-96 flex-shrink-0">
+                    <img 
+                      src={blog.image.asset.url}
+                      alt={blog.image.alt || blog.title}
+                      class="w-full h-48 md:h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                {/if}
+                
                 <div class="flex-1">
                   <CardHeader class="pb-4">
                     <div class="flex flex-wrap gap-2 mb-3">
@@ -104,6 +116,7 @@
 <style>
   .line-clamp-3 {
     display: -webkit-box;
+    line-clamp: 3;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;

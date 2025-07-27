@@ -81,7 +81,7 @@ export const whyPointsQuery = `*[_type == "whyPoint"] | order(_createdAt asc) {
 }`;
 
 // Query for blog posts
-export const postsQuery = `*[_type == "post"] | order(publishedAt desc) {
+export const postsQuery = `*[_type == "splash-n-shine-post"] | order(publishedAt desc) {
   _id,
   title,
   slug,
@@ -90,14 +90,24 @@ export const postsQuery = `*[_type == "post"] | order(publishedAt desc) {
   categories,
   readTime,
   seoKeywords,
-  articleType,
+  "articleType": postType,
   // Legacy fields
-  image,
+  image {
+    asset->{
+      _id,
+      url,
+      metadata {
+        dimensions,
+        lqip
+      }
+    },
+    alt
+  },
   body
 }`;
 
 // Single blog post query
-export const postQuery = `*[_type == "post" && slug.current == $slug][0] {
+export const postQuery = `*[_type == "splash-n-shine-post" && slug.current == $slug][0] {
   _id,
   title,
   slug,
@@ -106,9 +116,19 @@ export const postQuery = `*[_type == "post" && slug.current == $slug][0] {
   categories,
   readTime,
   seoKeywords,
-  articleType,
+  "articleType": postType,
   // Legacy fields
-  image,
+  image {
+    asset->{
+      _id,
+      url,
+      metadata {
+        dimensions,
+        lqip
+      }
+    },
+    alt
+  },
   body
 }`;
 

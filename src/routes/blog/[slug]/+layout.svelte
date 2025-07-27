@@ -1,18 +1,13 @@
 <script lang="ts">
-  import { getBlogSuggestions } from '$lib/data/blog';
   import { Badge } from '$lib/components/ui/badge';
   import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
   import Link from '$lib/components/Link.svelte';
   import { fadeIn } from '$lib/utils/anims';
-  import { page } from '$app/state';
   
   let { children } = $props();
   
-  // Get current blog post slug from the page params
-  let currentSlug = $derived(page.params.slug);
-  
-  // Get suggested articles (excluding current one)
-  let suggestions = $derived(getBlogSuggestions(currentSlug, 3));
+  // TODO: Implement blog suggestions from Sanity CMS
+  let suggestions: any[] = [];
   
   function formatDate(dateString: string): string {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -98,6 +93,7 @@
 <style>
   .line-clamp-2 {
     display: -webkit-box;
+    line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;

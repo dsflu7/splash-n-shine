@@ -247,7 +247,7 @@
 
 {#snippet mobileServiceBlock(serviceKey: string, i: number)}
 	{@const service = serviceData[serviceKey]}
-	<Accordion.Root class="mb-2 w-[90vw]" value={!i ? [serviceKey] : []}>
+	<Accordion.Root class="mb-2 w-[90vw]" type="multiple" value={!i ? [serviceKey] : []}>
 		<Accordion.Item value={serviceKey}>
 			<Accordion.Trigger class="group relative w-full rounded-lg bg-primary/10 px-4 py-3 text-left">
 				<div class="flex w-full items-center justify-between">

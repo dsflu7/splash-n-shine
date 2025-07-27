@@ -1,10 +1,9 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import type { BlogPost } from '$lib/types/blog';
   import { Badge } from '$lib/components/ui/badge';
   import * as Breadcrumb from '$lib/components/ui/breadcrumb';
   import { fadeIn } from '$lib/utils/anims';
-  import { page } from '$app/state';
+  import { PortableText } from '@portabletext/svelte';
 
   let { data }: { data: PageData } = $props();
   
@@ -15,97 +14,48 @@
       day: 'numeric'
     });
   }
-
-  // Generate structured data for SEO
-  function generateStructuredData(blog: BlogPost) {
-    const domain = `${page.url.protocol}//${page.url.host}`;
-    const articleUrl = `${domain}/blog/${blog.slug.current}`;
-    
-    // Calculate word count from body content if available
-    const calculateWordCount = (body: any[]): number => {
-      if (!body || !Array.isArray(body)) return 0;
-      
-      return body.reduce((count, block) => {
-        if (block._type === 'block' && block.children) {
-          const blockText = block.children
-            .filter((child: any) => child._type === 'span' && child.text)
-            .map((child: any) => child.text)
-            .join(' ');
-          return count + blockText.split(/\s+/).filter((word: string) => word.length > 0).length;
-        }
-        return count;
-      }, 0);
-    };
-
-    const wordCount = calculateWordCount(blog.body || []);
-    
-    return {
-      "@context": "https://schema.org",
-      "@type": blog.articleType || "BlogPosting",
-      "headline": blog.title,
-      "description": blog.previewDescription,
-      "datePublished": blog.publishedAt,
-      "dateModified": blog.publishedAt,
-      "author": {
-        "@type": "Person",
-        "name": "Splash n' Shine"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Splash n' Shine",
-        "logo": {
-          "@type": "ImageObject",
-          "url": `${domain}/assets/logo.png`
-        }
-      },
-      "url": articleUrl,
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": articleUrl
-      },
-      "articleSection": blog.categories.join(', '),
-      "keywords": blog.seoKeywords?.join(', ') || blog.categories.join(', '),
-      ...(blog.readTime && { "timeRequired": `PT${blog.readTime}M` }),
-      ...(wordCount > 0 && { "wordCount": wordCount }),
-      "abstract": blog.previewDescription,
-      "inLanguage": "en-US",
-      "copyrightYear": new Date(blog.publishedAt).getFullYear(),
-      "copyrightHolder": {
-        "@type": "Organization",
-        "name": "Splash n' Shine"
-      },
-      "mentions": blog.categories.map((category: string) => ({
-        "@type": "Thing",
-        "name": category
-      }))
-    };
-  }
-
-  let structuredData = $derived(generateStructuredData(data.blog));
 </script>
 
 <svelte:head>
-  <title>{data.blog.title} - Splash N Shine</title>
+  <title>{data.blog.title} | Splash n' Shine Blog</title>
   <meta name="description" content={data.blog.previewDescription} />
   <meta property="og:title" content={data.blog.title} />
   <meta property="og:description" content={data.blog.previewDescription} />
   <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.splashnshine.ca/blog/{data.blog.slug.current}" />
   <meta property="article:published_time" content={data.blog.publishedAt} />
   <meta property="article:author" content="Splash n' Shine" />
+  {#if data.blog.categories}
+    {#each data.blog.categories as category}
+      <meta property="article:tag" content={category} />
+    {/each}
+  {/if}
   {#if data.blog.seoKeywords}
     <meta name="keywords" content={data.blog.seoKeywords.join(', ')} />
   {/if}
-  {#each data.blog.categories as category}
-    <meta property="article:tag" content={category} />
-  {/each}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={data.blog.title} />
+  <meta name="twitter:description" content={data.blog.previewDescription} />
   
   <!-- Structured Data for SEO -->
-  {@html `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`}
+  {@html `<script type="application/ld+json">${JSON.stringify(data.structuredData)}</script>`}
 </svelte:head>
 
 <div class="min-h-screen bg-gradient-to-b from-background to-muted/20">
+  <!-- Hero Image -->
+  {#if data.blog.image?.asset?.url}
+    <div class="w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] overflow-hidden">
+      <img 
+        src={data.blog.image.asset.url}
+        alt={data.blog.image.alt || data.blog.title}
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+  {/if}
+
   <!-- Article Content -->
-  <article class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 mt-24">
+  <article class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 {data.blog.image?.asset?.url ? '' : 'mt-24'}">
     <div use:fadeIn>
       <!-- Breadcrumbs -->
       <div class="mb-8">
@@ -173,11 +123,10 @@
             {data.blog.previewDescription}
           </p>
           
-          <!-- If we have body content from Sanity, render it -->
+          <!-- Render body content from Sanity -->
           {#if data.blog.body && data.blog.body.length > 0}
-            <div class="sanity-content">
-              <!-- This would need a Sanity portable text renderer -->
-              <p class="text-muted-foreground italic">Full content from Sanity CMS would be rendered here...</p>
+            <div class="sanity-content prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-3xl prose-h1:mt-8 prose-h1:mb-4 prose-h2:text-2xl prose-h2:mt-6 prose-h2:mb-3 prose-h3:text-xl prose-h3:mt-5 prose-h3:mb-2 prose-p:mb-4 prose-p:leading-relaxed prose-a:text-primary prose-a:hover:underline prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:my-6 prose-ul:list-disc prose-ul:list-inside prose-ul:space-y-2 prose-ul:mb-4 prose-ol:list-decimal prose-ol:list-inside prose-ol:space-y-2 prose-ol:mb-4 prose-li:mb-1 prose-strong:font-semibold prose-em:italic">
+              <PortableText value={data.blog.body} />
             </div>
           {:else}
             <!-- Fallback content for demo -->
@@ -222,7 +171,7 @@
   </article>
 </div>
 
-<style>
+<style type="postcss">
   /* Enhanced prose styling for better readability */
   :global(.prose h2) {
     @apply text-2xl font-bold mt-8 mb-4 text-foreground;

@@ -1,7 +1,12 @@
 import type { PageServerLoad } from './$types';
-import { blogListItems } from '$lib/data/blog';
+import { serverClient } from '$lib/server/sanity';
+import { postsQuery } from '$lib/queries';
+import type { BlogPost } from '$lib/types/blog';
 
 export const load: PageServerLoad = async () => {
+  // Fetch blog posts from Sanity
+  const blogs: BlogPost[] = await serverClient.fetch(postsQuery);
+
   // Generate structured data for the blog listing page
   const structuredData = {
     "@context": "https://schema.org",
@@ -18,7 +23,7 @@ export const load: PageServerLoad = async () => {
         "url": "https://www.splashnshine.ca/assets/logo.png"
       }
     },
-    "blogPost": blogListItems.map(blog => ({
+    "blogPost": blogs.map(blog => ({
       "@type": "BlogPosting",
       "headline": blog.title,
       "description": blog.previewDescription,
@@ -28,7 +33,7 @@ export const load: PageServerLoad = async () => {
         "@type": "Person",
         "name": "Splash n' Shine"
       },
-      "keywords": blog.categories.join(', '),
+      "keywords": blog.categories?.join(', ') || '',
       ...(blog.readTime && { "timeRequired": `PT${blog.readTime}M` })
     })),
     "inLanguage": "en-US",
@@ -40,7 +45,7 @@ export const load: PageServerLoad = async () => {
   };
 
   return {
-    blogs: blogListItems,
+    blogs,
     structuredData
   };
 };
