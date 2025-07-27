@@ -42,19 +42,10 @@
         </div>
         
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {#each suggestions as suggestion (suggestion.id)}
+          {#each suggestions as suggestion (suggestion._id)}
             <div use:fadeIn>
               <Card class="group h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <Link href="/blog/{suggestion.slug}" class="block h-full">
-                  <div class="aspect-video overflow-hidden">
-                    <img
-                      src={suggestion.mainImage.url}
-                      alt={suggestion.mainImage.alt}
-                      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                  
+                <Link href="/blog/{suggestion.slug.current}" class="block h-full">
                   <CardHeader class="pb-3">
                     <div class="flex flex-wrap gap-1 mb-2">
                       {#each suggestion.categories.slice(0, 2) as category}

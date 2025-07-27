@@ -1,3 +1,5 @@
+import type { BlogPost, BlogListItem, BlogSuggestion } from './types/blog';
+
 // Optimized query for homepage services (limited fields and count)
 export const homepageServicesQuery = `*[_type == "service"] | order(_createdAt desc) [0...6] {
   _id,
@@ -84,9 +86,30 @@ export const postsQuery = `*[_type == "post"] | order(publishedAt desc) {
   title,
   slug,
   publishedAt,
+  previewDescription,
+  categories,
+  readTime,
+  seoKeywords,
+  articleType,
+  // Legacy fields
   image,
-  body,
-  categories
+  body
+}`;
+
+// Single blog post query
+export const postQuery = `*[_type == "post" && slug.current == $slug][0] {
+  _id,
+  title,
+  slug,
+  publishedAt,
+  previewDescription,
+  categories,
+  readTime,
+  seoKeywords,
+  articleType,
+  // Legacy fields
+  image,
+  body
 }`;
 
 // Query for FAQs by category
@@ -191,16 +214,6 @@ export interface WhyPoint {
   desc: string;
 }
 
-export interface Post {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  publishedAt: string;
-  image?: any;
-  body?: any[];
-  categories?: string[];
-}
-
 export interface FAQ {
   _id: string;
   question: string;
@@ -210,4 +223,66 @@ export interface FAQ {
   relatedLocations?: Location[];
   featured: boolean;
   order: number;
+}
+
+// Utility function to generate structured data for blog posts
+export function generateBlogStructuredData(post: BlogPost, domain: string = 'https://www.splashnshine.ca') {
+  // Calculate word count from body content
+  const calculateWordCount = (body: any[]): number => {
+    if (!body || !Array.isArray(body)) return 0;
+    
+    return body.reduce((count, block) => {
+      if (block._type === 'block' && block.children) {
+        const blockText = block.children
+          .filter((child: any) => child._type === 'span' && child.text)
+          .map((child: any) => child.text)
+          .join(' ');
+        return count + blockText.split(/\s+/).filter((word: string) => word.length > 0).length;
+      }
+      return count;
+    }, 0);
+  };
+
+  const wordCount = calculateWordCount(post.body || []);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": post.articleType || "BlogPosting",
+    "headline": post.title,
+    "description": post.previewDescription,
+    "datePublished": post.publishedAt,
+    "dateModified": post.publishedAt,
+    "author": {
+      "@type": "Person",
+      "name": "Splash n' Shine",
+      "url": `${domain}/our-story`
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Splash n' Shine",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${domain}/assets/logo.png`
+      },
+      "url": domain
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${domain}/blog/${post.slug.current}`
+    },
+    "articleSection": post.categories.join(', '),
+    "keywords": post.seoKeywords?.join(', ') || post.categories.join(', '),
+    "wordCount": wordCount > 0 ? wordCount : undefined,
+    "timeRequired": post.readTime ? `PT${post.readTime}M` : undefined,
+    "abstract": post.previewDescription,
+    "about": {
+      "@type": "Thing",
+      "name": "Professional Cleaning Services",
+      "description": "Exterior cleaning, pressure washing, and property maintenance services in Vancouver"
+    },
+    "mentions": post.categories.map((category: string) => ({
+      "@type": "Thing",
+      "name": category
+    }))
+  };
 }

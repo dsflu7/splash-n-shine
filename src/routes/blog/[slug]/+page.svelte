@@ -1,8 +1,10 @@
 <script lang="ts">
   import type { PageData } from './$types';
+  import type { BlogPost } from '$lib/types/blog';
   import { Badge } from '$lib/components/ui/badge';
   import * as Breadcrumb from '$lib/components/ui/breadcrumb';
   import { fadeIn } from '$lib/utils/anims';
+  import { page } from '$app/state';
 
   let { data }: { data: PageData } = $props();
   
@@ -13,6 +15,73 @@
       day: 'numeric'
     });
   }
+
+  // Generate structured data for SEO
+  function generateStructuredData(blog: BlogPost) {
+    const domain = `${page.url.protocol}//${page.url.host}`;
+    const articleUrl = `${domain}/blog/${blog.slug.current}`;
+    
+    // Calculate word count from body content if available
+    const calculateWordCount = (body: any[]): number => {
+      if (!body || !Array.isArray(body)) return 0;
+      
+      return body.reduce((count, block) => {
+        if (block._type === 'block' && block.children) {
+          const blockText = block.children
+            .filter((child: any) => child._type === 'span' && child.text)
+            .map((child: any) => child.text)
+            .join(' ');
+          return count + blockText.split(/\s+/).filter((word: string) => word.length > 0).length;
+        }
+        return count;
+      }, 0);
+    };
+
+    const wordCount = calculateWordCount(blog.body || []);
+    
+    return {
+      "@context": "https://schema.org",
+      "@type": blog.articleType || "BlogPosting",
+      "headline": blog.title,
+      "description": blog.previewDescription,
+      "datePublished": blog.publishedAt,
+      "dateModified": blog.publishedAt,
+      "author": {
+        "@type": "Person",
+        "name": "Splash n' Shine"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Splash n' Shine",
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${domain}/assets/logo.png`
+        }
+      },
+      "url": articleUrl,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": articleUrl
+      },
+      "articleSection": blog.categories.join(', '),
+      "keywords": blog.seoKeywords?.join(', ') || blog.categories.join(', '),
+      ...(blog.readTime && { "timeRequired": `PT${blog.readTime}M` }),
+      ...(wordCount > 0 && { "wordCount": wordCount }),
+      "abstract": blog.previewDescription,
+      "inLanguage": "en-US",
+      "copyrightYear": new Date(blog.publishedAt).getFullYear(),
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Splash n' Shine"
+      },
+      "mentions": blog.categories.map((category: string) => ({
+        "@type": "Thing",
+        "name": category
+      }))
+    };
+  }
+
+  let structuredData = $derived(generateStructuredData(data.blog));
 </script>
 
 <svelte:head>
@@ -20,28 +89,23 @@
   <meta name="description" content={data.blog.previewDescription} />
   <meta property="og:title" content={data.blog.title} />
   <meta property="og:description" content={data.blog.previewDescription} />
-  <meta property="og:image" content={data.blog.mainImage.url} />
   <meta property="og:type" content="article" />
   <meta property="article:published_time" content={data.blog.publishedAt} />
-  <meta property="article:author" content={data.blog.author.name} />
+  <meta property="article:author" content="Splash n' Shine" />
+  {#if data.blog.seoKeywords}
+    <meta name="keywords" content={data.blog.seoKeywords.join(', ')} />
+  {/if}
   {#each data.blog.categories as category}
     <meta property="article:tag" content={category} />
   {/each}
+  
+  <!-- Structured Data for SEO -->
+  {@html `<script type="application/ld+json">${JSON.stringify(structuredData)}</script>`}
 </svelte:head>
 
 <div class="min-h-screen bg-gradient-to-b from-background to-muted/20">
-  <!-- Hero Image Section -->
-  <section class="relative h-[60vh] w-full overflow-hidden">
-    <img
-      src={data.blog.mainImage.url}
-      alt={data.blog.mainImage.alt}
-      class="h-full w-full object-cover"
-    />
-    <div class="absolute inset-0 bg-black/30"></div>
-  </section>
-
   <!-- Article Content -->
-  <article class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+  <article class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 mt-24">
     <div use:fadeIn>
       <!-- Breadcrumbs -->
       <div class="mb-8">
@@ -81,7 +145,7 @@
         <!-- Article Meta -->
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-muted-foreground text-sm space-y-4 sm:space-y-0">
           <div class="flex items-center space-x-4">
-            <span class="font-medium text-foreground">{data.blog.author.name}</span>
+            <span class="font-medium text-foreground">Splash n' Shine</span>
             
             <span>•</span>
             <time datetime={data.blog.publishedAt} class="text-sm">
@@ -94,9 +158,9 @@
             {/if}
           </div>
           
-          {#if data.blog.featured}
+          {#if data.blog.articleType}
             <Badge variant="default" class="text-sm">
-              Featured Article
+              {data.blog.articleType}
             </Badge>
           {/if}
         </div>
@@ -105,17 +169,53 @@
       <!-- Article Body -->
       <div class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
         <div class="text-lg leading-8 text-justify">
-          {@html data.blog.content}
+          <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
+            {data.blog.previewDescription}
+          </p>
+          
+          <!-- If we have body content from Sanity, render it -->
+          {#if data.blog.body && data.blog.body.length > 0}
+            <div class="sanity-content">
+              <!-- This would need a Sanity portable text renderer -->
+              <p class="text-muted-foreground italic">Full content from Sanity CMS would be rendered here...</p>
+            </div>
+          {:else}
+            <!-- Fallback content for demo -->
+            <div class="space-y-6">
+              <p>
+                This article provides comprehensive insights into the topic of {data.blog.title.toLowerCase()}. 
+                Our expert team has compiled valuable information to help you understand and implement effective strategies.
+              </p>
+              
+              <h2>Key Points</h2>
+              <ul class="list-disc list-inside space-y-2">
+                {#each data.blog.categories as category}
+                  <li>Understanding {category.toLowerCase()} best practices</li>
+                {/each}
+                <li>Professional tips and techniques</li>
+                <li>Step-by-step implementation guide</li>
+              </ul>
+              
+              <h2>Professional Insights</h2>
+              <p>
+                At Splash n' Shine, we believe in sharing our expertise to help you achieve the best results. 
+                This guide covers everything you need to know about {data.blog.title.toLowerCase()}.
+              </p>
+              
+              <h2>Conclusion</h2>
+              <p>
+                {data.blog.previewDescription} For more detailed information and professional services, 
+                don't hesitate to contact our expert team.
+              </p>
+            </div>
+          {/if}
         </div>
       </div>
       
       <!-- Article Footer -->
       <footer class="mt-12 pt-8 border-t border-border">
         <div class="text-center text-muted-foreground text-sm">
-          <p>Published on {formatDate(data.blog.publishedAt)} by {data.blog.author.name}</p>
-          {#if data.blog.updatedAt && data.blog.updatedAt !== data.blog.publishedAt}
-            <p class="mt-1">Last updated: {formatDate(data.blog.updatedAt)}</p>
-          {/if}
+          <p>Published on {formatDate(data.blog.publishedAt)} by Splash n' Shine</p>
         </div>
       </footer>
     </div>

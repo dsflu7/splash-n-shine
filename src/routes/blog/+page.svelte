@@ -19,6 +19,15 @@
 <svelte:head>
   <title>Blog - Splash N Shine</title>
   <meta name="description" content="Discover cleaning tips, tricks, and insights from our professional cleaning experts. Learn how to keep your home spotless with our comprehensive guides." />
+  
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="Blog - Splash N Shine" />
+  <meta property="og:description" content="Professional cleaning tips, tricks, and insights from our cleaning experts. Learn how to keep your home spotless with our comprehensive guides." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.splashnshine.ca/blog" />
+  
+  <!-- Structured Data for SEO -->
+  {@html `<script type="application/ld+json">${JSON.stringify(data.structuredData)}</script>`}
 </svelte:head>
 
 <div class="min-h-screen bg-gradient-to-b from-background to-muted/20 mt-24">
@@ -42,21 +51,10 @@
   <section class="pb-16 sm:pb-20 lg:pb-24">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="space-y-8">
-        {#each data.blogs as blog (blog.id)}
+        {#each data.blogs as blog (blog._id)}
           <div use:fadeIn>
             <Card class="group overflow-hidden transition-all duration-300 hover:shadow-lg">
-              <Link href="/blog/{blog.slug}" class="flex flex-col md:flex-row">
-                <div class="md:w-80 lg:w-96">
-                  <div class="aspect-video md:aspect-square overflow-hidden">
-                    <img
-                      src={blog.mainImage.url}
-                      alt={blog.mainImage.alt}
-                      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-                
+              <Link href="/blog/{blog.slug.current}" class="flex flex-col md:flex-row">
                 <div class="flex-1">
                   <CardHeader class="pb-4">
                     <div class="flex flex-wrap gap-2 mb-3">
@@ -79,7 +77,7 @@
                     
                     <div class="flex items-center justify-between text-sm text-muted-foreground">
                       <div class="flex items-center space-x-4">
-                        <span class="font-medium">{blog.author.name}</span>
+                        <span class="font-medium">Splash n' Shine</span>
                         
                         <span>•</span>
                         <time datetime={blog.publishedAt}>
@@ -91,12 +89,6 @@
                           <span>{blog.readTime} min read</span>
                         {/if}
                       </div>
-                      
-                      {#if blog.featured}
-                        <Badge variant="default" class="text-xs">
-                          Featured
-                        </Badge>
-                      {/if}
                     </div>
                   </CardContent>
                 </div>

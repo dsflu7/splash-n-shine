@@ -1,53 +1,35 @@
+// Unified BlogPost interface - used throughout the entire project
 export interface BlogPost {
-  id: string;
+  _id: string;
   title: string;
-  slug: string;
-  previewDescription: string;
-  content: string;
-  mainImage: {
-    url: string;
-    alt: string;
-  };
-  categories: string[];
+  slug: { current: string };
   publishedAt: string;
-  createdAt: string;
-  updatedAt: string;
-  author: {
-    name: string;
-    image?: string;
-  };
-  readTime?: number; // estimated reading time in minutes
-  featured?: boolean;
-}
-
-export interface BlogListItem {
-  id: string;
-  title: string;
-  slug: string;
   previewDescription: string;
-  mainImage: {
-    url: string;
-    alt: string;
-  };
   categories: string[];
-  publishedAt: string;
-  author: {
-    name: string;
-    image?: string;
-  };
   readTime?: number;
-  featured?: boolean;
+  seoKeywords?: string[];
+  articleType?: 'Article' | 'BlogPosting' | 'NewsArticle' | 'Guide';
+  image?: any;
+  body?: any[];
 }
 
-export interface BlogSuggestion {
-  id: string;
+// Simplified interface for blog listing pages (subset of BlogPost)
+export interface BlogListItem {
+  _id: string;
   title: string;
-  slug: string;
+  slug: { current: string };
   previewDescription: string;
-  mainImage: {
-    url: string;
-    alt: string;
-  };
+  categories: string[];
+  publishedAt: string;
+  readTime?: number;
+}
+
+// Interface for related/suggested blog posts
+export interface BlogSuggestion {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  previewDescription: string;
   categories: string[];
   publishedAt: string;
   readTime?: number;
