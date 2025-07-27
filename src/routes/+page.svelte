@@ -259,20 +259,12 @@
 			<Accordion.Content class="px-1 pt-2">
 				<div class="flex flex-col gap-3">
 					<div class="aspect-video h-48 max-h-48 w-full overflow-hidden rounded">
-						<Image
-							url={`/assets/services/${serviceKey}/1.webp`}
-							description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-							class="h-full w-full object-cover"
-							width="400"
-							height="225"
-							quality={40}
-						/>
-						<!-- <enhanced:img
+						<enhanced:img
 							class="h-full w-full object-cover"
 							src={serviceImagesDict[serviceKey]}
-							sizes="640px"
+							sizes="400px"
 							alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-						/> -->
+						/>
 					</div>
 					<p class="py-1 font-[Cantarell] text-sm text-[#00000099]">{service.shortDescription}</p>
 					<div class="mt-1 flex justify-between gap-2">
