@@ -1,0 +1,15 @@
+import { createClient } from '@sanity/client';
+import { 
+  PUBLIC_SANITY_PROJECT_ID, 
+  PUBLIC_SANITY_DATASET, 
+  PUBLIC_SANITY_API_VERSION 
+} from '$env/static/public';
+
+export const client = createClient({
+  projectId: PUBLIC_SANITY_PROJECT_ID,
+  dataset: PUBLIC_SANITY_DATASET,
+  apiVersion: PUBLIC_SANITY_API_VERSION,
+  useCdn: true, // Enable CDN for better performance
+  perspective: 'published', // Only fetch published content
+  stega: false, // Disable preview mode for production
+});
