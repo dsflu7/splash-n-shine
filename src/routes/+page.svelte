@@ -29,8 +29,6 @@
 
 	let { data }: { data: PageData } = $props();
 
-	$inspect(data);
-
 	let reviews: Review[] = $state([]);
 	let rating: number = $state(0);
 	let userRatingCount: number = $state(0);
@@ -99,7 +97,6 @@
 	$effect(() => {
 		if ($servicesPageNavigating || page.url.toString().includes('services')) {
 			$servicesPageNavigating = false;
-			console.log('services page navigating');
 		}
 	});
 
