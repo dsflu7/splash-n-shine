@@ -115,18 +115,19 @@
 		{#if (!firstLoad && !$isMobile) || mobileNavOpen}
 			<div
 				in:slide
-				class="absolute top-20 -mx-[6%] flex w-screen flex-col items-center justify-evenly gap-8 border-b border-black bg-white py-4 lg:relative lg:top-0 lg:mx-0 lg:w-auto lg:flex-row lg:border-transparent lg:bg-transparent lg:py-0"
+				class="absolute top-20 -mx-[6%] flex w-screen flex-col items-start justify-start gap-6 border-b border-black bg-white py-6 px-8 lg:relative lg:top-0 lg:mx-0 lg:w-auto lg:flex-row lg:items-center lg:justify-evenly lg:border-transparent lg:bg-transparent lg:py-0 lg:px-0"
 			>
 				<Dropdown
 					label="Services"
-					buttonClass={colorState ? 'text-white' : 'text-black'}
+					buttonClass="{colorState ? 'text-white' : 'text-black'} {$isMobile ? 'justify-start font-semibold hover:text-primary transition-colors' : ''}"
 					title="Our Services"
-					menuClass="w-56"
+					menuClass="w-56 {$isMobile ? 'left-0' : ''}"
 				>
 					<DropdownItem
 						onclick={() => {
 							goto('/services');
 							$servicesPageNavigating = true;
+							if ($isMobile) mobileNavOpen = false;
 						}}
 						class="border-b"
 					>
@@ -137,6 +138,7 @@
 							onclick={() => {
 								goto(`/services/${service}`);
 								$servicesPageNavigating = true;
+								if ($isMobile) mobileNavOpen = false;
 							}}
 						>
 							<a href={`${domain}/services/${service}`} onclick={(e) => e.preventDefault()}>
@@ -151,14 +153,15 @@
 
 				<Dropdown
 					label="Locations"
-					buttonClass={colorState ? 'text-white' : 'text-black'}
+					buttonClass="{colorState ? 'text-white' : 'text-black'} {$isMobile ? 'justify-start font-semibold hover:text-primary transition-colors' : ''}"
 					title="Service Areas"
-					menuClass="w-56"
+					menuClass="w-56 {$isMobile ? 'left-0' : ''}"
 				>
 					<DropdownItem
 						onclick={() => {
 							goto('/locations');
 							$servicesPageNavigating = true;
+							if ($isMobile) mobileNavOpen = false;
 						}}
 						class="border-b"
 					>
@@ -169,6 +172,7 @@
 							onclick={() => {
 								goto(`/locations/${slug}`);
 								$servicesPageNavigating = true;
+								if ($isMobile) mobileNavOpen = false;
 							}}
 						>
 							<a href="{domain}/locations/{slug}" onclick={(e) => e.preventDefault()}>
@@ -181,18 +185,90 @@
 					{/each}
 				</Dropdown>
 
-				<a
-					href="{domain}/gallery"
-					onclick={(e) => {
-						e.preventDefault();
-						goto('/gallery');
-					}}
-					class="font-semibold {colorState ? 'text-white' : 'text-black'}"
-				>
-					Gallery
-				</a>
+				<!-- Navigation Links -->
+				<div class="flex flex-col gap-4 lg:hidden">
+					<h3 class="text-sm font-bold text-gray-600 uppercase tracking-wider">Navigation</h3>
+					<div class="flex flex-col gap-3 pl-2">
+						<a
+							href="{domain}/gallery"
+							onclick={(e) => {
+								e.preventDefault();
+								goto('/gallery');
+								mobileNavOpen = false;
+							}}
+							class="font-semibold text-black hover:text-primary transition-colors"
+						>
+							Gallery
+						</a>
 
-				<div class="flex items-center gap-4 md:flex-row md:gap-7">
+						<a
+							href="{domain}/blog"
+							onclick={(e) => {
+								e.preventDefault();
+								goto('/blog');
+								mobileNavOpen = false;
+							}}
+							class="font-semibold text-black hover:text-primary transition-colors"
+						>
+							Blog
+						</a>
+					</div>
+				</div>
+
+				<!-- Desktop Navigation Links -->
+				<div class="hidden lg:flex lg:items-center lg:gap-8">
+					<a
+						href="{domain}/gallery"
+						onclick={(e) => {
+							e.preventDefault();
+							goto('/gallery');
+						}}
+						class="font-semibold {colorState ? 'text-white' : 'text-black'}"
+					>
+						Gallery
+					</a>
+
+					<a
+						href="{domain}/blog"
+						onclick={(e) => {
+							e.preventDefault();
+							goto('/blog');
+						}}
+						class="font-semibold {colorState ? 'text-white' : 'text-black'}"
+					>
+						Blog
+					</a>
+				</div>
+
+				<!-- Contact & Social - Mobile -->
+				<div class="flex flex-col gap-4 lg:hidden">
+					<h3 class="text-sm font-bold text-gray-600 uppercase tracking-wider">Connect</h3>
+					<div class="flex flex-col gap-3 pl-2">
+						<div class="flex items-center gap-3">
+							<a
+								href="https://www.instagram.com/splashnshine.ca/"
+								aria-label="Go to instagram page"
+								class="flex items-center gap-2 text-sm font-semibold text-black hover:text-primary transition-colors"
+							>
+								<Instagram color="black" />
+								Instagram
+							</a>
+						</div>
+						<div class="flex items-center gap-3">
+							<a
+								href="tel:{contactInfo.phone}"
+								aria-label="Call phone number"
+								class="flex items-center gap-2 text-sm font-semibold text-black hover:text-primary transition-colors"
+							>
+								<PhoneCall color="black" />
+								Call Us
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Contact & Social - Desktop -->
+				<div class="hidden lg:flex items-center gap-4 md:flex-row md:gap-7">
 					<a
 						href="https://www.instagram.com/splashnshine.ca/"
 						aria-label="Go to instagram page"
@@ -208,6 +284,20 @@
 						<PhoneCall color={colorState ? 'white' : 'black'} />
 					</a>
 				</div>
+				<!-- Mobile CTA -->
+				<div class="lg:hidden pt-2 border-t border-gray-200">
+					<Button
+						onclick={() => {
+							goto('/contact');
+							mobileNavOpen = false;
+						}}
+						class="w-full justify-start"
+						aria-label="Open contact page"
+					>
+						Get Free Quote
+					</Button>
+				</div>
+
 				<Button
 					onclick={() => goto('/contact')}
 					variant={colorState ? 'secondary' : 'default'}

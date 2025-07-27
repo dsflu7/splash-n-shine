@@ -3,12 +3,12 @@
   <!-- Primary Pages -->
   <url>
     <loc>https://www.splashnshine.ca/</loc>
-    <lastmod>2025-07-21</lastmod>
+    <lastmod>2025-07-27</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/contact</loc>
-    <lastmod>2025-07-21</lastmod>
+    <lastmod>2025-07-27</lastmod>
     <priority>0.8</priority>
   </url>
   
@@ -140,22 +140,62 @@
   <!-- Secondary Pages -->
   <url>
     <loc>https://www.splashnshine.ca/gallery</loc>
-    <lastmod>2025-07-21</lastmod>
+    <lastmod>2025-07-27</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.splashnshine.ca/our-story</loc>
-    <lastmod>2025-07-21</lastmod>
+    <loc>https://www.splashnshine.ca/blog</loc>
+    <lastmod>2025-07-27</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.splashnshine.ca/our-story</loc>
+    <lastmod>2025-07-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.splashnshine.ca/blog/pressure-washing-101</loc>
+    <lastmod>2025-07-27</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/blog/roof-cleaning-guide</loc>
+    <lastmod>2025-07-27</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/blog/gutter-maintenance-tips</loc>
+    <lastmod>2025-07-27</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/blog/driveway-cleaning-techniques</loc>
+    <lastmod>2025-07-27</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/blog/seasonal-cleaning-vancouver</loc>
+    <lastmod>2025-07-27</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/blog/commercial-cleaning-best-practices</loc>
+    <lastmod>2025-07-27</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Legal Pages -->
+  <!-- Legal Pages -->
+  <url>
     <loc>https://www.splashnshine.ca/privacy-policy</loc>
-    <lastmod>2025-07-21</lastmod>
+    <lastmod>2025-07-27</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/terms-and-conditions</loc>
-    <lastmod>2025-07-21</lastmod>
+    <lastmod>2025-07-27</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>

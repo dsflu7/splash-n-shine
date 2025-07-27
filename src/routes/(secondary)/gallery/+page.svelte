@@ -3,7 +3,6 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
-	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import { serviceData, services } from '$lib/data/services';
 	import Image from '$lib/components/Image.svelte';
 	import { goto } from '$app/navigation';
@@ -40,25 +39,21 @@
 </Dialog.Root>
 
 {#snippet sectionFigure(gridCtrl: string, section: string, idx: number, ext: string, name?: string)}
-	<Tooltip.Root openDelay={300}>
-		<Tooltip.Trigger
-			onclick={() => {
-				dialogOpen = true;
-				dialogImageSrc = `/assets/${section}/${name || idx}.${ext}`;
-			}}
-			class="overflow-hidden object-cover {gridCtrl}"
-		>
-			<Image
-				url={`/assets/${section}/${name || idx}.${ext}`}
-				description={`${section.replaceAll('-', ' ')} portfolio image ${idx + 1} - ${idx % 2 === 0 ? 'before' : 'after'} cleaning transformation`}
-				class="h-full w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
-			/>
-		</Tooltip.Trigger>
-
-		<Tooltip.Content>
-			<span>Click to expand</span>
-		</Tooltip.Content>
-	</Tooltip.Root>
+	<button
+		onclick={() => {
+			dialogOpen = true;
+			dialogImageSrc = `/assets/${section}/${name || idx}.${ext}`;
+		}}
+		class="overflow-hidden object-cover {gridCtrl} group cursor-pointer"
+		title="Click to expand"
+		aria-label="Expand image {idx + 1} - {idx % 2 === 0 ? 'before' : 'after'} cleaning transformation"
+	>
+		<Image
+			url={`/assets/${section}/${name || idx}.${ext}`}
+			description={`${section.replaceAll('-', ' ')} portfolio image ${idx + 1} - ${idx % 2 === 0 ? 'before' : 'after'} cleaning transformation`}
+			class="h-full w-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110"
+		/>
+	</button>
 {/snippet}
 
 <main

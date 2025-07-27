@@ -29,8 +29,6 @@
 
 	let { data }: { data: PageData } = $props();
 
-	$inspect(data);
-
 	let reviews: Review[] = $state([]);
 	let rating: number = $state(0);
 	let userRatingCount: number = $state(0);
@@ -99,7 +97,6 @@
 	$effect(() => {
 		if ($servicesPageNavigating || page.url.toString().includes('services')) {
 			$servicesPageNavigating = false;
-			console.log('services page navigating');
 		}
 	});
 
@@ -250,7 +247,7 @@
 
 {#snippet mobileServiceBlock(serviceKey: string, i: number)}
 	{@const service = serviceData[serviceKey]}
-	<Accordion.Root class="mb-2 w-[90vw]" value={!i ? [serviceKey] : []}>
+	<Accordion.Root class="mb-2 w-[90vw]" type="multiple" value={!i ? [serviceKey] : []}>
 		<Accordion.Item value={serviceKey}>
 			<Accordion.Trigger class="group relative w-full rounded-lg bg-primary/10 px-4 py-3 text-left">
 				<div class="flex w-full items-center justify-between">
@@ -262,20 +259,12 @@
 			<Accordion.Content class="px-1 pt-2">
 				<div class="flex flex-col gap-3">
 					<div class="aspect-video h-48 max-h-48 w-full overflow-hidden rounded">
-						<Image
-							url={`/assets/services/${serviceKey}/1.webp`}
-							description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-							class="h-full w-full object-cover"
-							width="400"
-							height="225"
-							quality={40}
-						/>
-						<!-- <enhanced:img
+						<enhanced:img
 							class="h-full w-full object-cover"
 							src={serviceImagesDict[serviceKey]}
-							sizes="640px"
+							sizes="400px"
 							alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-						/> -->
+						/>
 					</div>
 					<p class="py-1 font-[Cantarell] text-sm text-[#00000099]">{service.shortDescription}</p>
 					<div class="mt-1 flex justify-between gap-2">
