@@ -11,8 +11,12 @@
   const domain = $derived(`${page.url.protocol}//${page.url.host}`);
   
   // Truncate title and description for SEO requirements
-  const seoTitle = $derived(data.blog.title.length > 50 ? data.blog.title.substring(0, 47) + '...' : data.blog.title);
-  const seoDescription = $derived(data.blog.previewDescription.length > 160 ? data.blog.previewDescription.substring(0, 157) + '...' : data.blog.previewDescription);
+  const seoTitle = $derived(data.blog.title?.length > 50 ? data.blog.title.substring(0, 47) + '...' : data.blog.title || 'Blog Post');
+  const seoDescription = $derived(
+    data.blog.previewDescription?.length > 160 
+      ? data.blog.previewDescription.substring(0, 157) + '...' 
+      : data.blog.previewDescription || 'Read this blog post from Splash n\' Shine for expert cleaning tips and insights.'
+  );
   
   function formatDate(dateString: string): string {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -85,7 +89,7 @@
             </Breadcrumb.Item>
             <Breadcrumb.Separator />
             <Breadcrumb.Item>
-              <Breadcrumb.Page>{data.blog.title}</Breadcrumb.Page>
+              <Breadcrumb.Page>{data.blog.title || 'Blog Post'}</Breadcrumb.Page>
             </Breadcrumb.Item>
           </Breadcrumb.List>
         </Breadcrumb.Root>
@@ -94,17 +98,19 @@
       <!-- Article Header -->
       <header class="mb-12">
         <!-- Categories -->
-        <div class="flex flex-wrap gap-2 mb-6">
-          {#each data.blog.categories as category}
-            <Badge variant="secondary" class="text-sm">
-              {category}
-            </Badge>
-          {/each}
-        </div>
+        {#if data.blog.categories && data.blog.categories.length > 0}
+          <div class="flex flex-wrap gap-2 mb-6">
+            {#each data.blog.categories as category}
+              <Badge variant="secondary" class="text-sm">
+                {category}
+              </Badge>
+            {/each}
+          </div>
+        {/if}
         
         <!-- Title -->
         <h1 class="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl mb-6">
-          {data.blog.title}
+          {data.blog.title || 'Blog Post'}
         </h1>
         
         <!-- Article Meta -->
@@ -134,9 +140,11 @@
       <!-- Article Body -->
       <div class="prose prose-lg prose-neutral dark:prose-invert max-w-none">
         <div class="text-lg leading-8 text-justify">
-          <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
-            {data.blog.previewDescription}
-          </p>
+          {#if data.blog.previewDescription}
+            <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
+              {data.blog.previewDescription}
+            </p>
+          {/if}
           
           <!-- Render body content from Sanity -->
           {#if data.blog.body && data.blog.body.length > 0}
@@ -147,15 +155,20 @@
             <!-- Fallback content for demo -->
             <div class="space-y-6">
               <p>
-                This article provides comprehensive insights into the topic of {data.blog.title.toLowerCase()}. 
+                This article provides comprehensive insights into the topic of {(data.blog.title || 'professional cleaning').toLowerCase()}. 
                 Our expert team has compiled valuable information to help you understand and implement effective strategies.
               </p>
               
               <h2>Key Points</h2>
               <ul class="list-disc list-inside space-y-2">
-                {#each data.blog.categories as category}
-                  <li>Understanding {category.toLowerCase()} best practices</li>
-                {/each}
+                {#if data.blog.categories && data.blog.categories.length > 0}
+                  {#each data.blog.categories as category}
+                    <li>Understanding {category.toLowerCase()} best practices</li>
+                  {/each}
+                {:else}
+                  <li>Understanding professional cleaning best practices</li>
+                  <li>Expert maintenance techniques</li>
+                {/if}
                 <li>Professional tips and techniques</li>
                 <li>Step-by-step implementation guide</li>
               </ul>
@@ -163,12 +176,12 @@
               <h2>Professional Insights</h2>
               <p>
                 At Splash n' Shine, we believe in sharing our expertise to help you achieve the best results. 
-                This guide covers everything you need to know about {data.blog.title.toLowerCase()}.
+                This guide covers everything you need to know about {(data.blog.title || 'professional cleaning').toLowerCase()}.
               </p>
               
               <h2>Conclusion</h2>
               <p>
-                {data.blog.previewDescription} For more detailed information and professional services, 
+                {data.blog.previewDescription || 'This comprehensive guide covers everything you need to know about the topic.'} For more detailed information and professional services, 
                 don't hesitate to contact our expert team.
               </p>
             </div>
