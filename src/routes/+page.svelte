@@ -9,6 +9,7 @@
 
 	// Critical imports only - defer heavy components
 	import heroAddr from '$lib/icons/landingHero2.webp?enhanced';
+	import teamAddr from '$lib/icons/team.jpg?enhanced';
 	import { serviceImagesDict } from '$lib/icons/services/service_images';
 	import { serviceData, services } from '$lib/data/services';
 
@@ -233,7 +234,7 @@
 		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
 	>
 		<enhanced:img
-			class="relative z-10 h-full w-full object-cover"
+			class="relative z-10 h-full w-full object-cover min-w-[100vw] max-w-[100vw]"
 			src={heroAddr}
 			sizes="(min-width: 768px) 100vw, 100vw"
 			alt="Professional exterior cleaning service in action - Splash n' Shine"
@@ -291,34 +292,14 @@
 		<!-- About -->
 		<section class="container mx-auto flex flex-col items-center gap-8 px-4 py-12 lg:flex-row">
 			<div class="w-full lg:w-1/2">
-				{#if Image}
-					<Image
-						url="/assets/landing/team.jpg"
-						description="Splash n' Shine professional cleaning team in Vancouver"
-						class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
-						width="800"
-						height="600"
-						size={[480, 640, 800]}
-						sizes="(min-width: 1024px) 50vw, 100vw"
-						quality={65}
-						format="avif"
-					/>
-				{:else}
-					<img
-						src="/assets/landing/team.jpg"
+					<enhanced:img
+						src={teamAddr}
 						alt="Splash n' Shine professional cleaning team in Vancouver"
 						class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
 						width="800"
 						height="600"
 						loading="lazy"
 					/>
-				{/if}
-				<!-- <enhanced:img
-				src={team}
-				sizes="640px"
-				alt="Splash n' Shine professional cleaning team in Vancouver"
-				class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
-			/> -->
 			</div>
 			<div class="w-full space-y-6 lg:w-1/2">
 				<h2 class="text-3xl font-semibold">
