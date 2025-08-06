@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
 	import { Button } from '$lib/components/ui/button';
-	import * as Dialog from '$lib/components/ui/dialog';
-	import { ScrollArea } from '$lib/components/ui/scroll-area';
+	import LazyDialog from '$lib/components/LazyDialog.svelte';
 	import { serviceData, services } from '$lib/data/services';
 	import Image from '$lib/components/Image.svelte';
 	import { goto } from '$app/navigation';
@@ -16,6 +15,10 @@
 
 	let exPath = $state('cleaning-example');
 	let landingPath = $state('landing');
+	
+	function handleDialogOpenChange(open: boolean) {
+		dialogOpen = open;
+	}
 </script>
 
 <svelte:head>
@@ -42,17 +45,11 @@
 	<link rel="canonical" href={`${domain}/gallery`} />
 </svelte:head>
 
-<Dialog.Root bind:open={dialogOpen}>
-	<Dialog.Content>
-		<ScrollArea class="max-h-[80vh]">
-			<Image
-				url={dialogImageSrc}
-				description="High resolution before/after comparison of our professional cleaning work"
-				class=""
-			/>
-		</ScrollArea>
-	</Dialog.Content>
-</Dialog.Root>
+<LazyDialog 
+	bind:open={dialogOpen}
+	{dialogImageSrc}
+	onOpenChange={handleDialogOpenChange}
+/>
 
 {#snippet sectionFigure(gridCtrl: string, section: string, idx: number, ext: string, name?: string)}
 	<button

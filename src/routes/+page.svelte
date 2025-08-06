@@ -117,18 +117,15 @@
 		property="og:description"
 		content="Top-rated professional exterior cleaning in Vancouver and the Lower Mainland. Pressure washing, soft washing, roof, gutter, and window cleaning. Free quote."
 	/>
-	<meta property="og:image" content={`${domain}/assets/logo.png`} />
-	<meta property="og:url" content={`${domain}/`} />
+	<meta property="og:image" content="https://www.splashnshine.ca/assets/logo.png" />
+	<meta property="og:url" content="https://www.splashnshine.ca/" />
 	<meta property="og:type" content="website" />
-	<link rel="canonical" href={`${domain}/`} />
+	<link rel="canonical" href="https://www.splashnshine.ca/" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Professional Cleaning Services in Vancouver | Splash n' Shine" />
 	<meta name="twitter:description" content="Top-rated professional exterior cleaning in Vancouver and the Lower Mainland. Pressure washing, soft washing, roof, gutter, and window cleaning. Free quote." />
-	<meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+	<meta name="twitter:image" content="https://www.splashnshine.ca/assets/logo.png" />
 </svelte:head>
-
-<!-- Preload critical hero image for faster LCP -->
-<link rel="preload" as="image" href="/assets/landing/1.webp" fetchpriority="high" />
 
 <svelte:window bind:scrollY={initScroll} />
 
@@ -142,41 +139,28 @@
 			class="aspect-square overflow-hidden rounded object-cover"
 			aria-label={`Learn more about ${service.title}`}
 		>
-			<a
-				href={`${domain}/services/${serviceKey}`}
-				onclick={(e) => {
-					e.preventDefault();
-					goto(`/services/${serviceKey}`);
-				}}
+			<!-- Use a non-link wrapper to avoid default navigation + goto double handling -->
+			<div
 				class="block"
 				aria-label={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 			>
-				<!-- <Image
-					url={`/assets/services/${serviceKey}/1.webp`}
-					description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
-					width="480"
-					height="480"
-					quality={50}
-				/> -->
 				<enhanced:img
 					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 					src={serviceImagesDict[serviceKey]}
 					sizes="640px"
 					alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 				/>
-			</a>
+			</div>
 		</button>
 
 		<span class="font-cantarell text-[#00000099]">{service.shortDescription}</span>
-		<a
-			href={`${domain}/services/${services[i]}`}
-			onclick={(e) => {
-				e.preventDefault();
-				goto(`/services/${serviceKey}`);
-			}}
-			class="py-2 text-xs italic hover:underline">Read more...</a
+		<button
+			onclick={() => goto(`/services/${serviceKey}`)}
+			class="py-2 text-xs italic hover:underline"
+			aria-label={`Read more about ${service.title}`}
 		>
+			Read more...
+		</button>
 	</div>
 {/snippet}
 
@@ -209,37 +193,21 @@
 							onclick={() => goto(`/services/${serviceKey}`)}
 							class="min-h-[44px] min-w-[44px] flex-1"
 						>
-							<a
-								href={`${domain}/services/${serviceKey}`}
-								onclick={(e) => {
-									e.preventDefault();
-									goto(`/services/${serviceKey}`);
-								}}
-								class="flex h-full w-full items-center justify-center text-left"
-							>
+							<span class="flex h-full w-full items-center justify-center text-left">
 								<span class="block truncate">
 									Learn More about {serviceKey
 										.split('-')
 										.map((v) => v.charAt(0).toUpperCase() + v.slice(1))
 										.join(' ')}
 								</span>
-							</a>
+							</span>
 						</Button>
 						<Button
 							size="sm"
 							onclick={() => goto('/contact')}
 							class="min-h-[44px] min-w-[44px] flex-none"
 						>
-							<a
-								href={`${domain}/contact`}
-								onclick={(e) => {
-									e.preventDefault();
-									goto('/contact');
-								}}
-								class="flex h-full w-full items-center justify-center"
-							>
-								Get Quote
-							</a>
+							<span class="flex h-full w-full items-center justify-center">Get Quote</span>
 						</Button>
 					</div>
 				</div>
@@ -253,27 +221,34 @@
 	<section
 		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
 	>
-		<!-- Hero image loading placeholder -->
-		<div
-			class="absolute inset-0 animate-pulse bg-gradient-to-r from-blue-600 to-blue-800"
-			style="background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);"
-		></div>
-
 		<!-- Optimized hero image with maximum priority -->
-		<Image
-			url={heroAddr}
-			description="Professional exterior cleaning service in action - Splash n' Shine"
-			class="relative z-10 h-full w-full object-cover"
-			size={[1200, 1600, 1920, 2560, 3200]}
-			sizes="100vw"
-			quality={60}
-			format="avif"
-			width="3522"
-			height="2140"
-			fetchpriority="high"
-			loading="eager"
-			decoding="sync"
-		/>
+		{#if Image}
+			<Image
+				url={heroAddr}
+				description="Professional exterior cleaning service in action - Splash n' Shine"
+				class="relative z-10 h-full w-full object-cover"
+				size={[1200, 1600, 1920, 2560, 3200]}
+				sizes="100vw"
+				quality={60}
+				format="avif"
+				width="3522"
+				height="2140"
+				fetchpriority="high"
+				loading="eager"
+				decoding="sync"
+			/>
+		{:else}
+			<enhanced:img
+				class="relative z-10 h-full w-full object-cover"
+				src={heroAddr}
+				sizes="100vw"
+				alt="Professional exterior cleaning service in action - Splash n' Shine"
+				loading="eager"
+				decoding="sync"
+				fetchpriority="high"
+				style="content-visibility: auto; contain-intrinsic-size: 100vw 85vh;"
+			/>
+		{/if}
 
 		<div class="absolute z-20 h-full w-full bg-black/30"></div>
 		<div
@@ -323,17 +298,28 @@
 		<!-- About -->
 		<section class="container mx-auto flex flex-col items-center gap-8 px-4 py-12 lg:flex-row">
 			<div class="w-full lg:w-1/2">
-				<Image
-					url="/assets/landing/team.jpg"
-					description="Splash n' Shine professional cleaning team in Vancouver"
-					class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
-					width="800"
-					height="600"
-					size={[480, 640, 800]}
-					sizes="(min-width: 1024px) 50vw, 100vw"
-					quality={65}
-					format="avif"
-				/>
+				{#if Image}
+					<Image
+						url="/assets/landing/team.jpg"
+						description="Splash n' Shine professional cleaning team in Vancouver"
+						class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
+						width="800"
+						height="600"
+						size={[480, 640, 800]}
+						sizes="(min-width: 1024px) 50vw, 100vw"
+						quality={65}
+						format="avif"
+					/>
+				{:else}
+					<img
+						src="/assets/landing/team.jpg"
+						alt="Splash n' Shine professional cleaning team in Vancouver"
+						class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
+						width="800"
+						height="600"
+						loading="lazy"
+					/>
+				{/if}
 				<!-- <enhanced:img
 				src={team}
 				sizes="640px"
@@ -421,17 +407,28 @@
 		<!-- Phone CTA -->
 		<section class="relative flex h-[60vh] w-full items-center justify-center py-24 text-white">
 			<div class="absolute inset-0 z-0">
-				<Image
-					url="/assets/landing/2.jpg"
-					description="Professional exterior cleaning background"
-					class="h-full w-full object-cover"
-					width="1920"
-					height="1080"
-					size={[960, 1280, 1600, 1920]}
-					sizes="100vw"
-					quality={60}
-					format="avif"
-				/>
+				{#if Image}
+					<Image
+						url="/assets/landing/2.jpg"
+						description="Professional exterior cleaning background"
+						class="h-full w-full object-cover"
+						width="1920"
+						height="1080"
+						size={[960, 1280, 1600, 1920]}
+						sizes="100vw"
+						quality={60}
+						format="avif"
+					/>
+				{:else}
+					<img
+						src="/assets/landing/2.jpg"
+						alt="Professional exterior cleaning background"
+						class="h-full w-full object-cover"
+						width="1920"
+						height="1080"
+						loading="lazy"
+					/>
+				{/if}
 				<div class="absolute inset-0 bg-secondary-foreground/65">&nbsp;</div>
 			</div>
 			<div class="container relative z-10 mx-auto my-auto text-center">
