@@ -19,6 +19,18 @@
 	// Get the base URL for absolute links
 	const domain = $derived(`${page.url.protocol}//${page.url.host}`);
 
+	// Get location title for SEO - truncate if needed
+	const locationTitle = $derived((() => {
+		const title = `${selectedLocation?.name} Exterior Cleaning | Splash n' Shine`;
+		return title.length > 60 ? title.substring(0, 57) + '...' : title;
+	})());
+
+	// Get location description for SEO - ensure it's within 160 chars
+	const locationDescription = $derived((() => {
+		const desc = `Professional exterior cleaning in ${selectedLocation?.name}. Expert power washing, soft washing, and property maintenance. Trusted local cleaning specialists.`;
+		return desc.length > 160 ? desc.substring(0, 157) + '...' : desc;
+	})());
+
 	$effect(() => {
 		if (!selectedLocation) {
 			goto('/');
@@ -27,29 +39,25 @@
 </script>
 
 <svelte:head>
-	<title>{selectedLocation?.name} Services | Splash n' Shine</title>
-	<meta
-		name="description"
-		content="Professional exterior cleaning in {selectedLocation?.name}. Expert power washing, soft washing, and property maintenance for residential and commercial properties."
-	/>
+	<title>{locationTitle}</title>
+	<meta name="description" content={locationDescription} />
 	<meta
 		name="keywords"
-		content="{selectedLocation?.name} exterior cleaning, {selectedLocation?.name} power washing, {selectedLocation?.name} soft washing, local cleaning services, {selectedLocation?.name} property maintenance, {selectedLocation?.name} house washing, {selectedLocation?.name} commercial cleaning, {selectedLocation?.name} roof cleaning, {selectedLocation?.name} window cleaning"
+		content="{selectedLocation?.name} exterior cleaning, {selectedLocation?.name} power washing, {selectedLocation?.name} soft washing, local cleaning services, {selectedLocation?.name} property maintenance"
 	/>
-	<meta
-		property="og:title"
-		content="{selectedLocation?.name} Exterior Cleaning Specialists | Splash n' Shine"
-	/>
-	<meta
-		property="og:description"
-		content="Your trusted local cleaning experts in {selectedLocation?.name}. Professional power washing and exterior cleaning services tailored to your community's unique needs."
-	/>
-	<meta property="og:image" content="/assets/logo.png" />
-	<meta property="og:url" content="https://www.splashnshine.ca/locations/{locationId}" />
+	<!-- Open Graph tags -->
+	<meta property="og:title" content={locationTitle} />
+	<meta property="og:description" content={locationDescription} />
+	<meta property="og:image" content={`${domain}/assets/logo.png`} />
+	<meta property="og:url" content={`${domain}/locations/${locationId}`} />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Splash n' Shine" />
-
-	<link rel="canonical" href="https://www.splashnshine.ca/locations/{locationId}" />
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={locationTitle} />
+	<meta name="twitter:description" content={locationDescription} />
+	<meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+	<link rel="canonical" href={`${domain}/locations/${locationId}`} />
 </svelte:head>
 
 <!-- Structured Data for Individual Location Page -->
@@ -202,7 +210,7 @@
 	<section class="mb-16">
 		<h2 class="mb-8 text-center text-3xl font-bold">Frequently Asked Questions</h2>
 		<div class="mx-auto max-w-3xl">
-			<Accordion.Root class="w-full">
+			<Accordion.Root type="single" class="w-full">
 				{#each selectedLocation.faqItems as faq, index}
 					<Accordion.Item value="item-{index}">
 						<Accordion.Trigger class="text-left font-semibold">

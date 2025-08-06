@@ -8,17 +8,23 @@ import {
   type Service
 } from '$lib/queries';
 
+// Enable prerendering and caching
+export const prerender = true;
+
 export const load = async () => {
   try {
-    // TODO: Enable when Sanity is properly configured
-    // SSR: Fetch all content that renders on page load
+    // For prerendered pages, we want to return static data
+    // or fetch from Sanity if it's configured and fast
+    
+    // TODO: Enable when Sanity is properly configured and optimized
     // const [featuredProjects, whyPoints, services] = await Promise.all([
     //   client.fetch<Project[]>(featuredProjectsQuery),
     //   client.fetch<WhyPoint[]>(whyPointsQuery),
     //   client.fetch<Service[]>(homepageServicesQuery)
     // ]);
     
-    // Return mock data for now
+    // Return empty data for optimal prerendering performance
+    // Homepage content comes from local data files for best performance
     return {
       featuredProjects: [],
       whyPoints: [],

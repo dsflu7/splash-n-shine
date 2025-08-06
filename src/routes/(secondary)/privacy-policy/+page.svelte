@@ -1,24 +1,34 @@
 <script lang="ts">
 	import Image from '$lib/components/Image.svelte';
 	import { fadeIn } from '$lib/utils/anims';
+	import { page } from '$app/stores';
+
+	// Derive domain for absolute URLs
+	const domain = `${$page.url.protocol}//${$page.url.host}`;
 </script>
 
 <svelte:head>
-	<title>Privacy Policy | Splash n' Shine</title>
+	<title>Privacy Policy | Splash n' Shine Data Protection</title>
 	<meta
 		name="description"
-		content="Learn how we collect, protect and use your personal information while providing exceptional exterior cleaning services across Vancouver."
+		content="Learn how Splash n' Shine collects, protects and uses your personal information while providing exceptional exterior cleaning services in Vancouver."
 	/>
-	<meta name="keywords" content="customer data protection, privacy practices, information collection policy, personal data security, customer information use, data rights, cookies policy, marketing preferences, data processing consent, privacy compliance" />
-	<meta property="og:title" content="Your Privacy Matters | Splash n' Shine Data Protection" />
+	<meta name="keywords" content="privacy policy, data protection, personal information, customer privacy, information security, data collection practices" />
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="Privacy Policy | Splash n' Shine Data Protection" />
 	<meta
 		property="og:description"
-		content="Transparent information about how we protect your personal data while delivering exceptional exterior cleaning services across Vancouver and the Lower Mainland."
+		content="Learn how Splash n' Shine collects, protects and uses your personal information while providing exceptional exterior cleaning services in Vancouver."
 	/>
-	<meta property="og:image" content="/assets/logo.png" />
-	<meta property="og:url" content="https://www.splashnshine.ca/privacy-policy" />
+	<meta property="og:image" content={`${domain}/assets/logo.png`} />
+	<meta property="og:url" content={`${domain}/privacy-policy`} />
 	<meta property="og:type" content="website" />
-	<link rel="canonical" href="https://www.splashnshine.ca/privacy-policy" />
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Privacy Policy | Splash n' Shine Data Protection" />
+	<meta name="twitter:description" content="Learn how Splash n' Shine collects, protects and uses your personal information while providing exceptional exterior cleaning services in Vancouver." />
+	<meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+	<link rel="canonical" href={`${domain}/privacy-policy`} />
 </svelte:head>
 
 <!-- Structured Data for Privacy Policy Page -->
@@ -27,13 +37,13 @@
 		{
 			"@context": "https://schema.org",
 			"@type": "WebPage",
-			"name": "Privacy Policy | Splash n' Shine",
-			"description": "Learn how we collect, protect and use your personal information while providing exceptional exterior cleaning services across Vancouver.",
-			"url": "https://www.splashnshine.ca/privacy-policy",
+			"name": "Privacy Policy | Splash n' Shine Data Protection",
+			"description": "Learn how Splash n' Shine collects, protects and uses your personal information while providing exceptional exterior cleaning services in Vancouver.",
+			"url": "${domain}/privacy-policy",
 			"provider": {
 				"@type": "Organization",
 				"name": "Splash n' Shine",
-				"url": "https://www.splashnshine.ca"
+				"url": "${domain}"
 			},
 			"genre": "Legal Document",
 			"audience": {

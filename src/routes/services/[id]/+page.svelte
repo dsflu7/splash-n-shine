@@ -16,6 +16,13 @@
 	import { ArrowRight } from 'svelte-radix';
 	import { fadeIn } from '$lib/utils/anims';
 
+	const formatServiceName = (id: string) => {
+		return id
+			.split('-')
+			.map((x) => x[0].toUpperCase() + x.slice(1))
+			.join(' ');
+	};
+
 	let selectedServiceData = $derived(serviceData[page.params.id]);
 
 	let carouselAPI: CarouselAPI | undefined = $state();
@@ -30,6 +37,21 @@
 	);
 
 	const domain = $derived(`${page.url.protocol}//${page.url.host}`);
+	
+	// Get service title for SEO - truncate if needed
+	const serviceTitle = $derived((() => {
+		const title = selectedServiceData?.title || formatServiceName(page.params.id);
+		const fullTitle = `${title} | Splash n' Shine`;
+		return fullTitle.length > 60 ? fullTitle.substring(0, 57) + '...' : fullTitle;
+	})());
+
+	// Get service description for SEO - ensure it's within 160 chars
+	const serviceDescription = $derived((() => {
+		const service = formatServiceName(page.params.id);
+		const cities = selectedServiceData?.cities?.slice(0, 2).join(' & ') || 'Vancouver & Surrey';
+		const desc = `Expert ${service} services in ${cities}. Professional equipment, eco-friendly methods, and superior results. Free quotes available!`;
+		return desc.length > 160 ? desc.substring(0, 157) + '...' : desc;
+	})());
 
 	$effect(() => {
 		if (carouselAPI) {
@@ -44,45 +66,29 @@
 			goto('/?services');
 		}
 	});
-
-	const formatServiceName = (id: string) => {
-		return id
-			.split('-')
-			.map((x) => x[0].toUpperCase() + x.slice(1))
-			.join(' ');
-	};
 </script>
 
 <svelte:head>
-	<title
-		>{selectedServiceData?.title || formatServiceName(page.params.id)} | Splash n' Shine</title
-	>
-	<meta
-		name="description"
-		content="Expert {formatServiceName(page.params.id)} in Vancouver and the Lower Mainland. Eco-friendly methods and professional equipment deliver superior results. Get a free quote today!"
-	/>
+	<title>{serviceTitle}</title>
+	<meta name="description" content={serviceDescription} />
 	<meta
 		name="keywords"
 		content="{selectedServiceData?.title || formatServiceName(page.params.id)}, {page.params
-			.id} Vancouver, {page.params.id} Surrey, professional {page.params.id}, affordable {page
-			.params.id}, eco-friendly {page.params.id}, residential {page.params.id}, commercial {page
-			.params.id}, Lower Mainland"
+			.id} Vancouver, {page.params.id} Surrey, professional {page.params.id}, residential {page
+			.params.id}, commercial {page.params.id}"
 	/>
-	<meta
-		property="og:title"
-		content="Professional {selectedServiceData?.title ||
-			formatServiceName(page.params.id)} | Splash n' Shine"
-	/>
-	<meta
-		property="og:description"
-		content="Transform your property with our expert {formatServiceName(page.params.id)} service. Serving {selectedServiceData?.cities?.slice(0,3).join(', ') || 'Vancouver, Surrey'} and the entire Lower Mainland with quality and care. Call us today for a free consultation!"
-	/>
-	<meta property="og:image" content="/assets/services/{page.params.id}/1.webp" />
-	<meta property="og:url" content="https://www.splashnshine.ca/services/{page.params.id}" />
+	<!-- Open Graph tags -->
+	<meta property="og:title" content={serviceTitle} />
+	<meta property="og:description" content={serviceDescription} />
+	<meta property="og:image" content={`${domain}/assets/services/${page.params.id}/1.webp`} />
+	<meta property="og:url" content={`${domain}/services/${page.params.id}`} />
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="Splash n' Shine" />
-
-	<link rel="canonical" href="https://www.splashnshine.ca/services/{page.params.id}" />
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={serviceTitle} />
+	<meta name="twitter:description" content={serviceDescription} />
+	<meta name="twitter:image" content={`${domain}/assets/services/${page.params.id}/1.webp`} />
+	<link rel="canonical" href={`${domain}/services/${page.params.id}`} />
 </svelte:head>
 
 <!-- Structured Data for Individual Service Page -->
@@ -321,7 +327,7 @@
 	{#if selectedServiceData.faqItems && selectedServiceData.faqItems.length > 0}
 		<section class="bg-gray-100 font-[Cantarell] px-10">
 			<h3 class="mb-8 text-center text-2xl font-semibold">Frequently Asked Questions</h3>
-			<Accordion.Root class="w-full">
+			<Accordion.Root type="multiple" class="w-full">
 				{#each selectedServiceData.faqItems as faq}
 					<Accordion.Item value={faq.question}>
 						<Accordion.Trigger class="text-left text-lg font-bold">

@@ -34,24 +34,30 @@
 </script>
 
 <svelte:head>
-	<title>Exterior Cleaning Services | Splash n' Shine</title>
+	<title>Professional Cleaning Services Vancouver | Splash n' Shine</title>
 	<meta
 		name="description"
-		content="Professional house washing, roof cleaning, gutter maintenance, window cleaning, and more. Serving Vancouver and surrounding communities."
+		content="Expert exterior cleaning services in Vancouver & Lower Mainland. House washing, roof cleaning, gutter maintenance, window cleaning, and more. Free quotes available."
 	/>
 	<meta
 		name="keywords"
-		content="exterior cleaning services, house washing Vancouver, roof cleaning Surrey, gutter maintenance, window cleaning services, driveway power washing, deck restoration, commercial cleaning, strata cleaning, environmental cleaning solutions, cleaning services near me, power washing near me, exterior cleaning near me, house washing near me"
+		content="exterior cleaning services, house washing Vancouver, roof cleaning Surrey, gutter maintenance, window cleaning services, driveway power washing"
 	/>
-	<meta property="og:title" content="Complete Exterior Cleaning Services | Splash n' Shine" />
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="Professional Cleaning Services Vancouver | Splash n' Shine" />
 	<meta
 		property="og:description"
-		content="Explore our full range of professional power washing and exterior cleaning services. Exceptional results for homes and businesses across the Lower Mainland."
+		content="Expert exterior cleaning services in Vancouver & Lower Mainland. House washing, roof cleaning, gutter maintenance, window cleaning, and more. Free quotes available."
 	/>
-	<meta property="og:image" content="/assets/logo.png" />
-	<meta property="og:url" content="https://www.splashnshine.ca/services" />
+	<meta property="og:image" content={`${domain}/assets/logo.png`} />
+	<meta property="og:url" content={`${domain}/services`} />
 	<meta property="og:type" content="website" />
-	<link rel="canonical" href="https://www.splashnshine.ca/services" />
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Professional Cleaning Services Vancouver | Splash n' Shine" />
+	<meta name="twitter:description" content="Expert exterior cleaning services in Vancouver & Lower Mainland. House washing, roof cleaning, gutter maintenance, window cleaning, and more. Free quotes available." />
+	<meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+	<link rel="canonical" href={`${domain}/services`} />
 </svelte:head>
 
 <!-- Structured Data for Services Collection Page -->

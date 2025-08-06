@@ -11,18 +11,24 @@
 </script>
 
 <svelte:head>
-	<title>Service Locations | Splash n' Shine Vancouver</title>
+	<title>Service Areas Vancouver & Lower Mainland | Splash n' Shine</title>
 	<meta 
 		name="description" 
-		content="Find premium exterior cleaning services across Metro Vancouver. From Vancouver to Surrey, Burnaby, Richmond, and beyond, we serve your neighborhood." 
+		content="Professional exterior cleaning across Metro Vancouver. Serving Vancouver, Surrey, Burnaby, Richmond, and surrounding areas with expert house washing and cleaning services." 
 	/>
-	<meta name="keywords" content="exterior cleaning Vancouver, pressure washing Surrey, roof cleaning Burnaby, house washing Richmond, gutter cleaning Coquitlam, window washing Delta, driveway cleaning Langley, commercial cleaning White Rock, strata cleaning North Vancouver" />
-	<meta property="og:title" content="Locations Served | Splash n' Shine Cleaning Services" />
-	<meta property="og:description" content="Discover our service areas throughout Metro Vancouver. Professional exterior cleaning for residential and commercial properties in all major communities." />
-	<meta property="og:image" content="/assets/logo.png" />
-	<meta property="og:url" content="https://www.splashnshine.ca/locations" />
+	<meta name="keywords" content="exterior cleaning Vancouver, pressure washing Surrey, roof cleaning Burnaby, house washing Richmond, gutter cleaning Coquitlam, window washing Delta" />
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="Service Areas Vancouver & Lower Mainland | Splash n' Shine" />
+	<meta property="og:description" content="Professional exterior cleaning across Metro Vancouver. Serving Vancouver, Surrey, Burnaby, Richmond, and surrounding areas with expert house washing and cleaning services." />
+	<meta property="og:image" content={`${domain}/assets/logo.png`} />
+	<meta property="og:url" content={`${domain}/locations`} />
 	<meta property="og:type" content="website" />
-	<link rel="canonical" href="https://www.splashnshine.ca/locations" />
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Service Areas Vancouver & Lower Mainland | Splash n' Shine" />
+	<meta name="twitter:description" content="Professional exterior cleaning across Metro Vancouver. Serving Vancouver, Surrey, Burnaby, Richmond, and surrounding areas with expert house washing and cleaning services." />
+	<meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+	<link rel="canonical" href={`${domain}/locations`} />
 </svelte:head>
 
 <!-- Structured Data for Locations Page -->

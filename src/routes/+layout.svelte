@@ -48,32 +48,54 @@
 	<meta name="msvalidate.01" content="B6452AF26DC66424390A9A5C30B9741C" />
 	<meta name="google-site-verification" content="DXvftpzIopYp2VylaucB6Z-fTwgSBnj2isOeYsu29Yo" />
 
-	<!-- microsoft clarity -->
-	<script type="text/javascript">
-		(function (c, l, a, r, i, t, y) {
-			c[a] =
-				c[a] ||
-				function () {
-					(c[a].q = c[a].q || []).push(arguments);
-				};
-			t = l.createElement(r);
-			t.async = 1;
-			t.src = 'https://www.clarity.ms/tag/' + i;
-			y = l.getElementsByTagName(r)[0];
-			y.parentNode.insertBefore(t, y);
-		})(window, document, 'clarity', 'script', 'sizv7mjncs');
+	<!-- Microsoft Clarity - Load asynchronously for better performance -->
+	<script>
+	/* onMount(() => {
+		// Register service worker for caching critical resources
+		if ('serviceWorker' in navigator && browser) {
+			navigator.serviceWorker.register('/sw.js').catch(console.error);
+		}
+	}); */		// Defer non-critical scripts for better performance
+		window.addEventListener('load', function() {
+			// Microsoft Clarity - only load in production
+			if (location.hostname !== 'localhost') {
+				(function (c, l, a, r, i, t, y) {
+					c[a] =
+						c[a] ||
+						function () {
+							(c[a].q = c[a].q || []).push(arguments);
+						};
+					t = l.createElement(r);
+					t.async = 1;
+					t.src = 'https://www.clarity.ms/tag/' + i;
+					y = l.getElementsByTagName(r)[0];
+					y.parentNode.insertBefore(t, y);
+				})(window, document, 'clarity', 'script', 'sizv7mjncs');
+			}
+		});
 	</script>
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6214ND4P9"></script>
+	<!-- Google Analytics - Optimized loading -->
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
+		// Load Google Analytics after page load for better performance - only in production
+		if (location.hostname !== 'localhost') {
+			window.addEventListener('load', function() {
+				const script = document.createElement('script');
+				script.async = true;
+				script.src = 'https://www.googletagmanager.com/gtag/js?id=G-S6214ND4P9';
+				script.onerror = function() {
+					console.log('Google Analytics failed to load');
+				};
+				document.head.appendChild(script);
+				
+				script.onload = function() {
+					window.dataLayer = window.dataLayer || [];
+					function gtag() { dataLayer.push(arguments); }
+					gtag('js', new Date());
+					gtag('config', 'G-S6214ND4P9');
+				};
+			});
 		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-S6214ND4P9');
 	</script>
 
 </svelte:head>
@@ -109,9 +131,31 @@
 	</button>
 {/if}
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link
-	href="https://fonts.googleapis.com/css2?family=Alatsi&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-	rel="stylesheet"
-/>
+<!-- Optimized font loading - use local fonts with fallbacks -->
+<style>
+	/* Ensure fonts are loaded efficiently with local files and fallbacks */
+	@font-face {
+		font-family: 'Alatsi';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('/fonts/alatsi.woff2') format('woff2'),
+			 url('https://fonts.gstatic.com/s/alatsi/v13/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2') format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	@font-face {
+		font-family: 'Cantarell';
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url('/fonts/cantarell.woff2') format('woff2'),
+			 url('https://fonts.gstatic.com/s/cantarell/v15/B50WF_CzZFOtaOyW_Ty0z-3_5X01Ng.woff2') format('woff2');
+		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
+	
+	/* Add font fallbacks for better performance */
+	:global(body) {
+		font-family: 'Cantarell', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	}
+</style>

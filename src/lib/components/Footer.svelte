@@ -128,9 +128,9 @@
 					<p class="text-sm text-muted-foreground">
 						Website by 
 						<a 
-							href="https://rightmarketing.ca" 
+							href="https://www.rightmarketing.ca" 
 							target="_blank" 
-							rel="noopener noreferrer" 
+							rel="dofollow"
 							class="text-primary hover:text-primary/80 transition-colors font-semibold"
 						>
 							rightmarketing.ca

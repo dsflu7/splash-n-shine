@@ -19,11 +19,27 @@
 </script>
 
 <svelte:head>
-	<title>Project Gallery | Splash n' Shine</title>
+	<title>Project Gallery | Splash n' Shine Before & After Photos</title>
 	<meta
 		name="description"
-		content="View our stunning before-and-after transformations showcasing our exceptional pressure washing and exterior cleaning results in Vancouver."
+		content="Browse our stunning before-and-after gallery showcasing exceptional pressure washing and exterior cleaning transformations in Vancouver and surrounding areas."
 	/>
+	<meta name="keywords" content="pressure washing before after, exterior cleaning gallery, house washing results, Vancouver cleaning photos, cleaning transformations" />
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="Project Gallery | Splash n' Shine Before & After Photos" />
+	<meta
+		property="og:description"
+		content="Browse our stunning before-and-after gallery showcasing exceptional pressure washing and exterior cleaning transformations in Vancouver and surrounding areas."
+	/>
+	<meta property="og:image" content={`${domain}/assets/logo.png`} />
+	<meta property="og:url" content={`${domain}/gallery`} />
+	<meta property="og:type" content="website" />
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Project Gallery | Splash n' Shine Before & After Photos" />
+	<meta name="twitter:description" content="Browse our stunning before-and-after gallery showcasing exceptional pressure washing and exterior cleaning transformations in Vancouver and surrounding areas." />
+	<meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+	<link rel="canonical" href={`${domain}/gallery`} />
 </svelte:head>
 
 <Dialog.Root bind:open={dialogOpen}>

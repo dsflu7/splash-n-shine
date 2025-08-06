@@ -4,8 +4,11 @@
   import { Card, CardContent, CardHeader, CardTitle } from '$lib/components/ui/card';
   import Link from '$lib/components/Link.svelte';
   import { fadeIn } from '$lib/utils/anims';
+  import { page } from '$app/state';
 
   let { data }: { data: PageData } = $props();
+  
+  const domain = $derived(`${page.url.protocol}//${page.url.host}`);
 
   function formatDate(dateString: string): string {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -17,14 +20,24 @@
 </script>
 
 <svelte:head>
-  <title>Blog - Splash N Shine</title>
-  <meta name="description" content="Discover cleaning tips, tricks, and insights from our professional cleaning experts. Learn how to keep your home spotless with our comprehensive guides." />
+  <title>Cleaning Tips & Expert Guides | Splash n' Shine Blog</title>
+  <meta name="description" content="Professional cleaning tips, seasonal guides, and expert advice for maintaining your home. Transform your cleaning routine with insights from Vancouver's cleaning experts." />
+  <meta name="keywords" content="cleaning tips, house cleaning guides, professional cleaning advice, home maintenance tips, Vancouver cleaning experts" />
   
   <!-- Open Graph meta tags -->
-  <meta property="og:title" content="Blog - Splash N Shine" />
-  <meta property="og:description" content="Professional cleaning tips, tricks, and insights from our cleaning experts. Learn how to keep your home spotless with our comprehensive guides." />
+  <meta property="og:title" content="Cleaning Tips & Expert Guides | Splash n' Shine Blog" />
+  <meta property="og:description" content="Professional cleaning tips, seasonal guides, and expert advice for maintaining your home. Transform your cleaning routine with insights from Vancouver's cleaning experts." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.splashnshine.ca/blog" />
+  <meta property="og:url" content={`${domain}/blog`} />
+  <meta property="og:image" content={`${domain}/assets/logo.png`} />
+  
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cleaning Tips & Expert Guides | Splash n' Shine Blog" />
+  <meta name="twitter:description" content="Professional cleaning tips, seasonal guides, and expert advice for maintaining your home. Transform your cleaning routine with insights from Vancouver's cleaning experts." />
+  <meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+  
+  <link rel="canonical" href={`${domain}/blog`} />
   
   <!-- Structured Data for SEO -->
   {@html `<script type="application/ld+json">${JSON.stringify(data.structuredData)}</script>`}

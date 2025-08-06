@@ -1,24 +1,34 @@
 <script>
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { fadeIn } from '$lib/utils/anims';
+	import { page } from '$app/stores';
+
+	// Derive domain for absolute URLs
+	const domain = `${$page.url.protocol}//${$page.url.host}`;
 </script>
 
 <svelte:head>
-	<title>Contact Us | Splash n' Shine | Free Quotes</title>
+	<title>Contact Us for Free Quotes | Splash n' Shine Vancouver</title>
 	<meta
 		name="description"
-		content="Get a free quote for our professional exterior cleaning services. Our Vancouver team is ready to answer questions and provide personalized solutions."
+		content="Get free quotes for professional exterior cleaning in Vancouver. Contact our expert team for house washing, roof cleaning, and pressure washing services."
 	/>
-	<meta name="keywords" content="exterior cleaning quote, free estimate, Vancouver power washing quote, house washing consultation, contact cleaning professionals, schedule power washing, book exterior cleaning, Surrey cleaning quote, pressure washing appointment" />
-	<meta property="og:title" content="Contact Splash n' Shine | Free Quotes & Consultations" />
+	<meta name="keywords" content="free cleaning quote Vancouver, exterior cleaning estimate, house washing consultation, pressure washing quote, contact cleaning professionals" />
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="Contact Us for Free Quotes | Splash n' Shine Vancouver" />
 	<meta
 		property="og:description"
-		content="Get in touch for personalized exterior cleaning solutions and free estimates. Our Vancouver-based team is ready to transform your property."
+		content="Get free quotes for professional exterior cleaning in Vancouver. Contact our expert team for house washing, roof cleaning, and pressure washing services."
 	/>
-	<meta property="og:image" content="/assets/logo.png" />
-	<meta property="og:url" content="https://www.splashnshine.ca/contact" />
+	<meta property="og:image" content={`${domain}/assets/logo.png`} />
+	<meta property="og:url" content={`${domain}/contact`} />
 	<meta property="og:type" content="website" />
-	<link rel="canonical" href="https://www.splashnshine.ca/contact" />
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Contact Us for Free Quotes | Splash n' Shine Vancouver" />
+	<meta name="twitter:description" content="Get free quotes for professional exterior cleaning in Vancouver. Contact our expert team for house washing, roof cleaning, and pressure washing services." />
+	<meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+	<link rel="canonical" href={`${domain}/contact`} />
 </svelte:head>
 
 <!-- Structured Data for Contact Page -->
@@ -27,13 +37,13 @@
 		{
 			"@context": "https://schema.org",
 			"@type": "ContactPage",
-			"name": "Contact Us | Splash n' Shine | Free Quotes",
-			"description": "Get a free quote for our professional exterior cleaning services. Our Vancouver team is ready to answer questions and provide personalized solutions.",
-			"url": "https://www.splashnshine.ca/contact",
+			"name": "Contact Us for Free Quotes | Splash n' Shine Vancouver",
+			"description": "Get free quotes for professional exterior cleaning in Vancouver. Contact our expert team for house washing, roof cleaning, and pressure washing services.",
+			"url": "${domain}/contact",
 			"mainEntity": {
 				"@type": "LocalBusiness",
 				"name": "Splash n' Shine",
-				"url": "https://www.splashnshine.ca",
+				"url": "${domain}",
 				"contactPoint": {
 					"@type": "ContactPoint",
 					"contactType": "customer service",

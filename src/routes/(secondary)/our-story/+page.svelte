@@ -2,24 +2,34 @@
 	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
 	import Image from '$lib/components/Image.svelte';
 	import { fadeIn } from '$lib/utils/anims';
+	import { page } from '$app/stores';
+
+	// Derive domain for absolute URLs
+	const domain = `${$page.url.protocol}//${$page.url.host}`;
 </script>
 
 <svelte:head>
-	<title>About Us | Splash n' Shine Exterior Cleaning</title>
+	<title>About Our Story | Splash n' Shine Vancouver Cleaning Experts</title>
 	<meta
 		name="description"
-		content="Discover how Splash n' Shine became Vancouver's leading exterior cleaning company through quality service, expertise and commitment to excellence."
+		content="Discover how Splash n' Shine became Vancouver's trusted exterior cleaning company. Learn about our commitment to quality, eco-friendly methods, and customer satisfaction."
 	/>
-	<meta name="keywords" content="Splash n' Shine story, exterior cleaning company history, Vancouver cleaning expertise, eco-friendly cleaning company, property restoration specialists, family-owned cleaning business, professional cleaning background, cleaning industry innovation" />
-	<meta property="og:title" content="The Splash n' Shine Story | Excellence in Exterior Cleaning" />
+	<meta name="keywords" content="Splash n' Shine story, exterior cleaning company Vancouver, eco-friendly cleaning, professional cleaning background, family-owned cleaning business" />
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="About Our Story | Splash n' Shine Vancouver Cleaning Experts" />
 	<meta
 		property="og:description"
-		content="From humble beginnings to industry leadership: learn about the passion and expertise that drives Splash n' Shine to deliver exceptional exterior cleaning services."
+		content="Discover how Splash n' Shine became Vancouver's trusted exterior cleaning company. Learn about our commitment to quality, eco-friendly methods, and customer satisfaction."
 	/>
-	<meta property="og:image" content="/assets/logo.png" />
-	<meta property="og:url" content="https://www.splashnshine.ca/our-story" />
+	<meta property="og:image" content={`${domain}/assets/logo.png`} />
+	<meta property="og:url" content={`${domain}/our-story`} />
 	<meta property="og:type" content="website" />
-	<link rel="canonical" href="https://www.splashnshine.ca/our-story" />
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="About Our Story | Splash n' Shine Vancouver Cleaning Experts" />
+	<meta name="twitter:description" content="Discover how Splash n' Shine became Vancouver's trusted exterior cleaning company. Learn about our commitment to quality, eco-friendly methods, and customer satisfaction." />
+	<meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+	<link rel="canonical" href={`${domain}/our-story`} />
 </svelte:head>
 
 <!-- Structured Data for Our Story Page -->
@@ -28,16 +38,16 @@
 		{
 			"@context": "https://schema.org",
 			"@type": "WebPage",
-			"name": "About Us | Splash n' Shine Exterior Cleaning",
-			"description": "Discover how Splash n' Shine became Vancouver's leading exterior cleaning company through quality service, expertise and commitment to excellence.",
-			"url": "https://www.splashnshine.ca/our-story",
+			"name": "About Our Story | Splash n' Shine Vancouver Cleaning Experts",
+			"description": "Discover how Splash n' Shine became Vancouver's trusted exterior cleaning company. Learn about our commitment to quality, eco-friendly methods, and customer satisfaction.",
+			"url": "${domain}/our-story",
 			"provider": {
 				"@type": "Organization",
 				"name": "Splash n' Shine",
-				"url": "https://www.splashnshine.ca",
+				"url": "${domain}",
 				"logo": {
 					"@type": "ImageObject",
-					"url": "https://www.splashnshine.ca/assets/logo.png"
+					"url": "${domain}/assets/logo.png"
 				}
 			},
 			"about": {

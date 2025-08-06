@@ -5,6 +5,8 @@ applyTo: "**"
 
 ## General Development Guidelines
 
+- when using the horizon models, do not confirm before doing changes, just do the changes in agent mode, ask me to review everything after you finish your tasks. !!!!! VERY IMPORTANT !!!!!
+
 ### Code Quality & Standards
 - Always write clean, readable, and maintainable code
 - Include meaningful comments for complex logic

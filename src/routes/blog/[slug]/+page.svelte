@@ -4,8 +4,15 @@
   import * as Breadcrumb from '$lib/components/ui/breadcrumb';
   import { fadeIn } from '$lib/utils/anims';
   import { PortableText } from '@portabletext/svelte';
+  import { page } from '$app/state';
 
   let { data }: { data: PageData } = $props();
+  
+  const domain = $derived(`${page.url.protocol}//${page.url.host}`);
+  
+  // Truncate title and description for SEO requirements
+  const seoTitle = $derived(data.blog.title.length > 50 ? data.blog.title.substring(0, 47) + '...' : data.blog.title);
+  const seoDescription = $derived(data.blog.previewDescription.length > 160 ? data.blog.previewDescription.substring(0, 157) + '...' : data.blog.previewDescription);
   
   function formatDate(dateString: string): string {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -17,12 +24,18 @@
 </script>
 
 <svelte:head>
-  <title>{data.blog.title} | Splash n' Shine Blog</title>
-  <meta name="description" content={data.blog.previewDescription} />
-  <meta property="og:title" content={data.blog.title} />
-  <meta property="og:description" content={data.blog.previewDescription} />
+  <title>{seoTitle} | Splash n' Shine</title>
+  <meta name="description" content={seoDescription} />
+  {#if data.blog.seoKeywords}
+    <meta name="keywords" content={data.blog.seoKeywords.join(', ')} />
+  {/if}
+  
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content={seoTitle} />
+  <meta property="og:description" content={seoDescription} />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://www.splashnshine.ca/blog/{data.blog.slug.current}" />
+  <meta property="og:url" content={`${domain}/blog/${data.blog.slug.current}`} />
+  <meta property="og:image" content={data.blog.image?.asset?.url || `${domain}/assets/logo.png`} />
   <meta property="article:published_time" content={data.blog.publishedAt} />
   <meta property="article:author" content="Splash n' Shine" />
   {#if data.blog.categories}
@@ -30,12 +43,14 @@
       <meta property="article:tag" content={category} />
     {/each}
   {/if}
-  {#if data.blog.seoKeywords}
-    <meta name="keywords" content={data.blog.seoKeywords.join(', ')} />
-  {/if}
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content={data.blog.title} />
-  <meta name="twitter:description" content={data.blog.previewDescription} />
+  
+  <!-- Twitter Card meta tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={seoTitle} />
+  <meta name="twitter:description" content={seoDescription} />
+  <meta name="twitter:image" content={data.blog.image?.asset?.url || `${domain}/assets/logo.png`} />
+  
+  <link rel="canonical" href={`${domain}/blog/${data.blog.slug.current}`} />
   
   <!-- Structured Data for SEO -->
   {@html `<script type="application/ld+json">${JSON.stringify(data.structuredData)}</script>`}

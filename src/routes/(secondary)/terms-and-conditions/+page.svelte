@@ -1,24 +1,34 @@
 <script lang="ts">
 	import Image from '$lib/components/Image.svelte';
 	import { fadeIn } from '$lib/utils/anims';
+	import { page } from '$app/stores';
+
+	// Derive domain for absolute URLs
+	const domain = `${$page.url.protocol}//${$page.url.host}`;
 </script>
 
 <svelte:head>
-	<title>Terms & Conditions | Splash n' Shine</title>
+	<title>Terms & Conditions | Splash n' Shine Service Agreement</title>
 	<meta
 		name="description"
-		content="Important details about our service agreements, booking policies, payments, and client responsibilities for our exterior cleaning services."
+		content="Important service agreements, booking policies, payments, and client responsibilities for Splash n' Shine exterior cleaning services in Vancouver."
 	/>
-	<meta name="keywords" content="exterior cleaning terms, service agreement, booking policy, deposit requirements, cancellation policy, client responsibilities, payment terms, service guarantee, exterior cleaning liability, weather policy" />
-	<meta property="og:title" content="Terms & Conditions for Splash n' Shine Services" />
+	<meta name="keywords" content="terms conditions, service agreement, booking policy, payment terms, exterior cleaning contract, service guarantee, cancellation policy" />
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="Terms & Conditions | Splash n' Shine Service Agreement" />
 	<meta
 		property="og:description"
-		content="Important information about booking, payments, and service expectations for our exterior cleaning services in Vancouver and the Lower Mainland."
+		content="Important service agreements, booking policies, payments, and client responsibilities for Splash n' Shine exterior cleaning services in Vancouver."
 	/>
-	<meta property="og:image" content="/assets/logo.png" />
-	<meta property="og:url" content="https://www.splashnshine.ca/terms-and-conditions" />
+	<meta property="og:image" content={`${domain}/assets/logo.png`} />
+	<meta property="og:url" content={`${domain}/terms-and-conditions`} />
 	<meta property="og:type" content="website" />
-	<link rel="canonical" href="https://www.splashnshine.ca/terms-and-conditions" />
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Terms & Conditions | Splash n' Shine Service Agreement" />
+	<meta name="twitter:description" content="Important service agreements, booking policies, payments, and client responsibilities for Splash n' Shine exterior cleaning services in Vancouver." />
+	<meta name="twitter:image" content={`${domain}/assets/logo.png`} />
+	<link rel="canonical" href={`${domain}/terms-and-conditions`} />
 </svelte:head>
 
 <!-- Structured Data for Terms & Conditions Page -->
@@ -27,13 +37,13 @@
 		{
 			"@context": "https://schema.org",
 			"@type": "WebPage",
-			"name": "Terms & Conditions | Splash n' Shine",
-			"description": "Important details about our service agreements, booking policies, payments, and client responsibilities for our exterior cleaning services.",
-			"url": "https://www.splashnshine.ca/terms-and-conditions",
+			"name": "Terms & Conditions | Splash n' Shine Service Agreement",
+			"description": "Important service agreements, booking policies, payments, and client responsibilities for Splash n' Shine exterior cleaning services in Vancouver.",
+			"url": "${domain}/terms-and-conditions",
 			"provider": {
 				"@type": "Organization",
 				"name": "Splash n' Shine",
-				"url": "https://www.splashnshine.ca"
+				"url": "${domain}"
 			},
 			"genre": "Legal Document",
 			"audience": {
