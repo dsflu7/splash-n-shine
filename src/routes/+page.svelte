@@ -158,7 +158,7 @@
 				<enhanced:img
 					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 					src={serviceImagesDict[serviceKey]}
-					sizes="640px"
+					sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
 					alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 				/>
 			</div>
@@ -192,7 +192,7 @@
 						<enhanced:img
 							class="h-full w-full object-cover"
 							src={serviceImagesDict[serviceKey]}
-							sizes="400px"
+							sizes="(min-width: 640px) 50vw, 90vw"
 							alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 						/>
 					</div>
@@ -235,7 +235,7 @@
 		<enhanced:img
 			class="relative z-10 h-full w-full object-cover"
 			src={heroAddr}
-			sizes="100vw"
+			sizes="(min-width: 768px) 100vw, 100vw"
 			alt="Professional exterior cleaning service in action - Splash n' Shine"
 			loading="eager"
 			decoding="sync"
