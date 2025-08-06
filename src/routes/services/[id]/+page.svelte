@@ -150,16 +150,19 @@
 				{#each selectedServiceData.images as image, idx}
 					<Carousel.Item
 						onclick={() => carouselAPI?.scrollTo(idx)}
-						class="-ml-6 cursor-pointer pl-1 first:ml-auto {currentSlide === idx ||
-							'scale-75 lg:scale-90'} transition-all duration-300 ease-in-out"
+						class="-ml-6 cursor-pointer pl-1 first:ml-auto {currentSlide === idx || 'scale-75 lg:scale-90'} transition-all duration-300 ease-in-out"
 						aria-label={`View slide ${idx + 1}`}
 					>
 						<Card.Root class="overflow-hidden !border-black">
 							<Card.Content class="lg:aspect-16/9 aspect-9/16 overflow-hidden object-cover p-0">
 								<Image
 									url={image}
-									description={`${formatServiceName(page.params.id)} process demonstration - step ${idx + 1} showing ${carouselCaptions[idx] || 'professional cleaning technique'}`}
-									class="lg:aspect-16/9 aspect-9/16 h-[50vh] max-h-[50vh] w-full scale-125 rounded-2xl object-cover object-center lg:h-auto"
+									description={`${formatServiceName(page.params.id)} process demonstration - slide ${idx + 1}`}
+									class="lg:aspect-16/9 aspect-9/16 h-[50vh] max-h-[50vh] w-full rounded-2xl object-cover object-center lg:h-auto"
+									size={[640, 960, 1280]}
+									sizes="(min-width: 1024px) 50vw, 90vw"
+									quality={65}
+									format="webp"
 								/>
 							</Card.Content>
 						</Card.Root>
@@ -226,15 +229,21 @@
 							url={selectedServiceData.images[0]}
 							description={`${formatServiceName(page.params.id)} service demonstration`}
 							class="h-full w-full object-cover"
+							size={[640, 960, 1280]}
+							sizes="(min-width: 1024px) 50vw, 100vw"
+							quality={65}
+							format="webp"
 						/>
 					</div>
-					<div
-						class="absolute -bottom-6 -left-6 hidden aspect-[4/3] w-2/3 overflow-hidden rounded-lg shadow-xl lg:block"
-					>
+					<div class="absolute -bottom-6 -left-6 hidden aspect-[4/3] w-2/3 overflow-hidden rounded-lg shadow-xl lg:block">
 						<Image
 							url={selectedServiceData.images[1] || selectedServiceData.images[0]}
 							description={`${formatServiceName(page.params.id)} service detail`}
 							class="h-full w-full object-cover"
+							size={[480, 640, 800]}
+							sizes="33vw"
+							quality={65}
+							format="webp"
 						/>
 					</div>
 				</div>
@@ -304,6 +313,10 @@
 				url="/assets/landing/2.jpg"
 				description="Professional exterior cleaning background"
 				class="h-full w-full object-cover"
+				size={[960, 1280, 1600, 1920]}
+				sizes="100vw"
+				quality={60}
+				format="avif"
 			/>
 			<div class="absolute inset-0 bg-secondary-foreground/65">&nbsp;</div>
 		</div>

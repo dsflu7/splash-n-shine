@@ -260,15 +260,19 @@
 		></div>
 
 		<!-- Optimized hero image with maximum priority -->
-		<enhanced:img
+		<Image
+			url={heroAddr}
+			description="Professional exterior cleaning service in action - Splash n' Shine"
 			class="relative z-10 h-full w-full object-cover"
-			src={heroAddr}
+			size={[1200, 1600, 1920, 2560, 3200]}
 			sizes="100vw"
-			alt="Professional exterior cleaning service in action - Splash n' Shine"
+			quality={60}
+			format="avif"
+			width="3522"
+			height="2140"
+			fetchpriority="high"
 			loading="eager"
 			decoding="sync"
-			fetchpriority="high"
-			style="content-visibility: auto; contain-intrinsic-size: 100vw 85vh;"
 		/>
 
 		<div class="absolute z-20 h-full w-full bg-black/30"></div>
@@ -325,6 +329,10 @@
 					class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
 					width="800"
 					height="600"
+					size={[480, 640, 800]}
+					sizes="(min-width: 1024px) 50vw, 100vw"
+					quality={65}
+					format="avif"
 				/>
 				<!-- <enhanced:img
 				src={team}
@@ -419,14 +427,11 @@
 					class="h-full w-full object-cover"
 					width="1920"
 					height="1080"
+					size={[960, 1280, 1600, 1920]}
+					sizes="100vw"
+					quality={60}
+					format="avif"
 				/>
-				<!-- <enhanced:img
-				src={aboutbg}
-				sizes="640px"
-				alt="Professional exterior cleaning background"
-				class="h-full w-full object-cover"
-			/> -->
-
 				<div class="absolute inset-0 bg-secondary-foreground/65">&nbsp;</div>
 			</div>
 			<div class="container relative z-10 mx-auto my-auto text-center">

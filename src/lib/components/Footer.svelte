@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { PUBLIC_COMPANY_NAME, PUBLIC_DOMAIN } from '$env/static/public';
 	import { quoteDialogOpen } from '$lib/utils/stores';
+	import Image from '$lib/components/Image.svelte';
 
 	const siteMap = {
 		'Services': [
@@ -44,17 +45,23 @@
 			<div class="flex flex-col items-center lg:items-start space-y-6">
 				<div class="flex flex-col items-center lg:items-start space-y-4">
 					<!-- Logo -->
-					<img 
-						src="/assets/logo.png" 
-						alt="{PUBLIC_COMPANY_NAME} Logo" 
+					<Image 
+						url="/assets/logo.png"
+						description={`${PUBLIC_COMPANY_NAME} Logo`}
 						class="h-24 w-24 object-contain"
+						size={[64,96,128]}
+						sizes="96px"
+						quality={72}
+						width="96"
+						height="96"
+						fetchpriority="low"
 					/>
-					
+
 					<!-- Company Name -->
 					<h2 class="text-2xl font-bold text-white font-[Cantarell]">
 						{PUBLIC_COMPANY_NAME}
 					</h2>
-					
+
 					<!-- Tagline -->
 					<p class="text-muted-foreground text-center lg:text-left max-w-md leading-relaxed">
 						Professional exterior cleaning services across Metro Vancouver. 

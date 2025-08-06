@@ -65,7 +65,7 @@
 		<div class="text-center font-[Cantarell] text-white">
 			<div class="foot-logo aspect-square h-[40vh]">
 				<!-- <Logo class="w-full h-auto" /> -->
-				<Image url="/assets/logo.png" description="company logo header" />
+				<Image url="/assets/logo.png" description="company logo header" size={[96,128,192]} sizes="25vh" width="192" height="192" quality={72} />
 			</div>
 			<h4 class="text-xl font-semibold">{PUBLIC_COMPANY_NAME}</h4>
 		</div>
