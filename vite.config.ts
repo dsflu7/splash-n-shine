@@ -14,8 +14,8 @@ export default defineConfig({
 				manualChunks: {
 					// Simple static chunking to avoid circular dependencies
 					'vendor-ui': ['bits-ui'],
-					'vendor-icons': ['lucide-svelte', '@lucide', 'svelte-radix'], 
-					'vendor-cms': ['@portabletext/svelte', '@sanity/client'],
+					'vendor-icons': ['lucide-svelte'], 
+					'vendor-cms': ['@portabletext/svelte'],
 					'vendor-analytics': ['@vercel/analytics', '@vercel/speed-insights']
 				}
 			}
