@@ -5,8 +5,6 @@ import { enhancedImages } from '@sveltejs/enhanced-img';
 export default defineConfig({
 	plugins: [enhancedImages(), sveltekit()],
 	
-	base: '/',
-	
 	// Performance optimizations
 	build: {
 		target: 'es2020',
