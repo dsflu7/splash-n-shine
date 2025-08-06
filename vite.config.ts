@@ -11,28 +11,12 @@ export default defineConfig({
 		cssCodeSplit: true,
 		rollupOptions: {
 			output: {
-				manualChunks: (id) => {
-					// Conservative chunking to avoid circular dependencies
-					
-					// Large UI library that's used across the app
-					if (id.includes('bits-ui')) {
-						return 'vendor-ui';
-					}
-					
-					// Analytics - can be lazy loaded
-					if (id.includes('@vercel/analytics') || id.includes('@vercel/speed-insights')) {
-						return 'vendor-analytics';
-					}
-					
-					// CMS components - only used in blog
-					if (id.includes('@portabletext') || id.includes('@sanity/client')) {
-						return 'vendor-cms';
-					}
-					
-					// Icons are large and cacheable
-					if (id.includes('lucide-svelte') || id.includes('@lucide') || id.includes('svelte-radix')) {
-						return 'vendor-icons';
-					}
+				manualChunks: {
+					// Simple static chunking to avoid circular dependencies
+					'vendor-ui': ['bits-ui'],
+					'vendor-icons': ['lucide-svelte', '@lucide', 'svelte-radix'], 
+					'vendor-cms': ['@portabletext/svelte', '@sanity/client'],
+					'vendor-analytics': ['@vercel/analytics', '@vercel/speed-insights']
 				}
 			}
 		}

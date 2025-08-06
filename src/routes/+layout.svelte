@@ -57,43 +57,47 @@
 		}
 	}); */		// Defer non-critical scripts for better performance
 		window.addEventListener('load', function() {
-			// Microsoft Clarity - only load in production
+			// Microsoft Clarity - only load in production, delayed for better performance
 			if (location.hostname !== 'localhost') {
-				(function (c, l, a, r, i, t, y) {
-					c[a] =
-						c[a] ||
-						function () {
-							(c[a].q = c[a].q || []).push(arguments);
-						};
-					t = l.createElement(r);
-					t.async = 1;
-					t.src = 'https://www.clarity.ms/tag/' + i;
-					y = l.getElementsByTagName(r)[0];
-					y.parentNode.insertBefore(t, y);
-				})(window, document, 'clarity', 'script', 'sizv7mjncs');
+				setTimeout(function() {
+					(function (c, l, a, r, i, t, y) {
+						c[a] =
+							c[a] ||
+							function () {
+								(c[a].q = c[a].q || []).push(arguments);
+							};
+						t = l.createElement(r);
+						t.async = 1;
+						t.src = 'https://www.clarity.ms/tag/' + i;
+						y = l.getElementsByTagName(r)[0];
+						y.parentNode.insertBefore(t, y);
+					})(window, document, 'clarity', 'script', 'sizv7mjncs');
+				}, 3000); // 3 second delay after page load
 			}
 		});
 	</script>
 
 	<!-- Google Analytics - Optimized loading -->
 	<script>
-		// Load Google Analytics after page load for better performance - only in production
+		// Load Google Analytics after page load + 2 seconds for better performance - only in production
 		if (location.hostname !== 'localhost') {
 			window.addEventListener('load', function() {
-				const script = document.createElement('script');
-				script.async = true;
-				script.src = 'https://www.googletagmanager.com/gtag/js?id=G-S6214ND4P9';
-				script.onerror = function() {
-					console.log('Google Analytics failed to load');
-				};
-				document.head.appendChild(script);
-				
-				script.onload = function() {
-					window.dataLayer = window.dataLayer || [];
-					function gtag() { dataLayer.push(arguments); }
-					gtag('js', new Date());
-					gtag('config', 'G-S6214ND4P9');
-				};
+				setTimeout(function() {
+					const script = document.createElement('script');
+					script.async = true;
+					script.src = 'https://www.googletagmanager.com/gtag/js?id=G-S6214ND4P9';
+					script.onerror = function() {
+						console.log('Google Analytics failed to load');
+					};
+					document.head.appendChild(script);
+					
+					script.onload = function() {
+						window.dataLayer = window.dataLayer || [];
+						function gtag() { dataLayer.push(arguments); }
+						gtag('js', new Date());
+						gtag('config', 'G-S6214ND4P9');
+					};
+				}, 2000); // 2 second delay after page load
 			});
 		}
 	</script>

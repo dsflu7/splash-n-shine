@@ -8,7 +8,7 @@
 	import { contactInfo } from '$lib/data/locations';
 
 	// Critical imports only - defer heavy components
-	import heroAddr from '$lib/icons/landingHero.webp?enhanced';
+	import heroAddr from '$lib/icons/landingHero2.webp?enhanced';
 	import { serviceImagesDict } from '$lib/icons/services/service_images';
 	import { serviceData, services } from '$lib/data/services';
 
@@ -27,7 +27,6 @@
 	// Optimize state management for performance
 	let initScroll = $state(0);
 	let servicesSection: HTMLElement | undefined = $state();
-	let reviewsSection: HTMLElement | undefined = $state();
 
 	// Component loading states
 	let componentsLoaded = $state(false);
@@ -111,8 +110,14 @@
 		name="description"
 		content="Top-rated professional exterior cleaning in Vancouver and the Lower Mainland. Pressure washing, soft washing, roof, gutter, and window cleaning. Free quote."
 	/>
-	<meta name="keywords" content="professional cleaning services Vancouver, pressure washing, soft washing, roof cleaning, gutter cleaning, window washing" />
-	<meta property="og:title" content="Professional Cleaning Services in Vancouver | Splash n' Shine" />
+	<meta
+		name="keywords"
+		content="professional cleaning services Vancouver, pressure washing, soft washing, roof cleaning, gutter cleaning, window washing"
+	/>
+	<meta
+		property="og:title"
+		content="Professional Cleaning Services in Vancouver | Splash n' Shine"
+	/>
 	<meta
 		property="og:description"
 		content="Top-rated professional exterior cleaning in Vancouver and the Lower Mainland. Pressure washing, soft washing, roof, gutter, and window cleaning. Free quote."
@@ -122,8 +127,14 @@
 	<meta property="og:type" content="website" />
 	<link rel="canonical" href="https://www.splashnshine.ca/" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Professional Cleaning Services in Vancouver | Splash n' Shine" />
-	<meta name="twitter:description" content="Top-rated professional exterior cleaning in Vancouver and the Lower Mainland. Pressure washing, soft washing, roof, gutter, and window cleaning. Free quote." />
+	<meta
+		name="twitter:title"
+		content="Professional Cleaning Services in Vancouver | Splash n' Shine"
+	/>
+	<meta
+		name="twitter:description"
+		content="Top-rated professional exterior cleaning in Vancouver and the Lower Mainland. Pressure washing, soft washing, roof, gutter, and window cleaning. Free quote."
+	/>
 	<meta name="twitter:image" content="https://www.splashnshine.ca/assets/logo.png" />
 </svelte:head>
 
@@ -221,34 +232,16 @@
 	<section
 		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
 	>
-		<!-- Optimized hero image with maximum priority -->
-		{#if Image}
-			<Image
-				url={heroAddr}
-				description="Professional exterior cleaning service in action - Splash n' Shine"
-				class="relative z-10 h-full w-full object-cover"
-				size={[1200, 1600, 1920, 2560, 3200]}
-				sizes="100vw"
-				quality={60}
-				format="avif"
-				width="3522"
-				height="2140"
-				fetchpriority="high"
-				loading="eager"
-				decoding="sync"
-			/>
-		{:else}
-			<enhanced:img
-				class="relative z-10 h-full w-full object-cover"
-				src={heroAddr}
-				sizes="100vw"
-				alt="Professional exterior cleaning service in action - Splash n' Shine"
-				loading="eager"
-				decoding="sync"
-				fetchpriority="high"
-				style="content-visibility: auto; contain-intrinsic-size: 100vw 85vh;"
-			/>
-		{/if}
+		<enhanced:img
+			class="relative z-10 h-full w-full object-cover"
+			src={heroAddr}
+			sizes="100vw"
+			alt="Professional exterior cleaning service in action - Splash n' Shine"
+			loading="eager"
+			decoding="sync"
+			fetchpriority="high"
+			style="content-visibility: auto; contain-intrinsic-size: 100vw 85vh;"
+		/>
 
 		<div class="absolute z-20 h-full w-full bg-black/30"></div>
 		<div
@@ -452,7 +445,9 @@
 		</section>
 
 		<!-- testimonials replaced with external widget -->
-		<section bind:this={reviewsSection} class="flex w-full flex-col gap-8 overflow-hidden pb-16 text-center lg:gap-10">
+		<section
+			class="flex w-full flex-col gap-8 overflow-hidden pb-16 text-center lg:gap-10"
+		>
 			<h2 class="text-center text-4xl font-semibold leading-10">Testimonials</h2>
 			<div class="px-4 md:px-8 lg:px-16">
 				<iframe

@@ -16,7 +16,8 @@
 	import DropdownItem from '$lib/components/DropdownItem.svelte';
 	import Image from './Image.svelte';
 
-	import logoAddr from '$lib/icons/logo.png?enhanced';
+	// import logoAddr from '$lib/icons/logo.png?enhanced';
+	import logoAddr from '$lib/icons/favicon-96x96.png?enhanced';
 
 	let initScroll = $state(0);
 	let isLandingPage = $derived(page.route.id === '/');

@@ -14,7 +14,15 @@ async function loadAnalytics() {
 	}
 }
 
-// Load analytics after a short delay to prioritize initial page load
+// Load analytics after a longer delay to prioritize initial page load and Core Web Vitals
 if (typeof window !== 'undefined') {
-	setTimeout(loadAnalytics, 1000);
+	// Use idle callback to load analytics when browser is idle
+	if ('requestIdleCallback' in window) {
+		requestIdleCallback(() => {
+			setTimeout(loadAnalytics, 2000);
+		});
+	} else {
+		// Fallback for browsers without requestIdleCallback
+		setTimeout(loadAnalytics, 3000);
+	}
 }
