@@ -31,10 +31,6 @@ const config = {
 				formats: ['image/avif', 'image/webp'],
 				minimumCacheTTL: 300,
 				domains: ['splashnshine.ca', 'www.splashnshine.ca', 'comission-splash-n-shine.vercel.app'],
-			},
-			// Enable ISR for dynamic content
-			isr: {
-				expiration: 3600, // 1 hour
 			}
 		})
 	}
