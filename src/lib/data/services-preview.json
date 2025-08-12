@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Window Cleaning",
+    "desc": "Crystal-clear windows inside and out with screen cleaning and streak-free professional results",
+    "icon": "🪟",
+    "image": "/assets/services/window-cleaning-preview.webp",
+    "href": "/services/window-cleaning",
+    "popular": true
+  },
+  {
+    "title": "Pressure Washing",
+    "desc": "Professional high-pressure cleaning that removes dirt, grime, and stains from all exterior surfaces",
+    "icon": "🚿",
+    "image": "/assets/services/pressure-washing-preview.webp",
+    "href": "/services/pressure-washing"
+  },
+  {
+    "title": "House Washing",
+    "desc": "Complete exterior house cleaning to restore your home's curb appeal and protect your investment",
+    "icon": "🏡",
+    "image": "/assets/services/house-washing-preview.webp",
+    "href": "/services/house-washing"
+  },
+  {
+    "title": "Gutter Cleaning",
+    "desc": "Complete gutter cleaning and maintenance to protect your home from water damage",
+    "icon": "🏘️",
+    "image": "/assets/services/gutter-cleaning-preview.webp",
+    "href": "/services/gutter-cleaning"
+  },
+  {
+    "title": "Roof Cleaning",
+    "desc": "Safe roof cleaning to remove moss, algae, and debris while preserving your roof's integrity",
+    "icon": "🏗️",
+    "image": "/assets/services/roof-cleaning-preview.webp",
+    "href": "/services/roof-cleaning"
+  },
+  {
+    "title": "Commercial Cleaning",
+    "desc": "Professional cleaning services for businesses, storefronts, and commercial properties",
+    "icon": "🏢",
+    "image": "/assets/services/commercial-cleaning-preview.webp",
+    "href": "/services/commercial-cleaning"
+  }
+]

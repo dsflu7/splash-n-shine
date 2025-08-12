@@ -2,7 +2,8 @@
 	import { PUBLIC_COMPANY_NAME, PUBLIC_DOMAIN, PUBLIC_PHONE } from '$env/static/public';
 	import { Button } from '$lib/components/ui/button';
 	import Link from '$lib/components/Link.svelte';
-	import Infographic from '$lib/components/Infographic.svelte';
+	import CTA from '$lib/components/CTA.svelte';
+  import Infographic from '$lib/components/Infographic.svelte';
 
 	const primaryServiceAreas = [
 		{
@@ -349,25 +350,8 @@
 </section>
 
 <!-- Get Started -->
-<section class="py-16 bg-primary text-primary-foreground">
-	<div class="container mx-auto px-4 text-center">
-		<h2 class="text-3xl md:text-4xl font-bold mb-4">
-			Ready to Connect with Your Local Team?
-		</h2>
-		<p class="text-lg opacity-90 max-w-2xl mx-auto mb-8">
-			Find out why your neighbors trust us for their exterior cleaning needs. Professional service, local expertise, guaranteed results.
-		</p>
-		<div class="flex flex-col sm:flex-row gap-4 justify-center">
-			<Link href="/contact">
-				<Button variant="secondary" size="lg">
-					Get Local Quote
-				</Button>
-			</Link>
-			<Link href={`tel:${PUBLIC_PHONE}`}>
-				<Button variant="outline" size="lg">
-					Call {PUBLIC_PHONE}
-				</Button>
-			</Link>
-		</div>
-	</div>
-</section>
+<CTA 
+	title="Ready to Connect with Your Local Team?"
+	subtitle="Find out why your neighbors trust us for their exterior cleaning needs. Professional service, local expertise, guaranteed results."
+	primaryButtonText="Get Local Quote"
+/>

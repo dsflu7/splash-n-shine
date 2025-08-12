@@ -3,55 +3,22 @@
 	import BeforeAfterComparison from "$lib/components/BeforeAfterComparison.svelte";
 	import { Button } from "$lib/components/ui/button";
 	import Link from "$lib/components/Link.svelte";
-	import QuoteForm from "$lib/components/QuoteForm.svelte";
+	import CTA from "$lib/components/CTA.svelte";
 	import Infographic from "$lib/components/Infographic.svelte";
 	import { onMount } from 'svelte';
 
-	interface Service {
-		title: string;
-		desc: string;
-		icon: string;
-		image: string;
-		href: string;
-		popular?: boolean;
-	}
+	// Import static data
+	import homepageData from "$lib/data/homepage.json";
+	import servicesPreviewData from "$lib/data/services-preview.json";
+	import serviceLocationsData from "$lib/data/service-locations.json";
 
-	interface WhyChooseUsItem {
-		icon: string;
-		title: string;
-		description: string;
-	}
-
-	interface CompanyStat {
-		value: string;
-		label: string;
-		icon: string;
-	}
-
-	interface ProcessStep {
-		step: string;
-		title: string;
-		description: string;
-		icon: string;
-		details: string;
-	}
-
-	interface HomepageData {
-		services: Service[];
-		whyChooseUs: WhyChooseUsItem[];
-		companyStats: CompanyStat[];
-		process: ProcessStep[];
-	}
-
-	let homepageData: HomepageData | null = $state(null);
 	let reviewsIframeVisible = $state(false);
 
+	// Dynamic import for QuoteForm to keep it client-side
+	let QuoteForm: any = $state(null);
 	onMount(async () => {
-		// Load homepage data dynamically
-		const response = await fetch('/api/homepage-data');
-		if (response.ok) {
-			homepageData = await response.json();
-		}
+		const module = await import("$lib/components/QuoteForm.svelte");
+		QuoteForm = module.default;
 	});
 
 	// Intersection Observer for lazy loading reviews iframe
@@ -151,54 +118,10 @@
 		</div>
 		
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-			{#each [
-				{ 
-					title: "Window Cleaning", 
-					desc: "Crystal-clear windows inside and out with screen cleaning and streak-free professional results", 
-					icon: "🪟",
-					image: "/assets/services/window-cleaning-preview.webp", 
-					href: "/services/window-cleaning",
-					popular: true
-				},
-				{ 
-					title: "Pressure Washing", 
-					desc: "Professional high-pressure cleaning that removes dirt, grime, and stains from all exterior surfaces", 
-					icon: "🚿",
-					image: "/assets/services/pressure-washing-preview.webp",
-					href: "/services/pressure-washing"
-				},
-				{ 
-					title: "House Washing", 
-					desc: "Complete exterior house cleaning to restore your home's curb appeal and protect your investment", 
-					icon: "🏡",
-					image: "/assets/services/house-washing-preview.webp",
-					href: "/services/house-washing"
-				},
-				{ 
-					title: "Gutter Cleaning", 
-					desc: "Complete gutter cleaning and maintenance to protect your home from water damage", 
-					icon: "🏘️",
-					image: "/assets/services/gutter-cleaning-preview.webp",
-					href: "/services/gutter-cleaning"
-				},
-				{ 
-					title: "Roof Cleaning", 
-					desc: "Safe roof cleaning to remove moss, algae, and debris while preserving your roof's integrity", 
-					icon: "🏗️",
-					image: "/assets/services/roof-cleaning-preview.webp",
-					href: "/services/roof-cleaning"
-				},
-				{ 
-					title: "Commercial Cleaning", 
-					desc: "Professional cleaning services for businesses, storefronts, and commercial properties", 
-					icon: "�",
-					image: "/assets/services/commercial-cleaning-preview.webp",
-					href: "/services/commercial-cleaning"
-				}
-			] as service}
-				<div class="group bg-card rounded-lg overflow-hidden shadow-sm border border-border hover:shadow-lg transition-all duration-300">
+			{#each servicesPreviewData as service}
+				<div class="group bg-card relative rounded-lg overflow-hidden shadow-sm border border-border hover:shadow-lg transition-all duration-300">
 					{#if service.popular}
-						<div class="absolute z-10 top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+						<div class="absolute z-10 top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium w-fit">
 							Popular
 						</div>
 					{/if}
@@ -258,21 +181,19 @@
 		</div>
 		
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-			{#if homepageData?.whyChooseUs}
-				{#each homepageData.whyChooseUs as value}
-					<div class="text-center group">
-						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-							{value.icon}
-						</div>
-						<h3 class="text-xl font-semibold text-foreground mb-3 font-[Cantarell]">
-							{value.title}
-						</h3>
-						<p class="text-muted-foreground leading-relaxed">
-							{value.description}
-						</p>
+			{#each homepageData.whyChooseUs as value}
+				<div class="text-center group">
+					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+						{value.icon}
 					</div>
-				{/each}
-			{/if}
+					<h3 class="text-xl font-semibold text-foreground mb-3 font-[Cantarell]">
+						{value.title}
+					</h3>
+					<p class="text-muted-foreground leading-relaxed">
+						{value.description}
+					</p>
+				</div>
+			{/each}
 		</div>
 	</div>
 </section>
@@ -283,7 +204,7 @@
 		<Infographic
 			title="Trusted by Your Neighbors"
 			subtitle="Our track record speaks for itself with satisfied customers across Metro Vancouver"
-			stats={homepageData?.companyStats || []}
+			stats={homepageData.companyStats}
 		/>
 	</div>
 </section>
@@ -463,10 +384,16 @@
 			</p>
 		</div>
 		
-		<QuoteForm 
-			title="Get Your Free Estimate Now"
-			subtitle="Tell us about your project and receive a comprehensive quote within 24 hours"
-		/>
+		{#if QuoteForm}
+			<QuoteForm 
+				title="Get Your Free Estimate Now"
+				subtitle="Tell us about your project and receive a comprehensive quote within 24 hours"
+			/>
+		{:else}
+			<div class="flex justify-center py-16">
+				<div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+			</div>
+		{/if}
 	</div>
 </section>
 
@@ -483,84 +410,20 @@
 		</div>
 		
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			<!-- High-Value Service-Location Combinations -->
+			{#each serviceLocationsData as serviceLocation}
 			<div class="bg-card rounded-lg border p-6 hover:shadow-lg transition-all duration-200 group">
 				<div class="flex items-center justify-between mb-3">
-					<h3 class="font-semibold text-lg text-foreground">Window Cleaning Vancouver</h3>
+					<h3 class="font-semibold text-lg text-foreground">{serviceLocation.title}</h3>
 					<svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
 					</svg>
 				</div>
-				<p class="text-sm text-muted-foreground mb-4">Professional window cleaning services throughout Vancouver with same-day availability.</p>
-				<Link href="/window-cleaning-vancouver" class="text-primary hover:text-primary/80 font-medium text-sm">
-					Get Vancouver Window Cleaning →
+				<p class="text-sm text-muted-foreground mb-4">{serviceLocation.description}</p>
+				<Link href={serviceLocation.href} class="text-primary hover:text-primary/80 font-medium text-sm">
+					Get {serviceLocation.location} {serviceLocation.service} →
 				</Link>
 			</div>
-			
-			<div class="bg-card rounded-lg border p-6 hover:shadow-lg transition-all duration-200 group">
-				<div class="flex items-center justify-between mb-3">
-					<h3 class="font-semibold text-lg text-foreground">Pressure Washing Surrey</h3>
-					<svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-					</svg>
-				</div>
-				<p class="text-sm text-muted-foreground mb-4">Expert driveway, patio and exterior pressure washing services in Surrey and Fraser Valley.</p>
-				<Link href="/pressure-washing-surrey" class="text-primary hover:text-primary/80 font-medium text-sm">
-					Get Surrey Pressure Washing →
-				</Link>
-			</div>
-			
-			<div class="bg-card rounded-lg border p-6 hover:shadow-lg transition-all duration-200 group">
-				<div class="flex items-center justify-between mb-3">
-					<h3 class="font-semibold text-lg text-foreground">Gutter Cleaning Burnaby</h3>
-					<svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-					</svg>
-				</div>
-				<p class="text-sm text-muted-foreground mb-4">Complete gutter cleaning and maintenance services throughout Burnaby and North Shore.</p>
-				<Link href="/gutter-cleaning-burnaby" class="text-primary hover:text-primary/80 font-medium text-sm">
-					Get Burnaby Gutter Cleaning →
-				</Link>
-			</div>
-			
-			<div class="bg-card rounded-lg border p-6 hover:shadow-lg transition-all duration-200 group">
-				<div class="flex items-center justify-between mb-3">
-					<h3 class="font-semibold text-lg text-foreground">House Washing Richmond</h3>
-					<svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-					</svg>
-				</div>
-				<p class="text-sm text-muted-foreground mb-4">Gentle soft wash house cleaning services for Richmond homes and properties.</p>
-				<Link href="/house-washing-richmond" class="text-primary hover:text-primary/80 font-medium text-sm">
-					Get Richmond House Washing →
-				</Link>
-			</div>
-			
-			<div class="bg-card rounded-lg border p-6 hover:shadow-lg transition-all duration-200 group">
-				<div class="flex items-center justify-between mb-3">
-					<h3 class="font-semibold text-lg text-foreground">Roof Cleaning Vancouver</h3>
-					<svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-					</svg>
-				</div>
-				<p class="text-sm text-muted-foreground mb-4">Safe moss removal and roof cleaning services with Vancouver weather expertise.</p>
-				<Link href="/roof-cleaning-vancouver" class="text-primary hover:text-primary/80 font-medium text-sm">
-					Get Vancouver Roof Cleaning →
-				</Link>
-			</div>
-			
-			<div class="bg-card rounded-lg border p-6 hover:shadow-lg transition-all duration-200 group">
-				<div class="flex items-center justify-between mb-3">
-					<h3 class="font-semibold text-lg text-foreground">Deck Cleaning Langley</h3>
-					<svg class="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-					</svg>
-				</div>
-				<p class="text-sm text-muted-foreground mb-4">Professional deck and fence restoration services throughout Langley and surrounding areas.</p>
-				<Link href="/deck-fence-cleaning-langley" class="text-primary hover:text-primary/80 font-medium text-sm">
-					Get Langley Deck Cleaning →
-				</Link>
-			</div>
+			{/each}
 		</div>
 		
 		<div class="text-center mt-12">
@@ -577,26 +440,4 @@
 </section>
 
 <!-- Final CTA with Guarantee -->
-<section class="bg-primary text-primary-foreground py-16">
-	<div class="max-w-4xl mx-auto px-[6%] text-center">
-		<h2 class="text-3xl md:text-4xl font-bold mb-4 font-[Cantarell]">
-			100% Satisfaction Guaranteed
-		</h2>
-		<p class="text-lg mb-8 opacity-90 leading-relaxed">
-			We stand behind our work with a complete satisfaction guarantee on all services.<br/>
-			<strong>Work done right, smiles delivered.</strong>
-		</p>
-		<div class="flex flex-col sm:flex-row gap-4 justify-center">
-			<Link href="/contact">
-				<Button variant="secondary" size="lg" class="text-lg px-8">
-					Get Your Free Quote
-				</Button>
-			</Link>
-			<Link href={`tel:${PUBLIC_PHONE}`}>
-				<Button variant="secondary" size="lg" class="text-lg px-8">
-					Call {PUBLIC_PHONE}
-				</Button>
-			</Link>
-		</div>
-	</div>
-</section>
+<CTA />

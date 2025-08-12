@@ -4,8 +4,9 @@
   import { Button } from '$lib/components/ui/button';
   import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '$lib/components/ui/accordion';
   import BeforeAfterComparison from '$lib/components/BeforeAfterComparison.svelte';
-  import ProcessSteps from '$lib/components/ProcessSteps.svelte';
+  import CTA from '$lib/components/CTA.svelte';
   import type { Service, Location } from '$lib/server/data.js';
+  import ProcessSteps from '$lib/components/ProcessSteps.svelte';
   
   interface Props {
     data: {
@@ -231,27 +232,9 @@
 </section>
 
 <!-- Call to Action -->
-<section class="py-16 bg-primary text-primary-foreground">
-  <div class="container mx-auto px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl lg:text-4xl font-bold mb-6">
-        Ready for Professional {service.name}?
-      </h2>
-      <p class="text-xl mb-8 text-primary-foreground/90">
-        Join thousands of satisfied customers who trust Splash & Shine for their {service.name.toLowerCase()} needs.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button size="lg" variant="secondary">
-          <Link href="/quote" class="flex items-center gap-2">
-            Get Your Free Quote Today
-          </Link>
-        </Button>
-        <Button size="lg" variant="outline">
-          <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
-            Call (604) XXX-XXXX
-          </Link>
-        </Button>
-      </div>
-    </div>
-  </div>
-</section>
+<CTA 
+  title="Ready for Professional {data.service.name}?"
+  subtitle="Join thousands of satisfied customers who trust Splash & Shine for their {data.service.name.toLowerCase()} needs."
+  primaryButtonText="Get Your Free Quote Today"
+  primaryButtonHref="/quote"
+/>

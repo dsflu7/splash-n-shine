@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Window Cleaning Vancouver",
+    "description": "Professional window cleaning services throughout Vancouver with same-day availability.",
+    "href": "/window-cleaning-vancouver",
+    "service": "Window Cleaning",
+    "location": "Vancouver"
+  },
+  {
+    "title": "Pressure Washing Surrey",
+    "description": "Expert pressure washing services in Surrey for driveways, homes, and commercial properties.",
+    "href": "/pressure-washing-surrey",
+    "service": "Pressure Washing",
+    "location": "Surrey"
+  },
+  {
+    "title": "House Washing Burnaby",
+    "description": "Complete house washing services in Burnaby to restore your home's curb appeal and value.",
+    "href": "/house-washing-burnaby",
+    "service": "House Washing",
+    "location": "Burnaby"
+  },
+  {
+    "title": "Gutter Cleaning Richmond",
+    "description": "Professional gutter cleaning in Richmond to protect your home from water damage year-round.",
+    "href": "/gutter-cleaning-richmond",
+    "service": "Gutter Cleaning",
+    "location": "Richmond"
+  },
+  {
+    "title": "Roof Cleaning North Vancouver",
+    "description": "Safe roof cleaning and moss removal services throughout North Vancouver communities.",
+    "href": "/roof-cleaning-north-vancouver",
+    "service": "Roof Cleaning",
+    "location": "North Vancouver"
+  },
+  {
+    "title": "Commercial Cleaning West Vancouver",
+    "description": "Professional commercial cleaning services for West Vancouver businesses and properties.",
+    "href": "/commercial-cleaning-west-vancouver",
+    "service": "Commercial Cleaning",
+    "location": "West Vancouver"
+  }
+]
