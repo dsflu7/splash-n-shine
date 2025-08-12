@@ -48,7 +48,7 @@
 </script>
 
 <!-- Top Bar with Phone CTA -->
-<div class="bg-primary text-primary-foreground py-2">
+<div class="bg-primary text-primary-foreground py-3">
   <div class="max-w-7xl mx-auto px-[6%]">
     <div class="flex items-center justify-center md:justify-end">
       <a
@@ -66,18 +66,23 @@
 <!-- Main Header -->
 <header class="bg-background border-b border-border sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-[6%]">
-    <div class="flex items-center justify-between h-16">
+    <div class="flex items-center justify-between h-20">
       
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <Link href="/" class="flex items-center space-x-2" aria-label="Go to homepage">
-          <!-- Logo placeholder - will be replaced with actual logo -->
-          <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <span class="text-primary-foreground font-bold text-lg">S</span>
+        <Link href="/" class="flex items-center space-x-3" aria-label="Go to homepage">
+          <!-- Company Logo -->
+          <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center shadow-sm">
+            <span class="text-primary-foreground font-bold text-xl">S&S</span>
           </div>
-          <span class="text-xl font-bold text-foreground font-[Cantarell] hidden sm:block">
-            {PUBLIC_COMPANY_NAME}
-          </span>
+          <div class="hidden sm:block">
+            <div class="text-xl font-bold text-foreground font-[Cantarell] leading-tight">
+              {PUBLIC_COMPANY_NAME}
+            </div>
+            <div class="text-xs text-muted-foreground font-medium">
+              Professional Cleaning Services
+            </div>
+          </div>
         </Link>
       </div>
 

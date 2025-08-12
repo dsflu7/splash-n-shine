@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Main Pages -->
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- Services Overview -->
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/services</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- Individual Service Pages -->
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/services/pressure-washing</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/services/window-cleaning</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/services/house-washing</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/services/gutter-cleaning</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/services/roof-cleaning</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/services/commercial-cleaning</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- Contact & Legal Pages -->
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/contact</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/privacy-policy</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/terms-and-conditions</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  
+</urlset>
