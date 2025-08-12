@@ -1,0 +1,114 @@
+{
+  "services": [
+    {
+      "title": "Window Cleaning",
+      "desc": "Crystal-clear windows inside and out with screen cleaning and streak-free professional results",
+      "icon": "🪟",
+      "image": "/assets/services/window-cleaning-preview.webp",
+      "href": "/services/window-cleaning",
+      "popular": true
+    },
+    {
+      "title": "Pressure Washing",
+      "desc": "Professional high-pressure cleaning that removes dirt, grime, and stains from all exterior surfaces",
+      "icon": "🚿",
+      "image": "/assets/services/pressure-washing-preview.webp",
+      "href": "/services/pressure-washing"
+    },
+    {
+      "title": "House Washing",
+      "desc": "Complete exterior house cleaning to restore your home's curb appeal and protect your investment",
+      "icon": "🏡",
+      "image": "/assets/services/house-washing-preview.webp",
+      "href": "/services/house-washing"
+    },
+    {
+      "title": "Gutter Cleaning",
+      "desc": "Complete gutter cleaning and maintenance to protect your home from water damage year-round",
+      "icon": "🏘️",
+      "image": "/assets/services/gutter-cleaning-preview.webp",
+      "href": "/services/gutter-cleaning"
+    },
+    {
+      "title": "Roof Cleaning",
+      "desc": "Safe moss and algae removal to extend your roof's life and maintain your home's value",
+      "icon": "🏗️",
+      "image": "/assets/services/roof-cleaning-preview.webp",
+      "href": "/services/roof-cleaning"
+    },
+    {
+      "title": "Solar Panel Cleaning",
+      "desc": "Maximize energy efficiency with professional solar panel cleaning and maintenance services",
+      "icon": "☀️",
+      "image": "/assets/services/solar-panel-cleaning-preview.webp",
+      "href": "/services/solar-panel-cleaning"
+    }
+  ],
+  "whyChooseUs": [
+    {
+      "icon": "⏰",
+      "title": "Time-saving",
+      "description": "You save time while we restore your property promptly without losing attention to detail."
+    },
+    {
+      "icon": "🛡️",
+      "title": "Equipped & Safe",
+      "description": "We carry the latest cleaning equipment and eco-friendly products delivered by insured professionals."
+    },
+    {
+      "icon": "🎯",
+      "title": "Experienced",
+      "description": "Backed by years of experience and expertise in the best exterior cleaning and maintenance practices."
+    },
+    {
+      "icon": "😊",
+      "title": "Friendly & Reliable",
+      "description": "Committed to customer satisfaction with a smile. We're proud of our customer reviews."
+    }
+  ],
+  "companyStats": [
+    {
+      "value": "500+",
+      "label": "Happy Customers",
+      "icon": "😊"
+    },
+    {
+      "value": "5,000+",
+      "label": "Projects Completed",
+      "icon": "✅"
+    },
+    {
+      "value": "100%",
+      "label": "Satisfaction Rate",
+      "icon": "⭐"
+    },
+    {
+      "value": "24hr",
+      "label": "Response Time",
+      "icon": "⚡"
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Get A Free Estimate",
+      "description": "Fill out your request or call us to get your comprehensive free estimate.",
+      "icon": "📋",
+      "details": "Our expert team will assess your property's needs and provide a detailed, transparent quote with no hidden fees."
+    },
+    {
+      "step": "02", 
+      "title": "Get Scheduled",
+      "description": "Once you approve your quote, we'll work with you to find the perfect time.",
+      "icon": "📅",
+      "details": "Flexible scheduling that works around your lifestyle with professional, punctual service teams."
+    },
+    {
+      "step": "03",
+      "title": "Relax & Enjoy",
+      "description": "Work done right, results delivered. Your satisfaction is guaranteed.",
+      "icon": "✨",
+      "details": "Sit back while our experienced professionals transform your property with guaranteed satisfaction."
+    }
+  ]
+}

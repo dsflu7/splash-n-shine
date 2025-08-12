@@ -8,25 +8,41 @@
   // Mobile menu state
   let mobileMenuOpen = $state(false);
 
-  // Navigation structure (consistent with footer)
+  // Navigation structure with complete services and priority locations
   const navigation = {
     Services: [
+      { label: "Window Cleaning", route: "/services/window-cleaning" },
       { label: "Pressure Washing", route: "/services/pressure-washing" },
+      { label: "Gutter Cleaning", route: "/services/gutter-cleaning" },
       { label: "House Washing", route: "/services/house-washing" },
       { label: "Roof Cleaning", route: "/services/roof-cleaning" },
-      { label: "Gutter Cleaning", route: "/services/gutter-cleaning" },
-      { label: "Window Washing", route: "/services/window-washing" },
+      { label: "Concrete Cleaning", route: "/services/concrete-cleaning" },
+      {
+        label: "Deck & Fence Cleaning",
+        route: "/services/deck-fence-cleaning",
+      },
+      {
+        label: "Solar Panel Cleaning",
+        route: "/services/solar-panel-cleaning",
+      },
       { label: "All Services", route: "/services" },
     ],
     Company: [
-      { label: "Our Story", route: "/our-story" },
-      { label: "Gallery", route: "/gallery" },
       { label: "Blog", route: "/blog" },
+      { label: "Gallery", route: "/gallery" },
+      { label: "Our Story", route: "/our-story" },
+      { label: "Privacy Policy", route: "/privacy-policy" },
+      { label: "Terms & Conditions", route: "/terms-and-conditions" },
     ],
     Locations: [
       { label: "Vancouver", route: "/locations/vancouver" },
       { label: "Surrey", route: "/locations/surrey" },
+      { label: "Burnaby", route: "/locations/burnaby" },
       { label: "Richmond", route: "/locations/richmond" },
+      { label: "Fraser Valley", route: "/locations/fraser-valley" },
+      { label: "Langley", route: "/locations/langley" },
+      { label: "Coquitlam", route: "/locations/coquitlam" },
+      { label: "North Vancouver", route: "/locations/north-vancouver" },
       { label: "All Locations", route: "/locations" },
     ],
   };
@@ -67,16 +83,23 @@
 <header class="bg-background border-b border-border sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-[6%]">
     <div class="flex items-center justify-between h-20">
-      
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <Link href="/" class="flex items-center space-x-3" aria-label="Go to homepage">
+        <Link
+          href="/"
+          class="flex items-center space-x-3"
+          aria-label="Go to homepage"
+        >
           <!-- Company Logo -->
-          <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center shadow-sm">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center shadow-sm"
+          >
             <span class="text-primary-foreground font-bold text-xl">S&S</span>
           </div>
           <div class="hidden sm:block">
-            <div class="text-xl font-bold text-foreground font-[Cantarell] leading-tight">
+            <div
+              class="text-xl font-bold text-foreground font-[Cantarell] leading-tight"
+            >
               {PUBLIC_COMPANY_NAME}
             </div>
             <div class="text-xs text-muted-foreground font-medium">
@@ -94,7 +117,9 @@
               <NavigationMenu.Item>
                 {#if item.items}
                   <!-- Dropdown menu item -->
-                  <NavigationMenu.Trigger class="bg-transparent hover:bg-accent hover:text-accent-foreground">
+                  <NavigationMenu.Trigger
+                    class="bg-transparent hover:bg-accent hover:text-accent-foreground"
+                  >
                     {item.label}
                   </NavigationMenu.Trigger>
                   <NavigationMenu.Content>
@@ -138,9 +163,7 @@
         <Button
           class="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
         >
-          <Link href="/contact" class="text-inherit">
-            Get Free Quote
-          </Link>
+          <Link href="/contact" class="text-inherit">Get Free Quote</Link>
         </Button>
       </div>
 
@@ -189,10 +212,10 @@
 
 <!-- Mobile Menu Overlay -->
 {#if mobileMenuOpen}
-  <div 
-    class="lg:hidden fixed inset-0 z-50 bg-black/50" 
+  <div
+    class="lg:hidden fixed inset-0 z-50 bg-black/50"
     onclick={closeMobileMenu}
-    onkeydown={(e) => e.key === 'Escape' && closeMobileMenu()}
+    onkeydown={(e) => e.key === "Escape" && closeMobileMenu()}
     role="button"
     tabindex="0"
     aria-label="Close mobile menu"
@@ -209,7 +232,10 @@
     >
       <!-- Mobile Menu Header -->
       <div class="flex items-center justify-between p-6 border-b border-border">
-        <h2 id="mobile-menu-title" class="text-lg font-semibold text-foreground font-[Cantarell]">
+        <h2
+          id="mobile-menu-title"
+          class="text-lg font-semibold text-foreground font-[Cantarell]"
+        >
           Menu
         </h2>
         <button
@@ -240,7 +266,9 @@
             <div class="space-y-3">
               {#if item.items}
                 <!-- Category with sub-items -->
-                <h3 class="text-sm font-semibold text-foreground font-[Cantarell] uppercase tracking-wide">
+                <h3
+                  class="text-sm font-semibold text-foreground font-[Cantarell] uppercase tracking-wide"
+                >
                   {item.label}
                 </h3>
                 <div class="space-y-2 pl-4">
@@ -281,7 +309,7 @@
             <PhoneCall color="currentColor" class="w-5 h-5" />
             <span class="font-medium">Call: {PUBLIC_PHONE}</span>
           </a>
-          
+
           <Link
             href="/contact"
             onclick={closeMobileMenu}
