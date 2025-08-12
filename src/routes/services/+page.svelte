@@ -3,15 +3,12 @@
 	import { Button } from '$lib/components/ui/button';
 	import Link from '$lib/components/Link.svelte';
 	import Infographic from '$lib/components/Infographic.svelte';
+	import ProcessSteps from '$lib/components/ProcessSteps.svelte';
 
 	const services = [
 		{
 			title: 'Window Cleaning',
-			description: 'Crystal-cl			<Link href="/quote">
-				<Button variant="secondary" size="lg">
-					Get Your Quote
-				</Button>
-			</Link>indows inside and out, including screens and sills for a spotless, streak-free finish.',
+			description: 'Crystal-clean windows inside and out, including screens and sills for a spotless, streak-free finish.',
 			features: ['Interior & exterior cleaning', 'Screen cleaning', 'Sill & frame cleaning', 'Streak-free guarantee'],
 			image: '/assets/services/window-cleaning-hero.webp',
 			href: '/services/window-cleaning',
@@ -100,17 +97,17 @@
 
 	const process = [
 		{
-			step: '01',
+			step: 1,
 			title: 'Get A Free Estimate',
 			description: 'Fill out your request or call us to get your comprehensive free estimate.'
 		},
 		{
-			step: '02', 
+			step: 2, 
 			title: 'Get Scheduled',
 			description: 'Once you approve your quote, we\'ll work with you to find the perfect time.'
 		},
 		{
-			step: '03',
+			step: 3,
 			title: 'Relax & Enjoy',
 			description: 'Work done right, results delivered. Your satisfaction is guaranteed.'
 		}
@@ -308,42 +305,15 @@
 </section>
 
 <!-- Simple Process -->
-<section class="py-16 md:py-24 bg-background">
-	<div class="container mx-auto px-4">
-		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
-				Simple Steps to Get Started
-			</h2>
-			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-				Our streamlined process makes it easy to get professional cleaning services for your property.
-			</p>
-		</div>
-
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-			{#each process as step}
-				<div class="text-center group">
-					<div class="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-						{step.step}
-					</div>
-					<h3 class="text-xl font-semibold text-foreground mb-3">
-						{step.title}
-					</h3>
-					<p class="text-muted-foreground leading-relaxed">
-						{step.description}
-					</p>
-				</div>
-			{/each}
-		</div>
-
-		<div class="text-center mt-12">
-			<Link href="/contact">
-				<Button size="lg" class="text-lg px-8">
-					Start Your Free Estimate
-				</Button>
-			</Link>
-		</div>
-	</div>
-</section>
+<ProcessSteps 
+  steps={process}
+  title="Simple Steps to Get Started"
+  subtitle="Our streamlined process makes it easy to get professional cleaning services for your property."
+  variant="horizontal"
+  showConnectors={true}
+  animated={true}
+  class="bg-background"
+/>
 
 <!-- Satisfaction Guarantee -->
 <section class="py-16 bg-primary text-primary-foreground">

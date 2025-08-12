@@ -3,6 +3,7 @@
   import Link from '$lib/components/Link.svelte';
   import { Button } from '$lib/components/ui/button';
   import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '$lib/components/ui/accordion';
+  import ProcessSteps from '$lib/components/ProcessSteps.svelte';
   import type { Service, Location } from '$lib/server/data.js';
   
   interface ServiceLocationKeywords {
@@ -144,27 +145,14 @@
 </section>
 
 <!-- Service Process -->
-<section class="py-16 bg-secondary/30">
-  <div class="container mx-auto px-4">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground">
-        Our {service.name} Process in {location.name}
-      </h2>
-      <div class="space-y-6">
-        {#each service.process as step, index}
-          <div class="flex items-start space-x-4 p-6 bg-background rounded-lg border shadow-sm">
-            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-              <span class="text-primary-foreground font-bold text-lg">{index + 1}</span>
-            </div>
-            <div>
-              <p class="text-foreground leading-relaxed">{step}</p>
-            </div>
-          </div>
-        {/each}
-      </div>
-    </div>
-  </div>
-</section>
+<ProcessSteps 
+  steps={service.process}
+  title="Our {service.name} Process in {location.name}"
+  subtitle="Delivering professional {service.name.toLowerCase()} services to {location.name} residents with our proven approach"
+  variant="vertical"
+  showConnectors={true}
+  animated={true}
+/>
 
 <!-- Service Areas in Location -->
 <section class="py-16 bg-background">
