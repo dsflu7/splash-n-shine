@@ -51,9 +51,9 @@
 			</Link>
 			<Link href={secondaryButtonHref}>
 				<Button 
-					variant={variant === 'primary' ? 'outline' : 'outline'} 
+					variant={variant === 'primary' ? 'default' : 'outline'} 
 					size="lg" 
-					class="text-lg px-8"
+					class="text-lg px-8 border"
 				>
 					{secondaryButtonText}
 				</Button>
