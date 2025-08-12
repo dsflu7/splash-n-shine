@@ -12,24 +12,20 @@
 	import servicesPreviewData from "$lib/data/services-preview.json";
 	import serviceLocationsData from "$lib/data/service-locations.json";
 
-	let reviewsIframeVisible = $state(false);
-
-	// Dynamic import for QuoteForm to keep it client-side
 	let QuoteForm: any = $state(null);
-	onMount(async () => {
-		const module = await import("$lib/components/QuoteForm.svelte");
-		QuoteForm = module.default;
-	});
-
-	// Intersection Observer for lazy loading reviews iframe
+	let reviewsIframeVisible = $state(false);
 	let reviewsSection: HTMLElement;
+
 	onMount(() => {
 		if (reviewsSection) {
 			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
+				async (entries) => {
+					entries.forEach(async (entry) => {
 						if (entry.isIntersecting) {
-							reviewsIframeVisible = true;
+							const module = await import("$lib/components/QuoteForm.svelte");
+							QuoteForm = module.default;
+
+							reviewsIframeVisible = true;														
 							observer.unobserve(entry.target);
 						}
 					});
