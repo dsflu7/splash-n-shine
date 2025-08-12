@@ -68,13 +68,13 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-sm">
         <div class="bg-background p-4 rounded-lg border">
           <div class="font-semibold text-foreground">Happy Customers</div>
-          <div class="text-primary text-2xl font-bold">2,500+</div>
-          <div class="text-muted-foreground text-xs">Homes & Businesses Served</div>
+          <div class="text-primary text-2xl font-bold">300+</div>
+          <div class="text-muted-foreground text-xs">Local Homes & Businesses</div>
         </div>
         <div class="bg-background p-4 rounded-lg border">
           <div class="font-semibold text-foreground">Projects Completed</div>
-          <div class="text-primary text-2xl font-bold">8,000+</div>
-          <div class="text-muted-foreground text-xs">Successful Cleanings</div>
+          <div class="text-primary text-2xl font-bold">1,200+</div>
+          <div class="text-muted-foreground text-xs">Successful Services</div>
         </div>
         <div class="bg-background p-4 rounded-lg border">
           <div class="font-semibold text-foreground">Response Time</div>
@@ -83,7 +83,7 @@
         </div>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button size="lg" class="bg-primary hover:bg-primary/90">
+        <Button size="lg" variant="default">
           <Link href="/quote" class="flex items-center gap-2 text-primary-foreground">
             Get Free Quote
           </Link>
@@ -212,7 +212,7 @@
       </h2>
       <p class="text-xl mb-8 text-primary-foreground/90">
         Join your neighbors in {location.name} who trust Splash & Shine for all their cleaning needs. 
-        {location.isPriority ? 'As one of our priority service areas, we offer flexible scheduling and premium service.' : ''}
+        We're committed to providing exceptional service throughout the Greater Vancouver area.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button size="lg" variant="secondary">
@@ -220,7 +220,7 @@
             Get Your Free {location.name} Quote
           </Link>
         </Button>
-        <Button size="lg" variant="outline" class="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+        <Button size="lg" variant="outline">
           <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
             Call Today: (604) XXX-XXXX
           </Link>

@@ -20,7 +20,7 @@
   let { data }: Props = $props();
   
   const { service, locations, metaTitle, metaDescription, serviceStructuredData, faqStructuredData } = data;
-  const priorityLocations = locations.filter(loc => loc.isPriority);
+  const primaryAreas = locations.slice(0, 6); // Show top 6 service areas
   
   // Sample before/after images - in production, these would come from the service data
   const beforeAfterExamples = [
@@ -72,7 +72,7 @@
         {service.longDescription}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button size="lg" class="bg-primary hover:bg-primary/90">
+        <Button size="lg" variant="default">
           <Link href="/quote" class="flex items-center gap-2 text-primary-foreground">
             Get Free Quote
           </Link>
@@ -137,7 +137,7 @@
       {/each}
       
       <div class="text-center mt-12">
-        <Button size="lg" class="bg-primary hover:bg-primary/90">
+        <Button size="lg" variant="default">
           <Link href="/quote" class="flex items-center gap-2 text-primary-foreground">
             Get Similar Results for Your Property
           </Link>
@@ -183,11 +183,11 @@
         </p>
       </div>
       
-      <!-- Priority Locations -->
+      <!-- Primary Service Areas -->
       <div class="mb-12">
-        <h3 class="text-2xl font-semibold text-center mb-8 text-foreground">Priority Service Areas</h3>
+        <h3 class="text-2xl font-semibold text-center mb-8 text-foreground">Primary Service Areas</h3>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {#each priorityLocations as location}
+          {#each primaryAreas as location}
             <div class="bg-card rounded-lg border p-6 text-center hover:shadow-lg transition-shadow">
               <h4 class="font-semibold text-lg mb-3 text-foreground">{location.name}</h4>
               <p class="text-sm text-muted-foreground mb-4">{location.description}</p>
@@ -258,7 +258,7 @@
             Get Your Free Quote Today
           </Link>
         </Button>
-        <Button size="lg" variant="outline" class="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+        <Button size="lg" variant="outline">
           <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
             Call (604) XXX-XXXX
           </Link>

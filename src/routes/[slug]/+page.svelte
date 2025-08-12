@@ -84,7 +84,7 @@
       </div>
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button size="lg" class="bg-primary hover:bg-primary/90">
+        <Button size="lg" variant="default">
           <Link href="/quote" class="flex items-center gap-2 text-primary-foreground">
             Get Free {location.name} Quote
           </Link>
@@ -257,7 +257,7 @@
       </h2>
       <p class="text-xl mb-8 text-primary-foreground/90">
         Join your {location.name} neighbors who trust Splash & Shine for professional {service.name.toLowerCase()} services. 
-        {location.isPriority ? 'As a priority service area, we offer same-day quotes and flexible scheduling.' : ''}
+        We're committed to providing same-day quotes and flexible scheduling throughout our service area.
       </p>
       
       <!-- Local SEO keywords integration -->
@@ -274,7 +274,7 @@
             Get Your Free {location.name} Quote
           </Link>
         </Button>
-        <Button size="lg" variant="outline" class="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+        <Button size="lg" variant="outline">
           <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
             Call (604) XXX-XXXX Now
           </Link>

@@ -23,7 +23,6 @@ export interface Location {
   name: string;
   province: string;
   fullName: string;
-  isPriority: boolean;
   searchVolume: number;
   description: string;
   serviceAreas: string[];
@@ -82,10 +81,6 @@ export function getLocation(id: string): Location | null {
 export function getLocationsList(): Location[] {
   const locations = getLocations();
   return Object.values(locations);
-}
-
-export function getPriorityLocations(): Location[] {
-  return getLocationsList().filter(location => location.isPriority);
 }
 
 export function getLocationsBySearchVolume(): Location[] {

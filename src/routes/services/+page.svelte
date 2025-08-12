@@ -7,7 +7,11 @@
 	const services = [
 		{
 			title: 'Window Cleaning',
-			description: 'Crystal-clear windows inside and out, including screens and sills for a spotless, streak-free finish.',
+			description: 'Crystal-cl			<Link href="/quote">
+				<Button variant="secondary" size="lg">
+					Get Your Quote
+				</Button>
+			</Link>indows inside and out, including screens and sills for a spotless, streak-free finish.',
 			features: ['Interior & exterior cleaning', 'Screen cleaning', 'Sill & frame cleaning', 'Streak-free guarantee'],
 			image: '/assets/services/window-cleaning-hero.webp',
 			href: '/services/window-cleaning',
@@ -229,7 +233,7 @@
 						</ul>
 						
 						<Link href={service.href}>
-							<Button variant="outline" class="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+							<Button variant="outline" class="w-full">
 								Learn More
 							</Button>
 						</Link>
@@ -357,7 +361,7 @@
 				</Button>
 			</Link>
 			<Link href={`tel:${PUBLIC_PHONE}`}>
-				<Button variant="outline" size="lg" class="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+				<Button variant="outline" size="lg">
 					Call Now: {PUBLIC_PHONE}
 				</Button>
 			</Link>

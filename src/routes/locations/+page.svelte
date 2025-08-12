@@ -4,15 +4,14 @@
 	import Link from '$lib/components/Link.svelte';
 	import Infographic from '$lib/components/Infographic.svelte';
 
-	const priorityLocations = [
+	const primaryServiceAreas = [
 		{
 			name: 'Vancouver',
 			population: '662,248',
 			description: 'Professional cleaning services throughout Vancouver including downtown, Kitsilano, West End, and all neighborhoods.',
 			services: ['Window Cleaning', 'Pressure Washing', 'House Washing', 'Gutter Cleaning'],
 			image: '/assets/locations/vancouver-hero.webp',
-			href: '/locations/vancouver',
-			popular: true
+			href: '/locations/vancouver'
 		},
 		{
 			name: 'Surrey',
@@ -20,8 +19,7 @@
 			description: 'Comprehensive exterior cleaning services for Surrey homes and businesses from Guildford to South Surrey.',
 			services: ['Roof Cleaning', 'Concrete Cleaning', 'Window Cleaning', 'Pressure Washing'],
 			image: '/assets/locations/surrey-hero.webp',
-			href: '/locations/surrey',
-			popular: true
+			href: '/locations/surrey'
 		},
 		{
 			name: 'Burnaby',
@@ -29,8 +27,7 @@
 			description: 'Expert cleaning services for Burnaby residents including North Burnaby, Brentwood, and Deer Lake areas.',
 			services: ['House Washing', 'Gutter Cleaning', 'Solar Panel Cleaning', 'Deck Cleaning'],
 			image: '/assets/locations/burnaby-hero.webp',
-			href: '/locations/burnaby',
-			popular: true
+			href: '/locations/burnaby'
 		}
 	];
 
@@ -160,7 +157,7 @@
 	</div>
 </section>
 
-<!-- Priority Locations -->
+<!-- Primary Service Areas -->
 <section class="py-16 md:py-24 bg-background">
 	<div class="container mx-auto px-4">
 		<div class="text-center mb-16">
@@ -173,14 +170,8 @@
 		</div>
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-			{#each priorityLocations as location}
+			{#each primaryServiceAreas as location}
 				<div class="group relative bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-all duration-300">
-					{#if location.popular}
-						<div class="absolute top-4 right-4 z-10 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-							Priority Area
-						</div>
-					{/if}
-					
 					<div class="aspect-[4/3] relative overflow-hidden">
 						<img 
 							src={location.image} 
@@ -218,7 +209,7 @@
 						</div>
 						
 						<Link href={location.href}>
-							<Button variant="outline" class="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+							<Button variant="outline" class="w-full">
 								Learn More
 							</Button>
 						</Link>
@@ -368,12 +359,12 @@
 		</p>
 		<div class="flex flex-col sm:flex-row gap-4 justify-center">
 			<Link href="/contact">
-				<Button variant="secondary" size="lg" class="text-lg px-8">
+				<Button variant="secondary" size="lg">
 					Get Local Quote
 				</Button>
 			</Link>
 			<Link href={`tel:${PUBLIC_PHONE}`}>
-				<Button variant="outline" size="lg" class="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+				<Button variant="outline" size="lg">
 					Call {PUBLIC_PHONE}
 				</Button>
 			</Link>

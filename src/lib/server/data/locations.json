@@ -4,7 +4,6 @@
     "name": "Vancouver",
     "province": "BC",
     "fullName": "Vancouver, British Columbia",
-    "isPriority": true,
     "searchVolume": 31746,
     "description": "Serving the greater Vancouver area with professional cleaning services for residential and commercial properties.",
     "serviceAreas": [
@@ -57,7 +56,6 @@
     "name": "Surrey", 
     "province": "BC",
     "fullName": "Surrey, British Columbia",
-    "isPriority": true,
     "searchVolume": 23906,
     "description": "Professional cleaning services throughout Surrey's diverse neighborhoods and growing communities.",
     "serviceAreas": [
@@ -110,7 +108,6 @@
     "name": "Burnaby",
     "province": "BC", 
     "fullName": "Burnaby, British Columbia",
-    "isPriority": true,
     "searchVolume": 13720,
     "description": "Comprehensive cleaning services for Burnaby's residential communities and business districts.",
     "serviceAreas": [
@@ -163,7 +160,6 @@
     "name": "Richmond",
     "province": "BC",
     "fullName": "Richmond, British Columbia", 
-    "isPriority": false,
     "searchVolume": 7266,
     "description": "Quality cleaning services for Richmond's diverse residential and commercial properties.",
     "serviceAreas": [
@@ -216,7 +212,6 @@
     "name": "North Vancouver",
     "province": "BC",
     "fullName": "North Vancouver, British Columbia",
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Professional cleaning services for North Vancouver's unique mountain and waterfront properties.",
     "serviceAreas": [
@@ -263,7 +258,6 @@
     "name": "West Vancouver",
     "province": "BC",
     "fullName": "West Vancouver, British Columbia",
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Premium cleaning services for West Vancouver's luxury properties and waterfront estates.",
     "serviceAreas": [
@@ -310,7 +304,6 @@
     "name": "Coquitlam", 
     "province": "BC",
     "fullName": "Coquitlam, British Columbia",
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Reliable cleaning services for Coquitlam's growing residential and commercial communities.",
     "serviceAreas": [
@@ -357,7 +350,6 @@
     "name": "Port Coquitlam",
     "province": "BC",
     "fullName": "Port Coquitlam, British Columbia", 
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Comprehensive cleaning services for Port Coquitlam's residential neighborhoods and local businesses.",
     "serviceAreas": [
@@ -404,7 +396,6 @@
     "name": "New Westminster",
     "province": "BC", 
     "fullName": "New Westminster, British Columbia",
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Professional cleaning services for New Westminster's historic neighborhoods and modern developments.",
     "serviceAreas": [
@@ -451,7 +442,6 @@
     "name": "Delta",
     "province": "BC",
     "fullName": "Delta, British Columbia", 
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Quality cleaning services for Delta's diverse communities from Ladner to Tsawwassen.",
     "serviceAreas": [
@@ -498,7 +488,6 @@
     "name": "Langley",
     "province": "BC",
     "fullName": "Langley, British Columbia",
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Comprehensive cleaning services for both Langley City and Township communities.", 
     "serviceAreas": [
@@ -545,7 +534,6 @@
     "name": "White Rock",
     "province": "BC",
     "fullName": "White Rock, British Columbia",
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Premium cleaning services for White Rock's beachfront properties and hillside homes.",
     "serviceAreas": [
@@ -592,7 +580,6 @@
     "name": "Maple Ridge",
     "province": "BC",
     "fullName": "Maple Ridge, British Columbia",
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Reliable cleaning services for Maple Ridge's diverse neighborhoods from urban centers to rural properties.", 
     "serviceAreas": [
@@ -639,7 +626,6 @@
     "name": "Pitt Meadows",
     "province": "BC", 
     "fullName": "Pitt Meadows, British Columbia",
-    "isPriority": false,
     "searchVolume": 0,
     "description": "Personalized cleaning services for Pitt Meadows' close-knit community and rural properties.",
     "serviceAreas": [
@@ -686,7 +672,6 @@
     "name": "Fraser Valley",
     "province": "BC",
     "fullName": "Fraser Valley, British Columbia",
-    "isPriority": true,
     "searchVolume": 0,
     "description": "Comprehensive cleaning services throughout the Fraser Valley region including Abbotsford, Chilliwack, and Mission.",
     "serviceAreas": [

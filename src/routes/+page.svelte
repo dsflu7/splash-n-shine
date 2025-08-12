@@ -226,7 +226,7 @@
 							{service.desc}
 						</p>
 						<Link href={service.href}>
-							<Button variant="outline" class="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+							<Button variant="outline" class="w-full">
 								Learn More
 							</Button>
 						</Link>
@@ -356,47 +356,68 @@
 </section>
 
 <!-- Enhanced 3-Step Process -->
-<section class="py-16 md:py-20 bg-background">
+<section class="py-16 md:py-20 bg-gradient-to-br from-background via-muted/30 to-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-16">
+			<div class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
+				<span class="mr-2">✨</span>
+				Our Simple Process
+			</div>
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
 				How We Transform Your Property
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-				Our proven three-step process ensures exceptional results every time
+				From estimate to completion, we make professional cleaning effortless for you
 			</p>
 		</div>
 		
 		<div class="relative">
-			<!-- Connection line for desktop -->
-			<div class="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-primary/30 via-primary to-primary/30 -translate-y-1/2"></div>
+			<!-- Animated connection line for desktop -->
+			<div class="hidden md:block absolute top-24 left-1/4 right-1/4 h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent rounded-full">
+				<div class="h-full bg-gradient-to-r from-primary/40 via-primary to-primary/40 rounded-full animate-pulse"></div>
+			</div>
 			
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
 				{#if homepageData?.process}
 					{#each homepageData.process as step, index}
 						<div class="relative text-center group">
-							<!-- Step connection dots -->
+							<!-- Mobile connection line -->
 							{#if index < homepageData.process.length - 1}
-								<div class="md:hidden absolute left-1/2 bottom-0 w-px h-8 bg-gradient-to-b from-primary to-primary/30 transform -translate-x-1/2 translate-y-full"></div>
+								<div class="md:hidden absolute left-1/2 -bottom-6 w-0.5 h-12 bg-gradient-to-b from-primary/60 to-transparent transform -translate-x-1/2"></div>
 							{/if}
 							
-							<!-- Main step circle -->
-							<div class="relative mx-auto mb-6 w-20 h-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 z-10">
-								<div class="text-3xl">{step.icon}</div>
-								<div class="absolute -top-2 -right-2 w-8 h-8 bg-white text-primary rounded-full flex items-center justify-center text-sm font-bold shadow-md">
-									{step.step}
-								</div>
-							</div>
+							<!-- Floating background circle -->
+							<div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-br from-primary/5 to-primary/10 rounded-full blur-2xl group-hover:scale-125 transition-all duration-500"></div>
 							
-							<div class="space-y-4">
-								<h3 class="text-xl font-bold text-foreground font-[Cantarell]">
-									{step.title}
-								</h3>
-								<p class="text-muted-foreground leading-relaxed">
-									{step.description}
-								</p>
-								<div class="text-sm text-muted-foreground/80 italic border-l-2 border-primary/30 pl-4 ml-4 text-left">
-									{step.details}
+							<!-- Main step container -->
+							<div class="relative bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-2xl hover:border-primary/30 transition-all duration-500 group-hover:-translate-y-2">
+								<!-- Step icon circle -->
+								<div class="relative mx-auto mb-6 w-20 h-20 bg-gradient-to-br from-primary via-primary to-primary/80 text-primary-foreground rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+									<div class="text-3xl filter drop-shadow-sm">{step.icon}</div>
+									
+									<!-- Step number badge -->
+									<div class="absolute -top-3 -right-3 w-8 h-8 bg-white text-primary rounded-full flex items-center justify-center text-sm font-bold shadow-lg border-2 border-primary/20 group-hover:scale-125 transition-all duration-300">
+										{step.step}
+									</div>
+									
+									<!-- Glow effect -->
+									<div class="absolute inset-0 rounded-2xl bg-primary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+								</div>
+								
+								<div class="space-y-4">
+									<h3 class="text-xl font-bold text-foreground font-[Cantarell] group-hover:text-primary transition-colors duration-300">
+										{step.title}
+									</h3>
+									<p class="text-muted-foreground leading-relaxed text-base">
+										{step.description}
+									</p>
+									
+									<!-- Enhanced details section -->
+									<div class="mt-6 p-4 bg-gradient-to-r from-primary/5 to-transparent border-l-3 border-primary/40 rounded-r-lg">
+										<p class="text-sm text-muted-foreground/90 leading-relaxed italic">
+											{step.details}
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -405,11 +426,18 @@
 			</div>
 		</div>
 		
+		<!-- Enhanced CTA section -->
 		<div class="text-center mt-16">
-			<div class="inline-flex flex-col items-center space-y-4">
-				<div class="text-sm font-medium text-primary uppercase tracking-wide">Ready to get started?</div>
+			<div class="inline-flex flex-col items-center space-y-6 p-8 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 rounded-2xl border border-primary/20">
+				<div class="flex items-center space-x-2">
+					<span class="text-2xl">🎯</span>
+					<div class="text-lg font-medium text-primary">Ready to get started?</div>
+				</div>
+				<p class="text-muted-foreground max-w-md">
+					Join hundreds of satisfied customers who trust us for their cleaning needs
+				</p>
 				<Link href="/contact">
-					<Button size="lg" class="text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-shadow">
+					<Button size="lg" variant="default">
 						<span class="flex items-center space-x-2">
 							<span>Start Your Free Estimate</span>
 							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

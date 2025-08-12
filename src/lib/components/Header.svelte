@@ -8,7 +8,7 @@
   // Mobile menu state
   let mobileMenuOpen = $state(false);
 
-  // Navigation structure with complete services and priority locations
+  // Navigation structure with complete services and locations
   const navigation = {
     Services: [
       { label: "Window Cleaning", route: "/services/window-cleaning" },
@@ -28,7 +28,6 @@
       { label: "All Services", route: "/services" },
     ],
     Company: [
-      { label: "Blog", route: "/blog" },
       { label: "Gallery", route: "/gallery" },
       { label: "Our Story", route: "/our-story" },
       { label: "Privacy Policy", route: "/privacy-policy" },
@@ -51,7 +50,8 @@
     { label: "Services", items: navigation.Services },
     { label: "Company", items: navigation.Company },
     { label: "Locations", items: navigation.Locations },
-    { label: "Contact", route: "/contact" },
+    { label: "Blog", route: "/blog" },
+    //     { label: "Contact", route: "/contact" },
   ];
 
   function toggleMobileMenu() {
@@ -160,9 +160,7 @@
         >
           Contact Us
         </Link>
-        <Button
-          class="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
-        >
+        <Button variant="default">
           <Link href="/contact" class="text-inherit">Get Free Quote</Link>
         </Button>
       </div>
