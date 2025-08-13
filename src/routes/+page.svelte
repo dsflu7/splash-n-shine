@@ -260,9 +260,9 @@
 		</div>
 		
 		{#if reviewsIframeVisible}
-			<div class="bg-background rounded-lg shadow-sm border border-border overflow-hidden">
+			<div class="">
 				<iframe
-					class="lc_reviews_widget w-full h-[600px]"
+					class="lc_reviews_widget w-full h-[450px]"
 					src="https://reputationhub.site/reputation/widgets/review_widget/BlR0PXXBkzNERvcWVL4F"
 					frameborder="0"
 					scrolling="no"

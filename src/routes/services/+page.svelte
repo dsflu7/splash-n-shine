@@ -6,10 +6,7 @@
   } from "$env/static/public";
   import { Button } from "$lib/components/ui/button";
   import Link from "$lib/components/Link.svelte";
-  import Inf<!-- Hero Section -->
-<section 
-  class="relative bg-background py-16 md:py-24"
->phic from "$lib/components/Infographic.svelte";
+  import Infographic from "$lib/components/Infographic.svelte";
   import CTA from "$lib/components/CTA.svelte";
   import ProcessSteps from "$lib/components/ProcessSteps.svelte";
 

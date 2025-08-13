@@ -235,6 +235,13 @@
     <changefreq>monthly</changefreq>
   </url>
   
+  <!-- About Pages -->
+  <url>
+    <loc>https://www.{PUBLIC_DOMAIN}/our-story</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
   <!-- Contact & Legal Pages -->
   <url>
     <loc>https://www.{PUBLIC_DOMAIN}/contact</loc>
