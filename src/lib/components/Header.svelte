@@ -101,14 +101,14 @@
           aria-label="Go to homepage"
         >
           <img src={logo} alt={`${PUBLIC_COMPANY_NAME} Logo`} class="size-12 group-hover:scale-110 transition-transform duration-300" />
-          <div class="hidden sm:block">
+          <!-- <div class="hidden sm:block">
             <div class="text-xl font-bold text-foreground font-[Helvetica] leading-tight group-hover:text-primary transition-colors duration-300">
               {PUBLIC_COMPANY_NAME}
             </div>
             <div class="text-xs text-muted-foreground font-medium">
               Professional Cleaning Services
             </div>
-          </div>
+          </div> -->
         </Link>
       </div>
 

@@ -47,7 +47,7 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="relative py-20 md:py-28 overflow-hidden">
+<section class="relative py-12 md:py-16 overflow-hidden">
 	<!-- Background Image -->
 	<div class="absolute inset-0">
 		<img
@@ -69,7 +69,7 @@
 		<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
 			Professional exterior cleaning services with <strong>experienced teams</strong>, <strong>latest equipment</strong>, and <strong>guaranteed satisfaction</strong>
 		</p>
-		<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+		<div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
 			<Link href="/contact">
 				<Button size="lg" class="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-4 hover:scale-105 transition-all duration-300">
 					Get Free Estimate
@@ -105,9 +105,9 @@
 </section>
 
 <!-- Services Preview -->
-<section class="py-16 md:py-20 bg-background">
+<section class="py-10 md:py-12 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
-		<div class="text-center mb-12">
+		<div class="text-center mb-8">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Choose What Your Home Needs
 			</h2>
@@ -116,7 +116,7 @@
 			</p>
 		</div>
 		
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 			{#each servicesPreviewData as service}
 				<div class="group bg-card relative rounded-lg overflow-hidden shadow-sm border border-border hover:shadow-lg hover:border-blue-200/30 transition-all duration-300">
 					{#if service.popular}
@@ -157,7 +157,7 @@
 			{/each}
 		</div>
 		
-		<div class="text-center mt-12">
+		<div class="text-center mt-8">
 			<Link href="/services">
 				<Button size="lg" variant="outline" class="text-lg px-8">
 					View All Services
@@ -168,9 +168,9 @@
 </section>
 
 <!-- Why Choose Us - 4 Key Values -->
-<section class="py-16 md:py-20 bg-primary/5">
+<section class="py-10 md:py-12 bg-primary/5">
 	<div class="max-w-7xl mx-auto px-[6%]">
-		<div class="text-center mb-12">
+		<div class="text-center mb-8">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Our "You" Approach
 			</h2>
@@ -179,7 +179,7 @@
 			</p>
 		</div>
 		
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 			{#each homepageData.whyChooseUs as value}
 				<div class="text-center group p-6 rounded-lg border border-transparent hover:border-blue-200/30 hover:bg-card/50 transition-all duration-300">
 					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -198,7 +198,7 @@
 </section>
 
 <!-- Company Stats Infographic -->
-<section class="py-16 md:py-20 bg-background">
+<section class="py-10 md:py-12 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<Infographic
 			title="Trusted by Your Neighbors"
@@ -209,9 +209,9 @@
 </section>
 
 <!-- Before & After Results -->
-<section class="py-16 md:py-20 bg-background">
+<section class="py-10 md:py-12 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
-		<div class="text-center mb-12">
+		<div class="text-center mb-8">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Let Results Do the Talking
 			</h2>
@@ -220,14 +220,14 @@
 			</p>
 		</div>
 		
-		<div class="space-y-12">
+		<div class="space-y-8">
 			<!-- House Washing Before/After -->
 			<BeforeAfterComparison
 				beforeImage="https://cdn.sanity.io/files/ws2fgpe5/production/1792e570b24374a784ba3db66a9a89c233a93e18.jpg?w=800&h=450&fit=crop&auto=format&q=85"
 				afterImage="https://cdn.sanity.io/files/ws2fgpe5/production/5de4e0f59ab64d6994f54898e1ea799554c6b08f.jpg?w=800&h=450&fit=crop&auto=format&q=85"
 				altText="House exterior cleaning transformation showing dramatic improvement"
 				title="House Washing Transformation"
-				className="mb-12"
+				className="mb-8"
 			/>
 			
 			<BeforeAfterComparison
@@ -242,9 +242,9 @@
 </section>
 
 <!-- Customer Reviews -->
-<section bind:this={reviewsSection} class="py-16 md:py-20 bg-background">
+<section bind:this={reviewsSection} class="py-10 md:py-12 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
-		<div class="text-center mb-12">
+		<div class="text-center mb-8">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Don't Take Our Word For It
 			</h2>
@@ -275,9 +275,9 @@
 </section>
 
 <!-- Enhanced 3-Step Process -->
-<section class="py-16 md:py-20 bg-primary/3">
+<section class="py-10 md:py-12 bg-primary/3">
 	<div class="max-w-7xl mx-auto px-[6%]">
-		<div class="text-center mb-16">
+		<div class="text-center mb-10">
 			<div class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
 				<span class="mr-2">✨</span>
 				Our Simple Process
@@ -296,7 +296,7 @@
 				<div class="h-full bg-primary rounded-full animate-pulse" style="width: 60%;"></div>
 			</div>
 			
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
 				{#if homepageData?.process}
 					{#each homepageData.process as step, index}
 						<div class="relative text-center group">
@@ -346,7 +346,7 @@
 		</div>
 		
 		<!-- Enhanced CTA section -->
-		<div class="text-center mt-16">
+		<div class="text-center mt-10">
 			<div class="inline-flex flex-col items-center space-y-6 p-8 bg-blue-50/20 rounded-2xl border border-blue-200/30">
 				<div class="flex items-center space-x-2">
 					<span class="text-2xl">🎯</span>
@@ -371,9 +371,9 @@
 </section>
 
 <!-- Quote Form Section -->
-<section class="py-16 md:py-20 bg-background">
+<section class="py-10 md:py-12 bg-background">
 	<div class="max-w-5xl mx-auto px-[6%]">
-		<div class="text-center mb-12">
+		<div class="text-center mb-8">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Ready to Transform Your Property?
 			</h2>
@@ -396,9 +396,9 @@
 </section>
 
 <!-- Service-Location Combinations -->
-<section class="py-16 bg-background">
+<section class="py-10 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
-		<div class="text-center mb-12">
+		<div class="text-center mb-8">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Popular Service Areas
 			</h2>
@@ -424,7 +424,7 @@
 			{/each}
 		</div>
 		
-		<div class="text-center mt-12">
+		<div class="text-center mt-8">
 			<p class="text-muted-foreground mb-6">
 				Can't find your area? We serve all of Metro Vancouver and the Fraser Valley.
 			</p>

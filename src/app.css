@@ -5,7 +5,16 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.3rem;
+  
+  /* Gutter and spacing variables */
+  --gutter-xs: 1rem;     /* 16px - For tight spacing */
+  --gutter-sm: 2rem;     /* 32px - For small sections */
+  --gutter-md: 3rem;     /* 48px - For medium sections */
+  --gutter-lg: 4rem;     /* 64px - For large sections */
+  --gutter-xl: 6rem;     /* 96px - For major sections */
+  --gutter-2xl: 8rem;    /* 128px - For hero/major breaks */
+  
   /* Light theme - Clean white background with gold accents */
   --background: oklch(1 0 0);
   --foreground: oklch(0.12 0.02 45);
@@ -82,6 +91,15 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Gutter spacing tokens */
+  --spacing-gutter-xs: var(--gutter-xs);
+  --spacing-gutter-sm: var(--gutter-sm);
+  --spacing-gutter-md: var(--gutter-md);
+  --spacing-gutter-lg: var(--gutter-lg);
+  --spacing-gutter-xl: var(--gutter-xl);
+  --spacing-gutter-2xl: var(--gutter-2xl);
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -122,4 +140,28 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer utilities {
+  /* Gutter spacing utilities */
+  .py-gutter-xs { padding-top: var(--gutter-xs); padding-bottom: var(--gutter-xs); }
+  .py-gutter-sm { padding-top: var(--gutter-sm); padding-bottom: var(--gutter-sm); }
+  .py-gutter-md { padding-top: var(--gutter-md); padding-bottom: var(--gutter-md); }
+  .py-gutter-lg { padding-top: var(--gutter-lg); padding-bottom: var(--gutter-lg); }
+  .py-gutter-xl { padding-top: var(--gutter-xl); padding-bottom: var(--gutter-xl); }
+  .py-gutter-2xl { padding-top: var(--gutter-2xl); padding-bottom: var(--gutter-2xl); }
+  
+  .mb-gutter-xs { margin-bottom: var(--gutter-xs); }
+  .mb-gutter-sm { margin-bottom: var(--gutter-sm); }
+  .mb-gutter-md { margin-bottom: var(--gutter-md); }
+  .mb-gutter-lg { margin-bottom: var(--gutter-lg); }
+  .mb-gutter-xl { margin-bottom: var(--gutter-xl); }
+  .mb-gutter-2xl { margin-bottom: var(--gutter-2xl); }
+  
+  .mt-gutter-xs { margin-top: var(--gutter-xs); }
+  .mt-gutter-sm { margin-top: var(--gutter-sm); }
+  .mt-gutter-md { margin-top: var(--gutter-md); }
+  .mt-gutter-lg { margin-top: var(--gutter-lg); }
+  .mt-gutter-xl { margin-top: var(--gutter-xl); }
+  .mt-gutter-2xl { margin-top: var(--gutter-2xl); }
 }
