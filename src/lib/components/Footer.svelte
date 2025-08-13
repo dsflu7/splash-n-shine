@@ -1,5 +1,6 @@
 <script lang="ts">
   import { PUBLIC_COMPANY_NAME, PUBLIC_DOMAIN } from "$env/static/public";
+  import logo from "$lib/assets/logo.png";
   import Link from "./Link.svelte";
 
   const siteMap = {
@@ -47,17 +48,7 @@
       <div class="flex flex-col items-center lg:items-start space-y-6">
         <div class="flex flex-col items-center lg:items-start space-y-4">
           <!-- Logo -->
-          <!-- <Image 
-						url="/assets/logo.png"
-						description={`${PUBLIC_COMPANY_NAME} Logo`}
-						class="h-24 w-24 object-contain"
-						size={[64,96,128]}
-						sizes="96px"
-						quality={72}
-						width="96"
-						height="96"
-						fetchpriority="low"
-					/> -->
+          <img src={logo} alt={`${PUBLIC_COMPANY_NAME} Logo`} class="h-24 w-24 object-contain" />
 
           <!-- Company Name -->
           <h2 class="text-2xl font-bold text-white font-[Cantarell]">

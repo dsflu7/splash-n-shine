@@ -1,5 +1,6 @@
 <script lang="ts">
   import { PUBLIC_COMPANY_NAME, PUBLIC_PHONE } from "$env/static/public";
+  import logo from "$lib/assets/logo.png";
   import Link from "./Link.svelte";
   import PhoneCall from "./icons/PhoneCall.svelte";
   import { Button } from "./ui/button/index.js";
@@ -91,11 +92,11 @@
           aria-label="Go to homepage"
         >
           <!-- Company Logo -->
-          <div
+          <!-- <div
             class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center shadow-sm"
           >
-            <span class="text-primary-foreground font-bold text-xl">S&S</span>
-          </div>
+        </div> -->
+        <img src={logo} alt={`${PUBLIC_COMPANY_NAME} Logo`} class="size-12" />
           <div class="hidden sm:block">
             <div
               class="text-xl font-bold text-foreground font-[Cantarell] leading-tight"

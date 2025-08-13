@@ -33,6 +33,9 @@
 		"onlyBuiltDependencies": [
 			"@tailwindcss/oxide",
 			"esbuild"
+		],
+		"ignoredBuiltDependencies": [
+			"@tailwindcss/oxide"
 		]
 	},
 	"dependencies": {
