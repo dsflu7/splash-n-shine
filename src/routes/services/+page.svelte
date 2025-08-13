@@ -9,9 +9,10 @@
   import Infographic from "$lib/components/Infographic.svelte";
   import CTA from "$lib/components/CTA.svelte";
   import ProcessSteps from "$lib/components/ProcessSteps.svelte";
-  import servicesData from "$lib/data/services.json";
+	import { getServicesForUI } from "$lib/data";
 
-  const { services, whyChooseUs, serviceHighlights, seo } = servicesData;
+  	const servicesData = getServicesForUI();
+	const { services, whyChooseUs, serviceHighlights, seo } = servicesData;
    
 
   const process = [

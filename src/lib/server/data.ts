@@ -1,5 +1,13 @@
-import servicesData from './data/services.json';
-import locationsData from './data/locations.json';
+import { 
+  getServices as getUnifiedServices, 
+  getServiceById, 
+  getLocations as getUnifiedLocations, 
+  getLocationById,
+  getServicesForUI,
+  getLocationsForUI,
+  type Service as UnifiedService,
+  type Location as UnifiedLocation
+} from '$lib/data';
 
 // Before/After image interface
 export interface BeforeAfterExample {
@@ -83,60 +91,25 @@ export interface LocationsData {
   };
 }
 
-// Detailed service/location interfaces for CMS data
-export interface Service {
-  id: string;
-  name: string;
-  category: string;
-  shortDescription: string;
-  longDescription: string;
-  benefits: string[];
-  process: string[];
-  faqs: {
-    question: string;
-    answer: string;
-  }[];
-  primaryKeywords: string[];
-  secondaryKeywords: string[];
-  localKeywords: string[];
-  beforeAfterExamples?: BeforeAfterExample[];
-}
-
-export interface Location {
-  id: string;
-  name: string;
-  province: string;
-  fullName: string;
-  searchVolume: number;
-  description: string;
-  serviceAreas: string[];
-  localKeywords: string[];
-  demographics: {
-    population: string;
-    medianIncome: string;
-    homeOwnership: string;
-  };
-  localFeatures: string[];
-  testimonials: {
-    name: string;
-    location: string;
-    service: string;
-    text: string;
-  }[];
-}
+// Detailed service/location interfaces for CMS data - now using unified types
+export type Service = UnifiedService;
+export type Location = UnifiedLocation;
 
 export function getServices(): Record<string, Service> {
-  return servicesData;
+  const services = getUnifiedServices();
+  const result: Record<string, Service> = {};
+  services.forEach(service => {
+    result[service.id] = service;
+  });
+  return result;
 }
 
 export function getService(id: string): Service | null {
-  const services = getServices();
-  return services[id] || null;
+  return getServiceById(id) || null;
 }
 
 export function getServicesList(): Service[] {
-  const services = getServices();
-  return Object.values(services);
+  return getUnifiedServices();
 }
 
 export function getServicesByCategory(): Record<string, Service[]> {
@@ -154,21 +127,24 @@ export function getServicesByCategory(): Record<string, Service[]> {
 }
 
 export function getLocations(): Record<string, Location> {
-  return locationsData;
+  const locations = getUnifiedLocations();
+  const result: Record<string, Location> = {};
+  locations.forEach(location => {
+    result[location.id] = location;
+  });
+  return result;
 }
 
 export function getLocation(id: string): Location | null {
-  const locations = getLocations();
-  return locations[id] || null;
+  return getLocationById(id) || null;
 }
 
 export function getLocationsList(): Location[] {
-  const locations = getLocations();
-  return Object.values(locations);
+  return getUnifiedLocations();
 }
 
 export function getLocationsBySearchVolume(): Location[] {
-  return getLocationsList().sort((a, b) => b.searchVolume - a.searchVolume);
+  return getLocationsList().sort((a, b) => (b.searchVolume || 0) - (a.searchVolume || 0));
 }
 
 // Generate SEO-optimized content for service+location combinations

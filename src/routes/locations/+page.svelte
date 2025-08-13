@@ -4,8 +4,9 @@
 	import Link from '$lib/components/Link.svelte';
 	import CTA from '$lib/components/CTA.svelte';
   import Infographic from '$lib/components/Infographic.svelte';
-	import locationsData from '$lib/data/locations.json';
+	import { getLocationsForUI } from '$lib/data';
 
+	const locationsData = getLocationsForUI();
 	const { 
 		primaryServiceAreas, 
 		allLocations, 

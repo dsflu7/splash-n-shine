@@ -1,0 +1,69 @@
+{
+  "whyChooseUs": [
+    {
+      "icon": "⏰",
+      "title": "Time-saving",
+      "description": "You save time while we restore your property promptly without losing attention to detail."
+    },
+    {
+      "icon": "🛡️",
+      "title": "Equipped & Safe",
+      "description": "We carry the latest cleaning equipment and eco-friendly products delivered by insured professionals."
+    },
+    {
+      "icon": "🎯",
+      "title": "Experienced",
+      "description": "Backed by years of experience and expertise in the best exterior cleaning and maintenance practices."
+    },
+    {
+      "icon": "😊",
+      "title": "Friendly & Reliable",
+      "description": "Committed to customer satisfaction with a smile. We're proud of our customer reviews."
+    }
+  ],
+  "companyStats": [
+    {
+      "value": "300+",
+      "label": "Happy Customers",
+      "icon": "😊"
+    },
+    {
+      "value": "1,200+",
+      "label": "Projects Completed",
+      "icon": "✅"
+    },
+    {
+      "value": "100%",
+      "label": "Satisfaction Rate",
+      "icon": "⭐"
+    },
+    {
+      "value": "24hr",
+      "label": "Response Time",
+      "icon": "⚡"
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Get A Free Estimate",
+      "description": "Fill out your request or call us to get your comprehensive free estimate.",
+      "icon": "📋",
+      "details": "Our expert team will assess your property's needs and provide a detailed, transparent quote with no hidden fees."
+    },
+    {
+      "step": "02", 
+      "title": "Get Scheduled",
+      "description": "Once you approve your quote, we'll work with you to find the perfect time.",
+      "icon": "📅",
+      "details": "Flexible scheduling that works around your lifestyle with professional, punctual service teams."
+    },
+    {
+      "step": "03",
+      "title": "Relax & Enjoy",
+      "description": "Work done right, results delivered. Your satisfaction is guaranteed.",
+      "icon": "✨",
+      "details": "Sit back while our experienced professionals transform your property with guaranteed satisfaction."
+    }
+  ]
+}
