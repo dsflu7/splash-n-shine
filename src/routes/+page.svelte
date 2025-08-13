@@ -11,7 +11,7 @@
 	import homepageData from "$lib/data/homepage.json";
 	import servicesPreviewData from "$lib/data/services-preview.json";
 	import serviceLocationsData from "$lib/data/service-locations.json";
-	import landingHero from "$lib/assets/landing-hero.webp"
+	const landingHero = "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=1080&fit=crop&auto=format&q=80"
 
 	let QuoteForm: any = $state(null);
 	let reviewsIframeVisible = $state(false);
@@ -39,9 +39,9 @@
 </script>
 
 <svelte:head>
-	<title>Professional Exterior Cleaning Services | {PUBLIC_COMPANY_NAME}</title>
-	<meta name="description" content="Professional window cleaning, pressure washing, house washing & gutter cleaning services in Vancouver, Surrey, Burnaby. Free estimates & satisfaction guaranteed!" />
-	<meta name="keywords" content="cleaning services, window cleaning, pressure washing, house washing, gutter cleaning, roof cleaning, Vancouver, Surrey, Burnaby, Richmond" />
+	<title>Professional Services | {PUBLIC_COMPANY_NAME}</title>
+	<meta name="description" content="Professional services with experienced teams, latest equipment, and guaranteed satisfaction. Free estimates available!" />
+	<meta name="keywords" content="professional services, quality service, local business, experienced team, guaranteed satisfaction" />
 	
 	<link rel="preload" href={landingHero} as="image" fetchpriority="high" />
 </svelte:head>
@@ -52,7 +52,7 @@
 	<div class="absolute inset-0">
 		<img
 			src={landingHero}
-			alt="Professional exterior cleaning services - beautiful clean home after pressure washing and window cleaning"
+			alt="Professional services - quality results you can trust"
 			class="w-full h-full object-cover"
 			fetchpriority="high"
 			width="1920"
@@ -64,10 +64,10 @@
 	<!-- Hero Content -->
 	<div class="relative max-w-7xl mx-auto px-[6%] text-center text-white z-10">
 		<h1 class="text-4xl md:text-6xl font-bold mb-6 font-[Cantarell] leading-tight">
-			Let Your Home <span class="text-primary">Shine</span>
+			Professional <span class="text-primary">Excellence</span>
 		</h1>
 		<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-			Professional exterior cleaning services with <strong>experienced teams</strong>, <strong>latest equipment</strong>, and <strong>guaranteed satisfaction</strong>
+			Quality services delivered by <strong>experienced professionals</strong> with <strong>modern equipment</strong> and <strong>guaranteed satisfaction</strong>
 		</p>
 		<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
 			<Link href="/contact">
@@ -109,10 +109,10 @@
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
-				Choose What Your Home Needs
+				Our Services
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-				Professional cleaning solutions with the latest equipment and eco-friendly methods
+				Professional solutions delivered with the latest equipment and proven methods
 			</p>
 		</div>
 		
@@ -149,7 +149,7 @@
 						</p>
 						<Link href={service.href}>
 							<Button variant="outline" class="w-full hover:border-blue-300/50 transition-colors duration-300">
-								View {service.title} Services
+								Learn More About {service.title}
 							</Button>
 						</Link>
 					</div>
@@ -172,10 +172,10 @@
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
-				Our "You" Approach
+				Why Choose Us
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-				Four key values that make us the perfect solution for your property
+				Four key values that make us the perfect choice for your needs
 			</p>
 		</div>
 		
@@ -201,8 +201,8 @@
 <section class="py-16 md:py-20 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<Infographic
-			title="Trusted by Your Neighbors"
-			subtitle="Our track record speaks for itself with satisfied customers across Metro Vancouver"
+			title="Trusted by Our Community"
+			subtitle="Our track record speaks for itself with satisfied customers in your area"
 			stats={homepageData.companyStats}
 		/>
 	</div>
@@ -213,28 +213,28 @@
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
-				Let Results Do the Talking
+				See Our Results
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-				Experience the remarkable difference our professional cleaning services make. See real transformations from our satisfied customers.
+				Experience the remarkable difference our professional services make. See real transformations from our satisfied customers.
 			</p>
 		</div>
 		
 		<div class="space-y-12">
-			<!-- House Washing Before/After -->
+			<!-- Before/After Example 1 -->
 			<BeforeAfterComparison
-				beforeImage="https://cdn.sanity.io/files/ws2fgpe5/production/1792e570b24374a784ba3db66a9a89c233a93e18.jpg?w=800&h=450&fit=crop&auto=format&q=85"
-				afterImage="https://cdn.sanity.io/files/ws2fgpe5/production/5de4e0f59ab64d6994f54898e1ea799554c6b08f.jpg?w=800&h=450&fit=crop&auto=format&q=85"
-				altText="House exterior cleaning transformation showing dramatic improvement"
-				title="House Washing Transformation"
+				beforeImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop&auto=format&q=85"
+				afterImage="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=450&fit=crop&auto=format&q=85"
+				altText="Service transformation showing dramatic improvement in quality"
+				title="Professional Service Transformation"
 				className="mb-12"
 			/>
 			
 			<BeforeAfterComparison
-				beforeImage="https://cdn.sanity.io/files/ws2fgpe5/production/4eb6bc0c0429bd9229b86dbec6aec01d8aa1e7d6.webp?w=800&h=450&fit=crop&auto=format&q=85"
-				afterImage="https://cdn.sanity.io/files/ws2fgpe5/production/94f4132b51090e478da9820a1835189c20a9ae19.webp?w=800&h=450&fit=crop&auto=format&q=85"
-				altText="Roof cleaning transformation showing removal of moss, algae, and debris for improved appearance and longevity"
-				title="Roof Cleaning Transformation"
+				beforeImage="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=450&fit=crop&auto=format&q=85"
+				afterImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=450&fit=crop&auto=format&q=85"
+				altText="Quality improvement transformation showing professional results"
+				title="Quality Enhancement Results"
 			/>
 			
 		</div>
@@ -246,31 +246,44 @@
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
-				Don't Take Our Word For It
+				Customer Reviews
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-				See what your neighbors are saying about our professional cleaning services
+				See what our customers are saying about our professional services
 			</p>
 		</div>
 		
-		{#if reviewsIframeVisible}
-			<div class="">
-				<iframe
-					class="lc_reviews_widget w-full h-[450px]"
-					src="https://reputationhub.site/reputation/widgets/review_widget/BlR0PXXBkzNERvcWVL4F"
-					frameborder="0"
-					scrolling="no"
-					title="Customer reviews from ReputationHub"
-				></iframe>
-			</div>
-		{:else}
-			<div class="flex items-center justify-center h-[600px] bg-background rounded-lg border border-border">
-				<div class="text-center">
-					<div class="text-4xl mb-4">⭐</div>
-					<p class="text-muted-foreground">Loading customer reviews...</p>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			<div class="bg-card rounded-lg p-6 border border-border">
+				<div class="flex items-center mb-4">
+					<div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
 				</div>
+				<p class="text-muted-foreground mb-4 italic">
+					"Excellent service! Professional, reliable, and the results exceeded our expectations. Highly recommend!"
+				</p>
+				<div class="font-medium text-foreground">- Sarah Johnson</div>
 			</div>
-		{/if}
+			
+			<div class="bg-card rounded-lg p-6 border border-border">
+				<div class="flex items-center mb-4">
+					<div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+				</div>
+				<p class="text-muted-foreground mb-4 italic">
+					"Great team, fair pricing, and outstanding quality. We'll definitely use their services again."
+				</p>
+				<div class="font-medium text-foreground">- Mike Chen</div>
+			</div>
+			
+			<div class="bg-card rounded-lg p-6 border border-border">
+				<div class="flex items-center mb-4">
+					<div class="text-yellow-500">⭐⭐⭐⭐⭐</div>
+				</div>
+				<p class="text-muted-foreground mb-4 italic">
+					"Professional from start to finish. They delivered exactly what they promised on time and on budget."
+				</p>
+				<div class="font-medium text-foreground">- Emma Davis</div>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -280,13 +293,13 @@
 		<div class="text-center mb-16">
 			<div class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6">
 				<span class="mr-2">✨</span>
-				Our Simple Process
+				Our Process
 			</div>
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
-				How We Transform Your Property
+				How We Work With You
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-				From estimate to completion, we make professional cleaning effortless for you
+				From consultation to completion, we make professional service effortless for you
 			</p>
 		</div>
 		
@@ -353,7 +366,7 @@
 					<div class="text-lg font-medium text-primary">Ready to get started?</div>
 				</div>
 				<p class="text-muted-foreground max-w-md">
-					Join hundreds of satisfied customers who trust us for their cleaning needs
+					Join hundreds of satisfied customers who trust us for their service needs
 				</p>
 				<Link href="/contact">
 					<Button size="lg" variant="default" class="hover:scale-105 transition-all duration-300">
@@ -375,7 +388,7 @@
 	<div class="max-w-5xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
-				Ready to Transform Your Property?
+				Ready to Get Started?
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
 				Get your free, comprehensive estimate in under 2 minutes. No hidden fees, no pressure.
@@ -400,10 +413,10 @@
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
-				Popular Service Areas
+				Service Areas
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-				Find specialized cleaning services in your area with local expertise and guaranteed results
+				Find specialized services in your area with local expertise and guaranteed results
 			</p>
 		</div>
 		
@@ -426,7 +439,7 @@
 		
 		<div class="text-center mt-12">
 			<p class="text-muted-foreground mb-6">
-				Can't find your area? We serve all of Metro Vancouver and the Fraser Valley.
+				Can't find your area? We serve the entire metropolitan area and surrounding regions.
 			</p>
 			<Link href="/locations">
 				<Button variant="outline" size="lg">
