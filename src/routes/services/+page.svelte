@@ -84,7 +84,7 @@
 >
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 font-[Cantarell]">
+      <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 font-[Helvetica]">
         Let Your Property <span class="text-primary">Shine</span>
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -110,7 +110,7 @@
 <section class="py-16 md:py-24 bg-background">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
         Choose What Your Property Needs
       </h2>
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -147,7 +147,7 @@
           </div>
 
           <div class="p-6">
-            <h3 class="text-xl font-semibold text-foreground mb-3 font-[Cantarell] group-hover:text-primary transition-colors duration-300">
+            <h3 class="text-xl font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300">
               {service.title}
             </h3>
             <p class="text-muted-foreground mb-4 leading-relaxed">
@@ -197,7 +197,7 @@
 <section class="py-16 md:py-24 bg-primary/4">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
         Why Choose {PUBLIC_COMPANY_NAME}?
       </h2>
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -214,7 +214,7 @@
           >
             {item.icon}
           </div>
-          <h3 class="text-lg font-semibold text-foreground mb-3 font-[Cantarell] group-hover:text-primary transition-colors duration-300">
+          <h3 class="text-lg font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300">
             {item.title}
           </h3>
           <p class="text-muted-foreground leading-relaxed">

@@ -13,7 +13,7 @@
 	<div class="max-w-4xl mx-auto px-[6%]">
 		<!-- Header -->
 		<header class="text-center mb-12">
-			<h1 class="text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h1 class="text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Privacy Policy
 			</h1>
 			<p class="text-muted-foreground">
@@ -24,7 +24,7 @@
 		<!-- Content -->
 		<div class="prose prose-lg max-w-none text-foreground">
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Introduction
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">
@@ -33,12 +33,12 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Information We Collect
 				</h2>
 				<div class="space-y-4">
 					<div>
-						<h3 class="text-xl font-medium text-foreground mb-2 font-[Cantarell]">
+						<h3 class="text-xl font-medium text-foreground mb-2 font-[Helvetica]">
 							Personal Information
 						</h3>
 						<p class="text-muted-foreground leading-relaxed">
@@ -53,7 +53,7 @@
 					</div>
 					
 					<div>
-						<h3 class="text-xl font-medium text-foreground mb-2 font-[Cantarell]">
+						<h3 class="text-xl font-medium text-foreground mb-2 font-[Helvetica]">
 							Automatically Collected Information
 						</h3>
 						<p class="text-muted-foreground leading-relaxed">
@@ -70,7 +70,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					How We Use Your Information
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">
@@ -87,7 +87,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Information Sharing
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">
@@ -102,7 +102,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Data Security
 				</h2>
 				<p class="text-muted-foreground leading-relaxed">
@@ -111,7 +111,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Your Rights
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">
@@ -127,7 +127,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Cookies and Tracking
 				</h2>
 				<p class="text-muted-foreground leading-relaxed">
@@ -136,7 +136,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Children's Privacy
 				</h2>
 				<p class="text-muted-foreground leading-relaxed">
@@ -145,7 +145,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Changes to This Privacy Policy
 				</h2>
 				<p class="text-muted-foreground leading-relaxed">
@@ -154,7 +154,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Contact Us
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">

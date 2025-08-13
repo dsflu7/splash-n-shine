@@ -80,7 +80,7 @@
           fetchpriority="high"
         />
       </div>
-      <h1 class="text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+      <h1 class="text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
         Our Story
       </h1>
       <p
@@ -95,7 +95,7 @@
     <div class="prose prose-lg max-w-none text-foreground">
       <section class="mb-8">
         <h2
-          class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]"
+          class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]"
         >
           Our Journey
         </h2>
@@ -122,7 +122,7 @@
 
       <section class="mb-8">
         <h2
-          class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]"
+          class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]"
         >
           Our Mission
         </h2>
@@ -150,7 +150,7 @@
 
       <section class="mb-8">
         <h2
-          class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]"
+          class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]"
         >
           Our Commitment
         </h2>
@@ -172,7 +172,7 @@
       </section>
       <section class="mb-8">
         <h2
-          class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]"
+          class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]"
         >
           Our Core Values
         </h2>
@@ -182,7 +182,7 @@
               <div class="flex items-center mb-3">
                 <span class="text-2xl mr-3">🌱</span>
                 <h3
-                  class="text-xl font-medium text-foreground font-[Cantarell]"
+                  class="text-xl font-medium text-foreground font-[Helvetica]"
                 >
                   Eco-Friendly Approach
                 </h3>
@@ -198,7 +198,7 @@
               <div class="flex items-center mb-3">
                 <span class="text-2xl mr-3">⭐</span>
                 <h3
-                  class="text-xl font-medium text-foreground font-[Cantarell]"
+                  class="text-xl font-medium text-foreground font-[Helvetica]"
                 >
                   Quality Excellence
                 </h3>
@@ -213,7 +213,7 @@
               <div class="flex items-center mb-3">
                 <span class="text-2xl mr-3">🤝</span>
                 <h3
-                  class="text-xl font-medium text-foreground font-[Cantarell]"
+                  class="text-xl font-medium text-foreground font-[Helvetica]"
                 >
                   Customer Partnership
                 </h3>
@@ -228,7 +228,7 @@
               <div class="flex items-center mb-3">
                 <span class="text-2xl mr-3">🏠</span>
                 <h3
-                  class="text-xl font-medium text-foreground font-[Cantarell]"
+                  class="text-xl font-medium text-foreground font-[Helvetica]"
                 >
                   Local Expertise
                 </h3>
@@ -244,7 +244,7 @@
 
       <section class="mb-8">
         <h2
-          class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]"
+          class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]"
         >
           Meet Our Team
         </h2>
@@ -271,7 +271,7 @@
 
       <section class="mb-8">
         <h2
-          class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]"
+          class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]"
         >
           Service Areas
         </h2>
@@ -293,7 +293,7 @@
 
       <section class="mb-8">
         <h2
-          class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]"
+          class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]"
         >
           Contact Us
         </h2>

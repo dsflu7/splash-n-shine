@@ -59,7 +59,7 @@
 <section class="relative bg-background py-16 md:py-24">
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl mx-auto text-center">
-			<h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 font-[Cantarell]">
+			<h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 font-[Helvetica]">
 				Serving Communities <span class="text-primary">Across BC</span>
 			</h1>
 			<p class="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -85,7 +85,7 @@
 <section class="py-16 md:py-24 bg-background">
 	<div class="container mx-auto px-4">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Our Primary Service Areas
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -110,7 +110,7 @@
 					
 					<div class="p-6">
 						<div class="flex items-center justify-between mb-3">
-							<h3 class="text-xl font-semibold text-foreground font-[Cantarell] group-hover:text-primary transition-colors duration-300">
+							<h3 class="text-xl font-semibold text-foreground font-[Helvetica] group-hover:text-primary transition-colors duration-300">
 								{location.name}
 							</h3>
 							<span class="text-sm text-muted-foreground">
@@ -148,7 +148,7 @@
 <section class="py-16 md:py-20 bg-background">
 	<div class="container mx-auto px-4">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Complete Service Coverage
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -160,7 +160,7 @@
 			{#each allLocations as location}
 				<Link href={location.href}>
 					<div class="bg-card border border-border rounded-lg p-4 hover:shadow-md hover:border-blue-200/30 hover:bg-blue-50/20 transition-all duration-300">
-						<h3 class="font-semibold text-foreground mb-1 font-[Cantarell]">
+						<h3 class="font-semibold text-foreground mb-1 font-[Helvetica]">
 							{location.name}
 						</h3>
 						<p class="text-sm text-muted-foreground">
@@ -183,7 +183,7 @@
 <section class="py-16 md:py-20 bg-background">
 	<div class="container mx-auto px-4">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Regional Service Areas
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -197,7 +197,7 @@
 					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
 						{area.icon}
 					</div>
-					<h3 class="text-lg font-semibold text-foreground mb-3 font-[Cantarell] group-hover:text-primary transition-colors duration-300">
+					<h3 class="text-lg font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300">
 						{area.title}
 					</h3>
 					<p class="text-muted-foreground leading-relaxed">
@@ -229,7 +229,7 @@
 <section class="py-16 md:py-24 bg-background">
 	<div class="container mx-auto px-4">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Why Choose Local Experts?
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -243,7 +243,7 @@
 					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
 						{item.icon}
 					</div>
-					<h3 class="text-lg font-semibold text-foreground mb-3 font-[Cantarell] group-hover:text-primary transition-colors duration-300">
+					<h3 class="text-lg font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300">
 						{item.title}
 					</h3>
 					<p class="text-muted-foreground leading-relaxed">

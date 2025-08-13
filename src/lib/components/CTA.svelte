@@ -37,7 +37,7 @@
 	<div class="absolute bottom-0 left-0 w-48 h-48 bg-blue-500/3 rounded-full blur-2xl"></div>
 	
 	<div class="max-w-4xl mx-auto px-[6%] text-center relative z-10">
-		<h2 class="text-3xl md:text-4xl font-bold mb-4 font-[Cantarell]">
+		<h2 class="text-3xl md:text-4xl font-bold mb-4 font-[Helvetica]">
 			{title}
 		</h2>
 		<p class="text-lg mb-8 opacity-90 leading-relaxed">

@@ -63,7 +63,7 @@
 	
 	<!-- Hero Content -->
 	<div class="relative max-w-7xl mx-auto px-[6%] text-center text-white z-10">
-		<h1 class="text-4xl md:text-6xl font-bold mb-6 font-[Cantarell] leading-tight">
+		<h1 class="text-4xl md:text-6xl font-bold mb-6 font-[Helvetica] leading-tight">
 			Let Your Home <span class="text-primary">Shine</span>
 		</h1>
 		<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -108,7 +108,7 @@
 <section class="py-16 md:py-20 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Choose What Your Home Needs
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -140,7 +140,7 @@
 					<div class="p-6">
 						<div class="flex items-center mb-3">
 							<div class="text-2xl mr-3 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
-							<h3 class="text-xl font-semibold text-foreground font-[Cantarell] group-hover:text-primary transition-colors duration-300">
+							<h3 class="text-xl font-semibold text-foreground font-[Helvetica] group-hover:text-primary transition-colors duration-300">
 								{service.title}
 							</h3>
 						</div>
@@ -171,7 +171,7 @@
 <section class="py-16 md:py-20 bg-primary/5">
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Our "You" Approach
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -185,7 +185,7 @@
 					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
 						{value.icon}
 					</div>
-					<h3 class="text-xl font-semibold text-foreground mb-3 font-[Cantarell] group-hover:text-primary transition-colors duration-300">
+					<h3 class="text-xl font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300">
 						{value.title}
 					</h3>
 					<p class="text-muted-foreground leading-relaxed">
@@ -212,7 +212,7 @@
 <section class="py-16 md:py-20 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Let Results Do the Talking
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -245,7 +245,7 @@
 <section bind:this={reviewsSection} class="py-16 md:py-20 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Don't Take Our Word For It
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -282,7 +282,7 @@
 				<span class="mr-2">✨</span>
 				Our Simple Process
 			</div>
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				How We Transform Your Property
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -324,7 +324,7 @@
 								</div>
 								
 								<div class="space-y-4">
-									<h3 class="text-xl font-bold text-foreground font-[Cantarell] group-hover:text-primary transition-colors duration-300">
+									<h3 class="text-xl font-bold text-foreground font-[Helvetica] group-hover:text-primary transition-colors duration-300">
 										{step.title}
 									</h3>
 									<p class="text-muted-foreground leading-relaxed text-base">
@@ -374,7 +374,7 @@
 <section class="py-16 md:py-20 bg-background">
 	<div class="max-w-5xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Ready to Transform Your Property?
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -399,7 +399,7 @@
 <section class="py-16 bg-background">
 	<div class="max-w-7xl mx-auto px-[6%]">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Popular Service Areas
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">

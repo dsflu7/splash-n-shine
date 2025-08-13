@@ -63,7 +63,7 @@
 <section class="bg-background py-12 lg:py-16">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl lg:text-5xl font-bold mb-6 text-foreground font-[Cantarell]">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-6 text-foreground font-[Helvetica]">
         Professional {service.name} Services
       </h1>
       <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -89,7 +89,7 @@
 <section class="py-16 bg-background">
   <div class="container mx-auto px-4">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground font-[Cantarell]">
+      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground font-[Helvetica]">
         Why Choose Our {service.name} Services?
       </h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -114,7 +114,7 @@
 <section class="py-16 bg-primary/4">
 	<div class="container mx-auto px-4">
 		<div class="max-w-6xl mx-auto">
-			<h2 class="text-3xl lg:text-4xl font-bold text-center mb-4 text-foreground font-[Cantarell]">
+			<h2 class="text-3xl lg:text-4xl font-bold text-center mb-4 text-foreground font-[Helvetica]">
 				See the Difference Our {service.name} Makes
 			</h2>
 			<p class="text-xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
@@ -165,7 +165,7 @@
 <section class="py-16 bg-background">
   <div class="container mx-auto px-4">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground font-[Cantarell]">
+      <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground font-[Helvetica]">
         {service.name} Service Areas
       </h2>
       <div class="text-center mb-8">
@@ -176,11 +176,11 @@
       
       <!-- Primary Service Areas -->
       <div class="mb-12">
-        <h3 class="text-2xl font-semibold text-center mb-8 text-foreground font-[Cantarell]">Primary Service Areas</h3>
+        <h3 class="text-2xl font-semibold text-center mb-8 text-foreground font-[Helvetica]">Primary Service Areas</h3>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {#each primaryAreas as location}
             <div class="bg-card rounded-lg border p-6 text-center hover:shadow-lg hover:border-blue-200/30 transition-all duration-300 group">
-              <h4 class="font-semibold text-lg mb-3 text-foreground font-[Cantarell] group-hover:text-primary transition-colors duration-300">{location.name}</h4>
+              <h4 class="font-semibold text-lg mb-3 text-foreground font-[Helvetica] group-hover:text-primary transition-colors duration-300">{location.name}</h4>
               <p class="text-sm text-muted-foreground mb-4">{location.description}</p>
               <Button variant="outline" size="sm" class="w-full hover:border-blue-300/50 hover:scale-105 transition-all duration-300">
                 <Link href="/locations/{location.id}">
@@ -194,7 +194,7 @@
       
       <!-- All Locations -->
       <div class="text-center">
-        <h3 class="text-2xl font-semibold mb-6 text-foreground font-[Cantarell]">All Service Locations</h3>
+        <h3 class="text-2xl font-semibold mb-6 text-foreground font-[Helvetica]">All Service Locations</h3>
         <div class="flex flex-wrap gap-3 justify-center">
           {#each locations as location}
             <Link 
@@ -214,13 +214,13 @@
 <section class="py-16 bg-primary/3">
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl mx-auto">
-			<h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground font-[Cantarell]">
+			<h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground font-[Helvetica]">
 				Frequently Asked Questions
 			</h2>
 			<Accordion type="multiple" class="space-y-4">
 				{#each service.faqs as faq, index}
 					<AccordionItem value="item-{index}" class="border border-border/30 rounded-lg px-6 py-2 hover:border-blue-200/50 transition-colors duration-300">
-						<AccordionTrigger class="text-left font-semibold hover:text-primary transition-colors duration-300 font-[Cantarell] text-lg">
+						<AccordionTrigger class="text-left font-semibold hover:text-primary transition-colors duration-300 font-[Helvetica] text-lg">
 							{faq.question}
 						</AccordionTrigger>
 						<AccordionContent class="text-muted-foreground leading-relaxed">

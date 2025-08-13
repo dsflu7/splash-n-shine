@@ -102,7 +102,7 @@
         >
           <img src={logo} alt={`${PUBLIC_COMPANY_NAME} Logo`} class="size-12 group-hover:scale-110 transition-transform duration-300" />
           <div class="hidden sm:block">
-            <div class="text-xl font-bold text-foreground font-[Cantarell] leading-tight group-hover:text-primary transition-colors duration-300">
+            <div class="text-xl font-bold text-foreground font-[Helvetica] leading-tight group-hover:text-primary transition-colors duration-300">
               {PUBLIC_COMPANY_NAME}
             </div>
             <div class="text-xs text-muted-foreground font-medium">
@@ -235,7 +235,7 @@
       <div class="flex items-center justify-between p-6 border-b border-border">
         <h2
           id="mobile-menu-title"
-          class="text-lg font-semibold text-foreground font-[Cantarell]"
+          class="text-lg font-semibold text-foreground font-[Helvetica]"
         >
           Menu
         </h2>
@@ -268,7 +268,7 @@
               {#if item.items}
                 <!-- Category with sub-items -->
                 <h3
-                  class="text-sm font-semibold text-foreground font-[Cantarell] uppercase tracking-wide"
+                  class="text-sm font-semibold text-foreground font-[Helvetica] uppercase tracking-wide"
                 >
                   {item.label}
                 </h3>

@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { gsap } from "gsap";
+  import { Draggable } from "gsap/Draggable";
+  import { onMount, onDestroy } from "svelte";
+
   interface Props {
     beforeImage: string;
     afterImage: string;
@@ -7,82 +11,98 @@
     className?: string;
   }
 
-  let { 
-    beforeImage, 
-    afterImage, 
-    altText, 
+  let {
+    beforeImage,
+    afterImage,
+    altText,
     title = "Before & After Transformation",
-    className = ""
+    className = "",
   }: Props = $props();
 
   let sliderPosition = $state(50);
-  let isDragging = $state(false);
   let containerRef: HTMLDivElement;
+  let sliderRef: HTMLDivElement;
+  let draggableInstance: Draggable[];
 
-  function updateSliderPosition(clientX: number) {
-    if (!containerRef) return;
-    
-    const rect = containerRef.getBoundingClientRect();
-    const position = ((clientX - rect.left) / rect.width) * 100;
-    sliderPosition = Math.max(0, Math.min(100, position));
-  }
+  onMount(() => {
+    if (!containerRef || !sliderRef) return;
 
-  function handleMouseDown(event: MouseEvent) {
-    isDragging = true;
-    updateSliderPosition(event.clientX);
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
-  }
+    // Register GSAP plugin
+    gsap.registerPlugin(Draggable);
 
-  function handleMouseMove(event: MouseEvent) {
-    if (!isDragging) return;
-    updateSliderPosition(event.clientX);
-  }
+    // Create draggable instance
+    draggableInstance = Draggable.create(sliderRef, {
+      type: "x",
+      bounds: containerRef,
+      onDrag: function () {
+        const containerWidth = containerRef.offsetWidth;
+        const sliderLeft = this.x;
+        const percentage = (sliderLeft / containerWidth) * 100;
+        sliderPosition = Math.max(0, Math.min(100, percentage));
+      },
+      cursor: "ew-resize",
+      allowContextMenu: true,
+    });
 
-  function handleMouseUp() {
-    isDragging = false;
-    document.removeEventListener('mousemove', handleMouseMove);
-    document.removeEventListener('mouseup', handleMouseUp);
-  }
+    // Set initial position
+    const initialX = (sliderPosition / 100) * containerRef.offsetWidth;
+    gsap.set(sliderRef, { x: initialX });
+  });
 
-  function handleTouchStart(event: TouchEvent) {
-    isDragging = true;
-    updateSliderPosition(event.touches[0].clientX);
-  }
-
-  function handleTouchMove(event: TouchEvent) {
-    if (!isDragging) return;
-    event.preventDefault();
-    updateSliderPosition(event.touches[0].clientX);
-  }
-
-  function handleTouchEnd() {
-    isDragging = false;
-  }
+  onDestroy(() => {
+    // Clean up draggable instances
+    if (draggableInstance) {
+      draggableInstance.forEach((instance) => instance.kill());
+    }
+  });
 
   function handleKeyDown(event: KeyboardEvent) {
-    if (event.key === 'ArrowLeft') {
+    if (event.key === "ArrowLeft") {
       sliderPosition = Math.max(0, sliderPosition - 5);
-    } else if (event.key === 'ArrowRight') {
+      updateSliderVisualPosition();
+    } else if (event.key === "ArrowRight") {
       sliderPosition = Math.min(100, sliderPosition + 5);
+      updateSliderVisualPosition();
     }
+  }
+
+  function updateSliderVisualPosition() {
+    if (!containerRef || !sliderRef) return;
+    const newX = (sliderPosition / 100) * containerRef.offsetWidth;
+    gsap.set(sliderRef, { x: newX });
+  }
+
+  function handleContainerClick(event: MouseEvent) {
+    if (!containerRef || event.target === sliderRef) return;
+
+    const rect = containerRef.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const percentage = (clickX / rect.width) * 100;
+    sliderPosition = Math.max(0, Math.min(100, percentage));
+
+    // Animate to new position
+    const newX = (sliderPosition / 100) * containerRef.offsetWidth;
+    gsap.to(sliderRef, {
+      duration: 0.3,
+      x: newX,
+      ease: "power2.out",
+    });
   }
 </script>
 
 <div class="w-full max-w-4xl mx-auto {className}">
   {#if title}
-    <h3 class="text-2xl font-bold text-foreground text-center mb-6 font-[Cantarell]">
+    <h3
+      class="text-2xl font-bold text-foreground text-center mb-6 font-[Helvetica]"
+    >
       {title}
     </h3>
   {/if}
-  
-  <div 
+
+  <div
     bind:this={containerRef}
     class="relative overflow-hidden rounded-lg shadow-lg bg-card border border-border aspect-[4/3] md:aspect-[16/9] cursor-ew-resize select-none"
-    onmousedown={handleMouseDown}
-    ontouchstart={handleTouchStart}
-    ontouchmove={handleTouchMove}
-    ontouchend={handleTouchEnd}
+    onclick={handleContainerClick}
     onkeydown={handleKeyDown}
     tabindex="0"
     role="slider"
@@ -101,13 +121,15 @@
         decoding="async"
       />
       <!-- After Label -->
-      <div class="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
+      <div
+        class="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-semibold shadow-lg"
+      >
         After
       </div>
     </div>
 
     <!-- Before Image (Clipped) -->
-    <div 
+    <div
       class="absolute inset-0 transition-all duration-75 ease-out"
       style="clip-path: inset(0 {100 - sliderPosition}% 0 0)"
     >
@@ -119,18 +141,23 @@
         decoding="async"
       />
       <!-- Before Label -->
-      <div class="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
+      <div
+        class="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-semibold shadow-lg"
+      >
         Before
       </div>
     </div>
 
     <!-- Slider Handle -->
-    <div 
-      class="absolute top-0 bottom-0 w-1 bg-primary shadow-lg transition-all duration-75 ease-out"
+    <div
+      bind:this={sliderRef}
+      class="absolute top-0 bottom-0 w-1 bg-primary shadow-lg"
       style="left: {sliderPosition}%"
     >
       <!-- Handle Circle -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full shadow-lg border-2 border-primary-foreground flex items-center justify-center cursor-ew-resize hover:scale-110 transition-transform duration-200">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full shadow-lg border-2 border-primary-foreground flex items-center justify-center cursor-ew-resize hover:scale-110 transition-transform duration-200 touch-none"
+      >
         <!-- Drag Lines -->
         <div class="flex space-x-0.5">
           <div class="w-0.5 h-4 bg-primary-foreground rounded-full"></div>

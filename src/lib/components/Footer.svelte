@@ -51,7 +51,7 @@
           <img src={logo} alt={`${PUBLIC_COMPANY_NAME} Logo`} class="h-24 w-24 object-contain hover:scale-105 transition-transform duration-300" />
 
           <!-- Company Name -->
-          <h2 class="text-2xl font-bold text-primary font-[Cantarell]">
+          <h2 class="text-2xl font-bold text-primary font-[Helvetica]">
             {PUBLIC_COMPANY_NAME}
           </h2>
 
@@ -94,7 +94,7 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {#each Object.entries(siteMap) as [category, links]}
           <div class="space-y-4 group">
-            <h3 class="text-primary font-semibold text-lg font-[Cantarell] group-hover:text-blue-400 transition-colors duration-300">
+            <h3 class="text-primary font-semibold text-lg font-[Helvetica] group-hover:text-blue-400 transition-colors duration-300">
               {category}
             </h3>
             <ul class="space-y-2">

@@ -30,7 +30,7 @@
   <div class="max-w-7xl mx-auto px-[6%]">
     <!-- Header -->
     <header class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+      <h1 class="text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
         Get Your Free Quote
       </h1>
       <p
@@ -52,7 +52,7 @@
         <!-- Quick Contact -->
         <div class="bg-card rounded-lg shadow-sm border border-border p-6">
           <h3
-            class="text-xl font-semibold text-foreground mb-4 font-[Cantarell]"
+            class="text-xl font-semibold text-foreground mb-4 font-[Helvetica]"
           >
             Quick Contact
           </h3>
@@ -78,7 +78,7 @@
         <!-- Service Areas -->
         <div class="bg-card rounded-lg shadow-sm border border-border p-6">
           <h3
-            class="text-xl font-semibold text-foreground mb-4 font-[Cantarell]"
+            class="text-xl font-semibold text-foreground mb-4 font-[Helvetica]"
           >
             Service Areas
           </h3>
@@ -101,7 +101,7 @@
         <!-- Business Hours -->
         <div class="bg-card rounded-lg shadow-sm border border-border p-6">
           <h3
-            class="text-xl font-semibold text-foreground mb-4 font-[Cantarell]"
+            class="text-xl font-semibold text-foreground mb-4 font-[Helvetica]"
           >
             Business Hours
           </h3>
@@ -127,7 +127,7 @@
         <!-- Why Choose Us -->
         <div class="bg-card rounded-lg shadow-sm border border-border p-6">
           <h3
-            class="text-xl font-semibold text-foreground mb-4 font-[Cantarell]"
+            class="text-xl font-semibold text-foreground mb-4 font-[Helvetica]"
           >
             Why Choose Us?
           </h3>

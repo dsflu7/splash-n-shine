@@ -64,7 +64,7 @@
 <section class="bg-background py-12 lg:py-16">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl lg:text-5xl font-bold mb-6 text-foreground font-[Cantarell]">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-6 text-foreground font-[Helvetica]">
         Professional Cleaning Services in {location.name}, BC
       </h1>
       <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -113,11 +113,11 @@
       
       {#each Object.entries(servicesByCategory) as [category, categoryServices]}
         <div class="mb-12">
-          <h3 class="text-2xl font-semibold mb-6 text-foreground text-center font-[Cantarell]">{category}</h3>
+          <h3 class="text-2xl font-semibold mb-6 text-foreground text-center font-[Helvetica]">{category}</h3>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {#each categoryServices as service}
               <div class="bg-card rounded-lg border p-6 hover:shadow-lg hover:border-blue-200/30 transition-all duration-300 group">
-                <h4 class="font-semibold text-xl mb-3 text-foreground font-[Cantarell] group-hover:text-primary transition-colors duration-300">{service.name}</h4>
+                <h4 class="font-semibold text-xl mb-3 text-foreground font-[Helvetica] group-hover:text-primary transition-colors duration-300">{service.name}</h4>
                 <p class="text-sm text-muted-foreground mb-4 leading-relaxed">{service.shortDescription}</p>
                 <div class="flex flex-col gap-3">
                   <Button variant="outline" size="sm" class="w-full hover:border-blue-300/50 transition-colors duration-300">

@@ -13,7 +13,7 @@
 	<div class="max-w-4xl mx-auto px-[6%]">
 		<!-- Header -->
 		<header class="text-center mb-12">
-			<h1 class="text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
+			<h1 class="text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Terms & Conditions
 			</h1>
 			<p class="text-muted-foreground">
@@ -24,7 +24,7 @@
 		<!-- Content -->
 		<div class="prose prose-lg max-w-none text-foreground">
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Agreement to Terms
 				</h2>
 				<p class="text-muted-foreground leading-relaxed">
@@ -33,7 +33,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Services Description
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">
@@ -50,12 +50,12 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Service Terms
 				</h2>
 				<div class="space-y-4">
 					<div>
-						<h3 class="text-xl font-medium text-foreground mb-2 font-[Cantarell]">
+						<h3 class="text-xl font-medium text-foreground mb-2 font-[Helvetica]">
 							Scheduling and Access
 						</h3>
 						<ul class="list-disc ml-6 text-muted-foreground space-y-2">
@@ -67,7 +67,7 @@
 					</div>
 
 					<div>
-						<h3 class="text-xl font-medium text-foreground mb-2 font-[Cantarell]">
+						<h3 class="text-xl font-medium text-foreground mb-2 font-[Helvetica]">
 							Payment Terms
 						</h3>
 						<ul class="list-disc ml-6 text-muted-foreground space-y-2">
@@ -81,7 +81,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Customer Responsibilities
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">
@@ -98,7 +98,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Liability and Insurance
 				</h2>
 				<div class="space-y-4">
@@ -106,7 +106,7 @@
 						{PUBLIC_COMPANY_NAME} carries appropriate insurance coverage and takes reasonable precautions to protect your property during service delivery.
 					</p>
 					<div>
-						<h3 class="text-xl font-medium text-foreground mb-2 font-[Cantarell]">
+						<h3 class="text-xl font-medium text-foreground mb-2 font-[Helvetica]">
 							Limitations
 						</h3>
 						<ul class="list-disc ml-6 text-muted-foreground space-y-2">
@@ -120,7 +120,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Service Guarantee
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">
@@ -135,7 +135,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Cancellation Policy
 				</h2>
 				<div class="space-y-4">
@@ -152,7 +152,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Intellectual Property
 				</h2>
 				<p class="text-muted-foreground leading-relaxed">
@@ -161,7 +161,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Privacy Policy
 				</h2>
 				<p class="text-muted-foreground leading-relaxed">
@@ -170,7 +170,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Dispute Resolution
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">
@@ -185,7 +185,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Changes to Terms
 				</h2>
 				<p class="text-muted-foreground leading-relaxed">
@@ -194,7 +194,7 @@
 			</section>
 
 			<section class="mb-8">
-				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Cantarell]">
+				<h2 class="text-2xl font-semibold text-foreground mb-4 font-[Helvetica]">
 					Contact Information
 				</h2>
 				<p class="text-muted-foreground leading-relaxed mb-4">
