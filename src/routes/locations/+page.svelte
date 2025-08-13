@@ -133,10 +133,10 @@
 `}
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-primary/5 to-primary/10 py-16 md:py-24">
+<section class="relative bg-background py-16 md:py-24">
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl mx-auto text-center">
-			<h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6">
+			<h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 font-[Cantarell]">
 				Serving Communities <span class="text-primary">Across BC</span>
 			</h1>
 			<p class="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -144,12 +144,12 @@
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<Link href="/contact">
-					<Button size="lg" class="text-lg px-8">
+					<Button size="lg" class="text-lg px-8 hover:scale-105 transition-all duration-300">
 						Find Your Local Team
 					</Button>
 				</Link>
 				<Link href={`tel:${PUBLIC_PHONE}`}>
-					<Button variant="outline" size="lg" class="text-lg px-8">
+					<Button variant="outline" size="lg" class="text-lg px-8 hover:scale-105 hover:border-blue-300/50 transition-all duration-300">
 						Call {PUBLIC_PHONE}
 					</Button>
 				</Link>
@@ -162,7 +162,7 @@
 <section class="py-16 md:py-24 bg-background">
 	<div class="container mx-auto px-4">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
 				Our Primary Service Areas
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -172,7 +172,7 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			{#each primaryServiceAreas as location}
-				<div class="group relative bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-all duration-300">
+				<div class="group relative bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg hover:border-blue-200/30 transition-all duration-300">
 					<div class="aspect-[4/3] relative overflow-hidden">
 						<img 
 							src={location.image} 
@@ -182,12 +182,12 @@
 							width="400"
 							height="300"
 						/>
-						<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 					</div>
 					
 					<div class="p-6">
 						<div class="flex items-center justify-between mb-3">
-							<h3 class="text-xl font-semibold text-foreground">
+							<h3 class="text-xl font-semibold text-foreground font-[Cantarell] group-hover:text-primary transition-colors duration-300">
 								{location.name}
 							</h3>
 							<span class="text-sm text-muted-foreground">
@@ -202,7 +202,7 @@
 							<h4 class="text-sm font-medium text-foreground">Popular Services:</h4>
 							<div class="flex flex-wrap gap-2">
 								{#each location.services as service}
-									<span class="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-full">
+									<span class="text-xs bg-blue-50/50 text-muted-foreground px-2 py-1 rounded-full border border-blue-200/30">
 										{service}
 									</span>
 								{/each}
@@ -210,7 +210,7 @@
 						</div>
 						
 						<Link href={location.href}>
-							<Button variant="outline" class="w-full">
+							<Button variant="outline" class="w-full hover:border-blue-300/50 transition-colors duration-300">
 								Learn More
 							</Button>
 						</Link>
@@ -222,10 +222,10 @@
 </section>
 
 <!-- All Locations Grid -->
-<section class="py-16 md:py-20 bg-muted/30">
+<section class="py-16 md:py-20 bg-background">
 	<div class="container mx-auto px-4">
 		<div class="text-center mb-12">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
 				Complete Service Coverage
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -236,8 +236,8 @@
 		<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
 			{#each allLocations as location}
 				<Link href={location.href}>
-					<div class="bg-card border border-border rounded-lg p-4 hover:shadow-md transition-all duration-300 hover:border-primary/50">
-						<h3 class="font-semibold text-foreground mb-1">
+					<div class="bg-card border border-border rounded-lg p-4 hover:shadow-md hover:border-blue-200/30 hover:bg-blue-50/20 transition-all duration-300">
+						<h3 class="font-semibold text-foreground mb-1 font-[Cantarell]">
 							{location.name}
 						</h3>
 						<p class="text-sm text-muted-foreground">
@@ -260,7 +260,7 @@
 <section class="py-16 md:py-20 bg-background">
 	<div class="container mx-auto px-4">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
 				Regional Service Areas
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -270,11 +270,11 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 			{#each serviceAreas as area}
-				<div class="text-center group">
+				<div class="text-center group p-6 rounded-lg border border-transparent hover:border-blue-200/30 hover:bg-card/50 transition-all duration-300">
 					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
 						{area.icon}
 					</div>
-					<h3 class="text-lg font-semibold text-foreground mb-3">
+					<h3 class="text-lg font-semibold text-foreground mb-3 font-[Cantarell] group-hover:text-primary transition-colors duration-300">
 						{area.title}
 					</h3>
 					<p class="text-muted-foreground leading-relaxed">
@@ -287,7 +287,7 @@
 </section>
 
 <!-- Coverage Stats -->
-<section class="py-16 md:py-20 bg-muted/30">
+<section class="py-16 md:py-20 bg-primary/4">
 	<div class="container mx-auto px-4">
 		<Infographic
 			title="Extensive Local Coverage"
@@ -323,7 +323,7 @@
 <section class="py-16 md:py-24 bg-background">
 	<div class="container mx-auto px-4">
 		<div class="text-center mb-16">
-			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
 				Why Choose Local Experts?
 			</h2>
 			<p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -333,11 +333,11 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 			{#each whyLocal as item}
-				<div class="text-center group">
+				<div class="text-center group p-6 rounded-lg border border-transparent hover:border-blue-200/30 hover:bg-card/50 transition-all duration-300">
 					<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
 						{item.icon}
 					</div>
-					<h3 class="text-lg font-semibold text-foreground mb-3">
+					<h3 class="text-lg font-semibold text-foreground mb-3 font-[Cantarell] group-hover:text-primary transition-colors duration-300">
 						{item.title}
 					</h3>
 					<p class="text-muted-foreground leading-relaxed">

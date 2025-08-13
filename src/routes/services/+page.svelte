@@ -6,7 +6,10 @@
   } from "$env/static/public";
   import { Button } from "$lib/components/ui/button";
   import Link from "$lib/components/Link.svelte";
-  import Infographic from "$lib/components/Infographic.svelte";
+  import Inf<!-- Hero Section -->
+<section 
+  class="relative bg-background py-16 md:py-24"
+>phic from "$lib/components/Infographic.svelte";
   import CTA from "$lib/components/CTA.svelte";
   import ProcessSteps from "$lib/components/ProcessSteps.svelte";
 
@@ -239,11 +242,11 @@
 
 <!-- Hero Section -->
 <section
-  class="relative bg-gradient-to-br from-primary/5 to-primary/10 py-16 md:py-24"
+  class="relative bg-primary/10 py-16 md:py-24"
 >
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6">
+      <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 font-[Cantarell]">
         Let Your Property <span class="text-primary">Shine</span>
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -253,10 +256,10 @@
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Link href="/contact">
-          <Button size="lg" class="text-lg px-8">Get Free Estimate</Button>
+          <Button size="lg" class="text-lg px-8 hover:scale-105 transition-all duration-300">Get Free Estimate</Button>
         </Link>
         <Link href={`tel:${PUBLIC_PHONE}`}>
-          <Button variant="outline" size="lg" class="text-lg px-8">
+          <Button variant="outline" size="lg" class="text-lg px-8 hover:scale-105 hover:border-blue-300/50 transition-all duration-300">
             Call {PUBLIC_PHONE}
           </Button>
         </Link>
@@ -269,7 +272,7 @@
 <section class="py-16 md:py-24 bg-background">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
         Choose What Your Property Needs
       </h2>
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -281,11 +284,11 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {#each services as service}
         <div
-          class="group relative bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-all duration-300"
+          class="group relative bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg hover:border-blue-200/30 transition-all duration-300"
         >
           {#if service.popular}
             <div
-              class="absolute top-4 right-4 z-10 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium"
+              class="absolute top-4 right-4 z-10 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium animate-pulse"
             >
               Popular
             </div>
@@ -301,12 +304,12 @@
               height="300"
             />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             ></div>
           </div>
 
           <div class="p-6">
-            <h3 class="text-xl font-semibold text-foreground mb-3">
+            <h3 class="text-xl font-semibold text-foreground mb-3 font-[Cantarell] group-hover:text-primary transition-colors duration-300">
               {service.title}
             </h3>
             <p class="text-muted-foreground mb-4 leading-relaxed">
@@ -316,14 +319,14 @@
             <ul class="space-y-2 mb-6">
               {#each service.features as feature}
                 <li class="flex items-center text-sm text-muted-foreground">
-                  <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                  <div class="w-2 h-2 bg-primary rounded-full mr-3 group-hover:bg-blue-400 transition-colors duration-300"></div>
                   {feature}
                 </li>
               {/each}
             </ul>
 
             <Link href={service.href}>
-              <Button variant="outline" class="w-full">Learn More</Button>
+              <Button variant="outline" class="w-full hover:border-blue-300/50 transition-colors duration-300">Learn More</Button>
             </Link>
           </div>
         </div>
@@ -366,10 +369,10 @@
 </section>
 
 <!-- Why Choose Us -->
-<section class="py-16 md:py-24 bg-muted/50">
+<section class="py-16 md:py-24 bg-primary/4">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Cantarell]">
         Why Choose {PUBLIC_COMPANY_NAME}?
       </h2>
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -380,13 +383,13 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {#each whyChooseUs as item}
-        <div class="text-center group">
+        <div class="text-center group p-6 rounded-lg border border-transparent hover:border-blue-200/30 hover:bg-card/50 transition-all duration-300">
           <div
             class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
           >
             {item.icon}
           </div>
-          <h3 class="text-lg font-semibold text-foreground mb-3">
+          <h3 class="text-lg font-semibold text-foreground mb-3 font-[Cantarell] group-hover:text-primary transition-colors duration-300">
             {item.title}
           </h3>
           <p class="text-muted-foreground leading-relaxed">

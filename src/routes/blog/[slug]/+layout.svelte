@@ -23,7 +23,7 @@
 
 <!-- Related Articles Section -->
 {#if suggestions.length > 0}
-  <section class="bg-muted/20 py-16 sm:py-20 lg:py-24">
+  <section class="bg-background py-16 sm:py-20 lg:py-24">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div in:fadeIn>
         <div class="text-center mb-12">

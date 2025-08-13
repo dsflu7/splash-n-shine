@@ -67,14 +67,23 @@
 <!-- Top Bar with Phone CTA -->
 <div class="bg-primary text-primary-foreground py-3">
   <div class="max-w-7xl mx-auto px-[6%]">
-    <div class="flex items-center justify-center md:justify-end">
+    <div class="flex items-center justify-center md:justify-between">
+      <div class="hidden md:flex items-center space-x-6 text-sm">
+        <div class="flex items-center space-x-2">
+          <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+          <span class="font-medium">Professional Cleaning Services</span>
+        </div>
+        <span class="text-primary-foreground/60">|</span>
+        <span class="font-medium">Licensed & Insured</span>
+      </div>
+      
       <a
         href="tel:{PUBLIC_PHONE}"
-        class="flex items-center space-x-2 hover:opacity-90 transition-opacity duration-200 text-sm font-medium"
+        class="group flex items-center space-x-3 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105"
         aria-label="Call {PUBLIC_COMPANY_NAME} at {PUBLIC_PHONE}"
       >
-        <PhoneCall color="currentColor" class="w-4 h-4" />
-        <span>Call Now: {PUBLIC_PHONE}</span>
+        <PhoneCall color="currentColor" class="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+        <span class="font-semibold">Call Now: {PUBLIC_PHONE}</span>
       </a>
     </div>
   </div>
@@ -88,19 +97,12 @@
       <div class="flex-shrink-0">
         <Link
           href="/"
-          class="flex items-center space-x-3"
+          class="group flex items-center space-x-3 transition-all duration-300"
           aria-label="Go to homepage"
         >
-          <!-- Company Logo -->
-          <!-- <div
-            class="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center shadow-sm"
-          >
-        </div> -->
-        <img src={logo} alt={`${PUBLIC_COMPANY_NAME} Logo`} class="size-12" />
+          <img src={logo} alt={`${PUBLIC_COMPANY_NAME} Logo`} class="size-12 group-hover:scale-110 transition-transform duration-300" />
           <div class="hidden sm:block">
-            <div
-              class="text-xl font-bold text-foreground font-[Cantarell] leading-tight"
-            >
+            <div class="text-xl font-bold text-foreground font-[Cantarell] leading-tight group-hover:text-primary transition-colors duration-300">
               {PUBLIC_COMPANY_NAME}
             </div>
             <div class="text-xs text-muted-foreground font-medium">

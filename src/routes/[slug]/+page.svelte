@@ -65,7 +65,7 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="bg-primary/5 py-12 lg:py-16">
+<section class="bg-background py-12 lg:py-16">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
@@ -128,7 +128,7 @@
           <div class="space-y-4">
             {#each location.localFeatures.slice(0, 4) as feature}
               <div class="flex items-start space-x-3">
-                <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0 mt-1">
+                <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-1">
                   <svg class="w-4 h-4 text-secondary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -210,7 +210,7 @@
 {/if}
 
 <!-- FAQ Section -->
-<section class="py-16 bg-secondary/30">
+<section class="py-16 bg-background">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground">

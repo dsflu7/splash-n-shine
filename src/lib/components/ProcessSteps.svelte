@@ -64,7 +64,7 @@
 	);
 </script>
 
-<section class="py-16 bg-secondary/30 {className}">
+<section class="py-16 bg-primary/3 {className}">
 	<div class="container mx-auto px-4">
 		<div class="max-w-6xl mx-auto">
 			<!-- Header -->
@@ -86,7 +86,7 @@
 			>
 				<!-- Background connector line for horizontal variant -->
 				{#if variant === 'horizontal' && showConnectors}
-					<div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -translate-y-1/2 z-0"></div>
+					<div class="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-primary/20 -translate-y-1/2 z-0"></div>
 				{/if}
 
 				{#each processSteps as step, index (step.step || index)}
@@ -96,13 +96,13 @@
 					>
 						<!-- Vertical connector line -->
 						{#if variant === 'vertical' && showConnectors && index < processSteps.length - 1}
-							<div class="absolute left-6 top-20 w-0.5 h-16 bg-gradient-to-b from-primary/60 via-primary/30 to-transparent z-0"></div>
+							<div class="absolute left-6 top-20 w-0.5 h-16 bg-primary/40 z-0"></div>
 						{/if}
 
 						<!-- Step container -->
 						<div class="relative bg-card/90 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-2xl hover:border-primary/40 transition-all duration-500 group-hover:-translate-y-2 overflow-hidden">
 							<!-- Background glow effect -->
-							<div class="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+							<div class="absolute inset-0 bg-blue-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 							
 							<!-- Floating particles effect -->
 							<div class="absolute top-4 right-4 w-2 h-2 bg-primary/20 rounded-full animate-pulse"></div>
@@ -112,7 +112,7 @@
 							<div class="relative z-10 {variant === 'horizontal' ? 'text-center' : 'flex items-start space-x-6'}">
 								<!-- Step icon/number -->
 								<div class="flex-shrink-0 {variant === 'horizontal' ? 'mx-auto mb-6' : ''} relative">
-									<div class="w-16 h-16 bg-gradient-to-br from-primary via-primary to-primary/80 text-primary-foreground rounded-xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative overflow-hidden">
+									<div class="w-16 h-16 bg-primary text-primary-foreground rounded-xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative overflow-hidden">
 										<!-- Inner glow -->
 										<div class="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 										
@@ -151,7 +151,7 @@
 									<!-- Subtle progress bar -->
 									<div class="mt-6 h-1 bg-border/30 rounded-full overflow-hidden">
 										<div 
-											class="h-full bg-gradient-to-r from-primary to-primary/70 rounded-full transition-all duration-1000 group-hover:shadow-glow"
+											class="h-full bg-primary rounded-full transition-all duration-1000 group-hover:shadow-glow"
 											style="width: {((index + 1) / processSteps.length) * 100}%"
 										></div>
 									</div>
@@ -166,9 +166,9 @@
 			{#if variant === 'vertical'}
 				<div class="text-center mt-16">
 					<div class="inline-flex items-center space-x-2 text-muted-foreground">
-						<div class="w-8 h-0.5 bg-gradient-to-r from-transparent to-primary/30"></div>
+						<div class="w-8 h-0.5 bg-primary/20"></div>
 						<span class="text-sm font-medium">Simple, professional, reliable</span>
-						<div class="w-8 h-0.5 bg-gradient-to-l from-transparent to-primary/30"></div>
+						<div class="w-8 h-0.5 bg-primary/20"></div>
 					</div>
 				</div>
 			{/if}

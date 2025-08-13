@@ -60,7 +60,7 @@
   {@html `<script type="application/ld+json">${JSON.stringify(data.structuredData)}</script>`}
 </svelte:head>
 
-<div class="min-h-screen bg-gradient-to-b from-background to-muted/20">
+<div class="min-h-screen bg-background">
   <!-- Hero Image -->
   {#if data.blog.image?.asset?.url}
     <div class="w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] overflow-hidden">

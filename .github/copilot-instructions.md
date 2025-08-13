@@ -72,6 +72,7 @@ applyTo: "**"
 - **Dev**: `pnpm run dev` (Vite dev server)
 - **Type Checking**: `pnpm run check` or `pnpm run check:watch`
 - Deployment configured for Vercel via `@sveltejs/adapter-vercel`
+- DO NOT RUN THE DEV SERVER OVER AND OVER AGAIN, IT WILL ALWAYS BE RUNNIG, JUST TELL ME TO CHECK IT DON'T RUNN IT.
 
 ## Figma Integration Rules
 - The Figma Dev Mode MCP Server provides an assets endpoint for images and SVGs

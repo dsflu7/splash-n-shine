@@ -180,7 +180,7 @@
 							onclick={() => toggleService(service.id)}
 							class="relative p-4 border-2 rounded-lg text-left transition-all duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/20
 								{selectedServices.includes(service.id) 
-									? 'border-primary bg-primary/5' 
+									? 'border-primary bg-primary/10' 
 									: 'border-border hover:border-primary/50'}"
 						>
 							{#if service.popular}
@@ -228,7 +228,7 @@
 							onclick={() => selectedPropertyType = type.id}
 							class="p-4 border-2 rounded-lg text-center transition-all duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/20
 								{selectedPropertyType === type.id 
-									? 'border-primary bg-primary/5' 
+									? 'border-primary bg-primary/10' 
 									: 'border-border hover:border-primary/50'}"
 						>
 							<div class="text-3xl mb-2">
@@ -255,7 +255,7 @@
 							onclick={() => selectedTimeFrame = timeFrame.id}
 							class="p-4 border-2 rounded-lg text-left transition-all duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-primary/20
 								{selectedTimeFrame === timeFrame.id 
-									? 'border-primary bg-primary/5' 
+									? 'border-primary bg-primary/10' 
 									: 'border-border hover:border-primary/50'}"
 						>
 							<div class="font-medium text-foreground mb-1">

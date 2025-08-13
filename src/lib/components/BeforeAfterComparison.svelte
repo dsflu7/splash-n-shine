@@ -119,7 +119,7 @@
         decoding="async"
       />
       <!-- Before Label -->
-      <div class="absolute top-4 left-4 bg-muted text-muted-foreground px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
+      <div class="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-semibold shadow-lg">
         Before
       </div>
     </div>

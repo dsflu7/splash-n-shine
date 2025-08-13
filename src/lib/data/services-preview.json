@@ -3,7 +3,7 @@
     "title": "Window Cleaning",
     "desc": "Crystal-clear windows inside and out with screen cleaning and streak-free professional results",
     "icon": "🪟",
-    "image": "/assets/services/window-cleaning-preview.webp",
+    "image": "https://cdn.sanity.io/files/ws2fgpe5/production/5eff2b73137d1c4a1936381e17515d23af4477bc.webp",
     "href": "/services/window-cleaning",
     "popular": true
   },
@@ -11,35 +11,35 @@
     "title": "Pressure Washing",
     "desc": "Professional high-pressure cleaning that removes dirt, grime, and stains from all exterior surfaces",
     "icon": "🚿",
-    "image": "/assets/services/pressure-washing-preview.webp",
+    "image": "https://cdn.sanity.io/files/ws2fgpe5/production/3c97d10d7b69ceec5d190891c35c99e0eee2f210.webp",
     "href": "/services/pressure-washing"
   },
   {
     "title": "House Washing",
     "desc": "Complete exterior house cleaning to restore your home's curb appeal and protect your investment",
     "icon": "🏡",
-    "image": "/assets/services/house-washing-preview.webp",
+    "image": "https://cdn.sanity.io/files/ws2fgpe5/production/6a99ac3d0a536dd54fe2c5e41a2ffdca8b11960d.jpg",
     "href": "/services/house-washing"
   },
   {
     "title": "Gutter Cleaning",
     "desc": "Complete gutter cleaning and maintenance to protect your home from water damage",
     "icon": "🏘️",
-    "image": "/assets/services/gutter-cleaning-preview.webp",
+    "image": "https://cdn.sanity.io/files/ws2fgpe5/production/2dce3b3d4def977ccea4bf8c1cef5e981342327f.webp",
     "href": "/services/gutter-cleaning"
   },
   {
     "title": "Roof Cleaning",
     "desc": "Safe roof cleaning to remove moss, algae, and debris while preserving your roof's integrity",
     "icon": "🏗️",
-    "image": "/assets/services/roof-cleaning-preview.webp",
+    "image": "https://cdn.sanity.io/files/ws2fgpe5/production/c8e5920de6436c1e190143d5604a7da9dcc95708.webp",
     "href": "/services/roof-cleaning"
   },
   {
     "title": "Commercial Cleaning",
     "desc": "Professional cleaning services for businesses, storefronts, and commercial properties",
     "icon": "🏢",
-    "image": "/assets/services/commercial-cleaning-preview.webp",
+    "image": "https://cdn.sanity.io/files/ws2fgpe5/production/481fbe2710deb835bcf264e96c174702e5cec635.webp",
     "href": "/services/commercial-cleaning"
   }
 ]

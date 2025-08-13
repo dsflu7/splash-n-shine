@@ -102,7 +102,7 @@
 
 <div class="min-h-screen bg-background">
 	<!-- Hero Section -->
-	<section class="relative bg-primary/5 py-16">
+	<section class="relative bg-background py-16">
 		<div class="container mx-auto px-4">
 			<div class="text-center max-w-4xl mx-auto">
 				<h1 class="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -139,7 +139,7 @@
 	</section>
 
 	<!-- Filters & Controls -->
-	<section class="py-8 border-b bg-secondary/30">
+	<section class="py-8 border-b bg-background">
 		<div class="container mx-auto px-4">
 			<div class="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
 				<!-- Filters -->
@@ -232,7 +232,7 @@
 										{#if project.services && project.services.length > 0}
 											<div class="flex flex-wrap gap-2 mb-3">
 												{#each project.services as service}
-													<span class="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded">
+													<span class="text-xs bg-primary text-primary-foreground px-2 py-1 rounded">
 														{service.title}
 													</span>
 												{/each}

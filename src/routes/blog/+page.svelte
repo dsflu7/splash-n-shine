@@ -43,7 +43,7 @@
   {@html `<script type="application/ld+json">${JSON.stringify(data.structuredData)}</script>`}
 </svelte:head>
 
-<div class="min-h-screen bg-gradient-to-b from-background to-muted/20 mt-24">
+<div class="min-h-screen bg-background mt-24">
   <!-- Hero Section -->
   <section class="py-12 sm:py-16 lg:py-20">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

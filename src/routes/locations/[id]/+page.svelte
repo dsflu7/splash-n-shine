@@ -56,39 +56,39 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="bg-primary/5 py-12 lg:py-16">
+<section class="bg-background py-12 lg:py-16">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-6 text-foreground font-[Cantarell]">
         Professional Cleaning Services in {location.name}, BC
       </h1>
       <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
         {location.description}
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-sm">
-        <div class="bg-background p-4 rounded-lg border">
+        <div class="bg-background p-4 rounded-lg border border-border hover:border-blue-200/30 hover:shadow-md transition-all duration-300">
           <div class="font-semibold text-foreground">Happy Customers</div>
           <div class="text-primary text-2xl font-bold">300+</div>
           <div class="text-muted-foreground text-xs">Local Homes & Businesses</div>
         </div>
-        <div class="bg-background p-4 rounded-lg border">
+        <div class="bg-background p-4 rounded-lg border border-border hover:border-blue-200/30 hover:shadow-md transition-all duration-300">
           <div class="font-semibold text-foreground">Projects Completed</div>
           <div class="text-primary text-2xl font-bold">1,200+</div>
           <div class="text-muted-foreground text-xs">Successful Services</div>
         </div>
-        <div class="bg-background p-4 rounded-lg border">
+        <div class="bg-background p-4 rounded-lg border border-border hover:border-blue-200/30 hover:shadow-md transition-all duration-300">
           <div class="font-semibold text-foreground">Response Time</div>
           <div class="text-primary text-2xl font-bold">24hrs</div>
           <div class="text-muted-foreground text-xs">Average Quote Response</div>
         </div>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button size="lg" variant="default">
+        <Button size="lg" variant="default" class="hover:scale-105 transition-all duration-300">
           <Link href="/quote" class="flex items-center gap-2 text-primary-foreground">
             Get Free Quote
           </Link>
         </Button>
-        <Button size="lg" variant="outline">
+        <Button size="lg" variant="outline" class="hover:scale-105 hover:border-blue-300/50 transition-all duration-300">
           <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
             Call (604) XXX-XXXX
           </Link>
@@ -108,19 +108,19 @@
       
       {#each Object.entries(servicesByCategory) as [category, categoryServices]}
         <div class="mb-12">
-          <h3 class="text-2xl font-semibold mb-6 text-foreground text-center">{category}</h3>
+          <h3 class="text-2xl font-semibold mb-6 text-foreground text-center font-[Cantarell]">{category}</h3>
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {#each categoryServices as service}
-              <div class="bg-card rounded-lg border p-6 hover:shadow-lg transition-shadow">
-                <h4 class="font-semibold text-xl mb-3 text-foreground">{service.name}</h4>
+              <div class="bg-card rounded-lg border p-6 hover:shadow-lg hover:border-blue-200/30 transition-all duration-300 group">
+                <h4 class="font-semibold text-xl mb-3 text-foreground font-[Cantarell] group-hover:text-primary transition-colors duration-300">{service.name}</h4>
                 <p class="text-sm text-muted-foreground mb-4 leading-relaxed">{service.shortDescription}</p>
                 <div class="flex flex-col gap-3">
-                  <Button variant="outline" size="sm" class="w-full">
+                  <Button variant="outline" size="sm" class="w-full hover:border-blue-300/50 transition-colors duration-300">
                     <Link href="/services/{service.id}">
                       Learn More
                     </Link>
                   </Button>
-                  <Button size="sm" class="w-full">
+                  <Button size="sm" class="w-full hover:scale-105 transition-all duration-300">
                     <Link href="/{service.id}-{location.id}" class="text-primary-foreground">
                       Get {service.name} in {location.name}
                     </Link>
@@ -136,7 +136,7 @@
 </section>
 
 <!-- Service Areas -->
-<section class="py-16 bg-secondary/30">
+<section class="py-16 bg-background">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground">

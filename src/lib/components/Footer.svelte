@@ -40,7 +40,7 @@
   ];
 </script>
 
-<footer class="bg-foreground text-muted px-[6%] py-16">
+<footer class="bg-secondary text-secondary-foreground px-[6%] py-16">
   <div class="max-w-7xl mx-auto">
     <!-- Main Footer Content: Logo Left, Sitemap Right -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
@@ -48,10 +48,10 @@
       <div class="flex flex-col items-center lg:items-start space-y-6">
         <div class="flex flex-col items-center lg:items-start space-y-4">
           <!-- Logo -->
-          <img src={logo} alt={`${PUBLIC_COMPANY_NAME} Logo`} class="h-24 w-24 object-contain" />
+          <img src={logo} alt={`${PUBLIC_COMPANY_NAME} Logo`} class="h-24 w-24 object-contain hover:scale-105 transition-transform duration-300" />
 
           <!-- Company Name -->
-          <h2 class="text-2xl font-bold text-white font-[Cantarell]">
+          <h2 class="text-2xl font-bold text-primary font-[Cantarell]">
             {PUBLIC_COMPANY_NAME}
           </h2>
 
@@ -68,7 +68,7 @@
         <!-- Call to Action -->
         <Link
           href="/contact"
-          class="bg-primary text-primary-foreground px-6 py-3 rounded-md font-semibold hover:bg-primary/90 transition-colors duration-200"
+          class="bg-primary text-primary-foreground px-6 py-3 rounded-md font-semibold hover:bg-primary/90 hover:scale-105 transition-all duration-300"
           aria-label="Open quote request form"
         >
           Get Free Quote
@@ -81,7 +81,7 @@
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-muted hover:text-white transition-colors duration-200"
+              class="text-muted-foreground hover:text-blue-400 hover:scale-110 transition-all duration-300"
               aria-label="Visit our {social.label} page"
             >
               {social.label}
@@ -93,8 +93,8 @@
       <!-- Right Side: Sitemap -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {#each Object.entries(siteMap) as [category, links]}
-          <div class="space-y-4">
-            <h3 class="text-white font-semibold text-lg font-[Cantarell]">
+          <div class="space-y-4 group">
+            <h3 class="text-primary font-semibold text-lg font-[Cantarell] group-hover:text-blue-400 transition-colors duration-300">
               {category}
             </h3>
             <ul class="space-y-2">
@@ -102,7 +102,7 @@
                 <li>
                   <a
                     href={link.route}
-                    class="text-muted hover:text-white transition-colors duration-200 text-sm"
+                    class="text-muted-foreground hover:text-blue-300 hover:translate-x-1 transition-all duration-200 text-sm inline-block"
                     aria-label="Go to {link.label} page"
                   >
                     {link.label}
@@ -116,7 +116,7 @@
     </div>
 
     <!-- Bottom Section: Copyright and Credits -->
-    <div class="border-t border-muted/20 pt-8">
+    <div class="border-t border-muted-foreground/20 pt-8">
       <div
         class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
       >
@@ -136,7 +136,7 @@
               href="https://www.rightmarketing.ca"
               target="_blank"
               rel="dofollow"
-              class="text-primary hover:text-primary/80 transition-colors font-semibold"
+              class="text-blue-400 hover:text-blue-300 transition-colors font-semibold"
             >
               rightmarketing.ca
             </a>
