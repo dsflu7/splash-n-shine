@@ -71,7 +71,7 @@
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button size="lg" variant="default" class="hover:scale-105 transition-all duration-300">
-          <Link href="/quote" class="flex items-center gap-2 text-primary-foreground">
+          <Link href="/contact" class="flex items-center gap-2 text-primary-foreground">
             Get Free Quote
           </Link>
         </Button>
@@ -142,7 +142,7 @@
       
       <div class="text-center mt-12">
         <Button size="lg" variant="default" class="hover:scale-105 transition-all duration-300">
-          <Link href="/quote" class="flex items-center gap-2 text-primary-foreground">
+          <Link href="/contact" class="flex items-center gap-2 text-primary-foreground">
             Get Similar Results for Your Property
           </Link>
         </Button>
@@ -236,5 +236,5 @@
   title="Ready for Professional {data.service.name}?"
   subtitle="Join thousands of satisfied customers who trust Splash & Shine for their {data.service.name.toLowerCase()} needs."
   primaryButtonText="Get Your Free Quote Today"
-  primaryButtonHref="/quote"
+  primaryButtonHref="/contact"
 />

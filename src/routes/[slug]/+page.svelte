@@ -93,7 +93,7 @@
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button size="lg" variant="default">
-          <Link href="/quote" class="flex items-center gap-2 text-primary-foreground">
+          <Link href="/contact" class="flex items-center gap-2 text-primary-foreground">
             Get Free {location.name} Quote
           </Link>
         </Button>
@@ -265,7 +265,7 @@
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Button size="lg" variant="secondary">
-          <Link href="/quote" class="flex items-center gap-2">
+          <Link href="/contact" class="flex items-center gap-2">
             Get Your Free {location.name} Quote
           </Link>
         </Button>
