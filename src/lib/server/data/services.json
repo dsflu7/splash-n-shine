@@ -58,6 +58,14 @@
       "window cleaning surrey",
       "window cleaning burnaby",
       "window cleaning richmond"
+    ],
+    "beforeAfterExamples": [
+      {
+        "beforeImage": "/assets/before-after/window-cleaning-before-1.webp",
+        "afterImage": "/assets/before-after/window-cleaning-after-1.webp",
+        "title": "Window Cleaning Results",
+        "altText": "Professional window cleaning transformation"
+      }
     ]
   },
   "pressure-washing": {

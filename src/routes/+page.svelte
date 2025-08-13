@@ -236,13 +236,13 @@
 				className="mb-12"
 			/>
 			
-			<!-- Driveway Pressure Washing Before/After -->
 			<BeforeAfterComparison
 				beforeImage="https://cdn.sanity.io/files/ws2fgpe5/production/4eb6bc0c0429bd9229b86dbec6aec01d8aa1e7d6.webp"
 				afterImage="https://cdn.sanity.io/files/ws2fgpe5/production/94f4132b51090e478da9820a1835189c20a9ae19.webp"
-				altText="Driveway pressure washing before and after showing clean concrete"
-				title="Driveway Pressure Washing Results"
+				altText="Roof cleaning transformation showing removal of moss, algae, and debris for improved appearance and longevity"
+				title="Roof Cleaning Transformation"
 			/>
+			
 		</div>
 	</div>
 </section>

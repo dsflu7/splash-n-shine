@@ -1,6 +1,89 @@
 import servicesData from './data/services.json';
 import locationsData from './data/locations.json';
 
+// Before/After image interface
+export interface BeforeAfterExample {
+  beforeImage: string;
+  afterImage: string;
+  title: string;
+  altText: string;
+}
+
+// Homepage/UI-specific interfaces
+export interface ServicePreview {
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+  image: string;
+  href: string;
+  popular: boolean;
+  icon: string;
+  beforeAfterExamples?: BeforeAfterExample[];
+}
+
+export interface ServiceHighlight {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface ServicesData {
+  services: ServicePreview[];
+  whyChooseUs: ServiceHighlight[];
+  serviceHighlights: ServiceHighlight[];
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+    ogImage: string;
+  };
+}
+
+export interface PrimaryServiceArea {
+  id: string;
+  name: string;
+  population: string;
+  description: string;
+  services: string[];
+  image: string;
+  href: string;
+}
+
+export interface ServiceArea {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface WhyLocalItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface LocationStat {
+  title: string;
+  value: string;
+  description: string;
+  icon: string;
+}
+
+export interface LocationsData {
+  primaryServiceAreas: PrimaryServiceArea[];
+  allLocations: Location[];
+  serviceAreas: ServiceArea[];
+  whyLocal: WhyLocalItem[];
+  locationStats: LocationStat[];
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+    ogImage: string;
+  };
+}
+
+// Detailed service/location interfaces for CMS data
 export interface Service {
   id: string;
   name: string;
@@ -16,6 +99,7 @@ export interface Service {
   primaryKeywords: string[];
   secondaryKeywords: string[];
   localKeywords: string[];
+  beforeAfterExamples?: BeforeAfterExample[];
 }
 
 export interface Location {

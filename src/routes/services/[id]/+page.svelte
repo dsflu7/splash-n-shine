@@ -23,16 +23,6 @@
   
   const { service, locations, metaTitle, metaDescription, serviceStructuredData, faqStructuredData } = data;
   const primaryAreas = locations.slice(0, 6); // Show top 6 service areas
-  
-  // Sample before/after images - in production, these would come from the service data
-  const beforeAfterExamples = [
-    {
-      beforeImage: `/assets/before-after/${service.id}-before-1.webp`,
-      afterImage: `/assets/before-after/${service.id}-after-1.webp`,
-      title: `${service.name} Results`,
-      altText: `Professional ${service.name.toLowerCase()} transformation`
-    }
-  ];
 </script>
 
 <svelte:head>
@@ -124,17 +114,25 @@
 			<p class="text-xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
 				Professional {service.name.toLowerCase()} delivers remarkable transformations. 
 				See actual before and after results from our recent projects.
-			</p>      {#each beforeAfterExamples as example}
-        <div class="mb-12">
-          <BeforeAfterComparison 
-            beforeImage={example.beforeImage}
-            afterImage={example.afterImage}
-            altText={example.altText}
-            title={example.title}
-            className="max-w-4xl mx-auto"
-          />
-        </div>
-      {/each}
+			</p>
+			
+			{#if service.beforeAfterExamples && service.beforeAfterExamples.length > 0}
+				{#each service.beforeAfterExamples as example}
+					<div class="mb-12">
+						<BeforeAfterComparison 
+							beforeImage={example.beforeImage}
+							afterImage={example.afterImage}
+							altText={example.altText}
+							title={example.title}
+							className="max-w-4xl mx-auto"
+						/>
+					</div>
+				{/each}
+			{:else}
+				<div class="text-center text-muted-foreground mb-12">
+					<p>Before and after examples coming soon for {service.name.toLowerCase()} services.</p>
+				</div>
+			{/if}
       
       <div class="text-center mt-12">
         <Button size="lg" variant="default" class="hover:scale-105 transition-all duration-300">
@@ -216,7 +214,7 @@
 			<Accordion type="multiple" class="space-y-4">
 				{#each service.faqs as faq, index}
 					<AccordionItem value="item-{index}" class="border border-border/30 rounded-lg px-6 py-2 hover:border-blue-200/50 transition-colors duration-300">
-						<AccordionTrigger class="text-left font-semibold hover:text-primary transition-colors duration-300 font-[Cantarell]">
+						<AccordionTrigger class="text-left font-semibold hover:text-primary transition-colors duration-300 font-[Cantarell] text-lg">
 							{faq.question}
 						</AccordionTrigger>
 						<AccordionContent class="text-muted-foreground leading-relaxed">
