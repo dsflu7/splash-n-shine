@@ -1,261 +1,192 @@
 {
 	"services": [
 		{
-			"id": "window-cleaning",
-			"title": "Window Cleaning",
-			"description": "Crystal-clean windows inside and out, including screens and sills for a spotless, streak-free finish.",
+			"id": "primary-service",
+			"title": "Primary Service",
+			"description": "Professional primary service delivery with attention to detail and guaranteed satisfaction.",
 			"features": [
-				"Interior & exterior cleaning",
-				"Screen cleaning",
-				"Sill & frame cleaning",
-				"Streak-free guarantee"
+				"Comprehensive service delivery",
+				"Professional consultation",
+				"Quality assurance",
+				"Satisfaction guarantee"
 			],
-			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/5eff2b73137d1c4a1936381e17515d23af4477bc.webp?w=400&h=300&fit=crop&auto=format&q=80",
-			"href": "/services/window-cleaning",
+			"image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&auto=format&q=80",
+			"href": "/services/primary-service",
 			"popular": true,
-			"icon": "🪟",
+			"icon": "🔧",
 			"beforeAfterExamples": [
 				{
-					"beforeImage": "/assets/before-after/window-cleaning-before-1.webp",
-					"afterImage": "/assets/before-after/window-cleaning-after-1.webp",
-					"title": "Window Cleaning Results",
-					"altText": "Professional window cleaning transformation"
+					"beforeImage": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop&auto=format&q=80",
+					"afterImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&auto=format&q=80",
+					"title": "Primary Service Results",
+					"altText": "Professional primary service transformation"
 				}
 			]
 		},
 		{
-			"id": "pressure-washing",
-			"title": "Pressure Washing",
-			"description": "Professional high-pressure cleaning to remove dirt, grime, and stains from driveways, sidewalks, decks, and exterior surfaces.",
+			"id": "secondary-service",
+			"title": "Secondary Service",
+			"description": "Expert secondary service solutions using modern techniques and professional equipment.",
 			"features": [
-				"Driveway cleaning",
-				"Sidewalk restoration",
-				"Deck & patio cleaning",
-				"Building exterior wash"
+				"Advanced techniques",
+				"Professional equipment",
+				"Expert consultation",
+				"Quality results"
 			],
-			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/3c97d10d7b69ceec5d190891c35c99e0eee2f210.webp?w=400&h=300&fit=crop&auto=format&q=80",
-			"href": "/services/pressure-washing",
+			"image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&auto=format&q=80",
+			"href": "/services/secondary-service",
 			"popular": false,
-			"icon": "🚿",
+			"icon": "⚡",
 			"beforeAfterExamples": [
 				{
-					"beforeImage": "/assets/before-after/pressure-washing-before-1.webp",
-					"afterImage": "/assets/before-after/pressure-washing-after-1.webp",
-					"title": "Pressure Washing Results",
-					"altText": "Professional pressure washing transformation"
+					"beforeImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&auto=format&q=80",
+					"afterImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&auto=format&q=80",
+					"title": "Secondary Service Results",
+					"altText": "Professional secondary service transformation"
 				}
 			]
 		},
 		{
-			"id": "house-washing",
-			"title": "House Washing",
-			"description": "Complete exterior house washing to restore your home's curb appeal and protect your investment.",
+			"id": "premium-service",
+			"title": "Premium Service",
+			"description": "Comprehensive premium service package with enhanced features and premium support.",
 			"features": [
-				"Siding cleaning",
-				"Trim & detail work",
-				"Soft wash technology",
-				"Eco-friendly solutions"
+				"Premium package",
+				"Enhanced features",
+				"Priority support",
+				"Extended warranty"
 			],
-			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/6a99ac3d0a536dd54fe2c5e41a2ffdca8b11960d.jpg",
-			"href": "/services/house-washing",
+			"image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop&auto=format&q=80",
+			"href": "/services/premium-service",
+			"popular": true,
+			"icon": "⭐",
+			"beforeAfterExamples": [
+				{
+					"beforeImage": "https://images.unsplash.com/photo-1486312338219-ce68ba2077dd?w=400&h=300&fit=crop&auto=format&q=80",
+					"afterImage": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&auto=format&q=80",
+					"title": "Premium Service Results",
+					"altText": "Professional premium service transformation"
+				}
+			]
+		},
+		{
+			"id": "maintenance-service",
+			"title": "Maintenance Service",
+			"description": "Regular maintenance service to keep your investment in top condition year-round.",
+			"features": [
+				"Regular maintenance",
+				"Preventive care",
+				"Scheduled service",
+				"Long-term protection"
+			],
+			"image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&auto=format&q=80",
+			"href": "/services/maintenance-service",
 			"popular": false,
-			"icon": "🏡",
+			"icon": "🛠️",
 			"beforeAfterExamples": [
 				{
-					"beforeImage": "https://cdn.sanity.io/files/ws2fgpe5/production/1792e570b24374a784ba3db66a9a89c233a93e18.jpg",
-					"afterImage": "https://cdn.sanity.io/files/ws2fgpe5/production/5de4e0f59ab64d6994f54898e1ea799554c6b08f.jpg",
-					"title": "House Washing Results",
-					"altText": "Professional house washing transformation"
+					"beforeImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&auto=format&q=80",
+					"afterImage": "https://images.unsplash.com/photo-1486312338219-ce68ba2077dd?w=400&h=300&fit=crop&auto=format&q=80",
+					"title": "Maintenance Service Results",
+					"altText": "Professional maintenance service transformation"
 				}
 			]
 		},
 		{
-			"id": "gutter-cleaning",
-			"title": "Gutter Cleaning",
-			"description": "Complete gutter cleaning and maintenance to protect your home from water damage and ensure proper drainage.",
+			"id": "specialized-service",
+			"title": "Specialized Service",
+			"description": "Specialized service for unique needs using advanced techniques and professional equipment.",
 			"features": [
-				"Debris removal",
-				"Downspout clearing",
-				"Gutter inspection",
-				"Minor repair identification"
+				"Specialized techniques",
+				"Custom solutions",
+				"Expert analysis",
+				"Advanced equipment"
 			],
-			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/2dce3b3d4def977ccea4bf8c1cef5e981342327f.webp",
-			"href": "/services/gutter-cleaning",
+			"image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&auto=format&q=80",
+			"href": "/services/specialized-service",
 			"popular": false,
-			"icon": "🏘️",
+			"icon": "🎯",
 			"beforeAfterExamples": [
 				{
-					"beforeImage": "/assets/before-after/gutter-cleaning-before-1.webp",
-					"afterImage": "/assets/before-after/gutter-cleaning-after-1.webp",
-					"title": "Gutter Cleaning Results",
-					"altText": "Professional gutter cleaning transformation"
+					"beforeImage": "https://images.unsplash.com/photo-1486312338219-ce68ba2077dd?w=400&h=300&fit=crop&auto=format&q=80",
+					"afterImage": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&auto=format&q=80",
+					"title": "Specialized Service Results",
+					"altText": "Professional specialized service transformation"
 				}
 			]
 		},
 		{
-			"id": "roof-cleaning",
-			"title": "Roof Cleaning",
-			"description": "Safe, effective roof cleaning to remove moss, algae, and debris while preserving your roof's integrity.",
+			"id": "commercial-service",
+			"title": "Commercial Service",
+			"description": "Professional services for businesses, offices, and commercial properties with flexible scheduling.",
 			"features": [
-				"Moss removal",
-				"Algae treatment",
-				"Debris clearing",
-				"Gentle soft washing"
+				"Commercial solutions",
+				"Flexible scheduling",
+				"Business-focused service",
+				"Professional results"
 			],
-			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/c8e5920de6436c1e190143d5604a7da9dcc95708.webp",
-			"href": "/services/roof-cleaning",
-			"popular": false,
-			"icon": "🏗️",
-			"beforeAfterExamples": [
-				{
-					"beforeImage": "https://cdn.sanity.io/files/ws2fgpe5/production/4eb6bc0c0429bd9229b86dbec6aec01d8aa1e7d6.webp",
-					"afterImage": "https://cdn.sanity.io/files/ws2fgpe5/production/94f4132b51090e478da9820a1835189c20a9ae19.webp",
-					"title": "Roof Cleaning Results",
-					"altText": "Professional roof cleaning transformation"
-				}
-			]
-		},
-		{
-			"id": "concrete-cleaning",
-			"title": "Concrete Cleaning",
-			"description": "Deep cleaning of concrete surfaces including driveways, walkways, patios, and parking areas.",
-			"features": [
-				"Oil stain removal",
-				"Deep cleaning",
-				"Surface restoration",
-				"Sealing preparation"
-			],
-			"image": "/assets/services/concrete-cleaning-hero.webp",
-			"href": "/services/concrete-cleaning",
-			"popular": false,
-			"icon": "🏛️",
-			"beforeAfterExamples": [
-				{
-					"beforeImage": "/assets/before-after/concrete-cleaning-before-1.webp",
-					"afterImage": "/assets/before-after/concrete-cleaning-after-1.webp",
-					"title": "Concrete Cleaning Results",
-					"altText": "Professional concrete cleaning transformation"
-				}
-			]
-		},
-		{
-			"id": "deck-fence-cleaning",
-			"title": "Deck & Fence Cleaning",
-			"description": "Restore and protect your outdoor wood and composite surfaces with specialized cleaning techniques.",
-			"features": [
-				"Wood restoration",
-				"Composite cleaning",
-				"Stain preparation",
-				"Weatherproofing prep"
-			],
-			"image": "/assets/services/deck-fence-cleaning-hero.webp",
-			"href": "/services/deck-fence-cleaning",
-			"popular": false,
-			"icon": "🪚",
-			"beforeAfterExamples": [
-				{
-					"beforeImage": "/assets/before-after/deck-fence-cleaning-before-1.webp",
-					"afterImage": "/assets/before-after/deck-fence-cleaning-after-1.webp",
-					"title": "Deck & Fence Cleaning Results",
-					"altText": "Professional deck & fence cleaning transformation"
-				}
-			]
-		},
-		{
-			"id": "solar-panel-cleaning",
-			"title": "Solar Panel Cleaning",
-			"description": "Maximize energy efficiency with professional solar panel cleaning and maintenance services.",
-			"features": [
-				"Panel efficiency optimization",
-				"Safe cleaning methods",
-				"Performance improvement",
-				"Regular maintenance"
-			],
-			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/c274e70c23d3ecc7661dcd239b56a18558498448.jpg",
-			"href": "/services/solar-panel-cleaning",
-			"popular": false,
-			"icon": "☀️",
-			"beforeAfterExamples": [
-				{
-					"beforeImage": "https://cdn.sanity.io/files/ws2fgpe5/production/b3c096ec6e7dce411091786b3f759a836be148c3.jpg",
-					"afterImage": "https://cdn.sanity.io/files/ws2fgpe5/production/0f08030168ed6579b045df6ce2d325faf77b54d5.jpg",
-					"title": "Solar Panel Cleaning Results",
-					"altText": "Professional solar panel cleaning transformation"
-				}
-			]
-		},
-		{
-			"id": "commercial-cleaning",
-			"title": "Commercial Cleaning",
-			"description": "Professional cleaning services for businesses, storefronts, and commercial properties.",
-			"features": [
-				"Storefront cleaning",
-				"Building maintenance",
-				"Parking lot cleaning",
-				"Regular service schedules"
-			],
-			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/481fbe2710deb835bcf264e96c174702e5cec635.webp",
-			"href": "/services/commercial-cleaning",
+			"image": "https://images.unsplash.com/photo-1486312338219-ce68ba2077dd?w=400&h=300&fit=crop&auto=format&q=80",
+			"href": "/services/commercial-service",
 			"popular": false,
 			"icon": "🏢",
 			"beforeAfterExamples": [
 				{
-					"beforeImage": "/assets/before-after/commercial-cleaning-before-1.webp",
-					"afterImage": "/assets/before-after/commercial-cleaning-after-1.webp",
-					"title": "Commercial Cleaning Results",
-					"altText": "Professional commercial cleaning transformation"
+					"beforeImage": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop&auto=format&q=80",
+					"afterImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&auto=format&q=80",
+					"title": "Commercial Service Results",
+					"altText": "Professional commercial service transformation"
 				}
 			]
 		}
 	],
 	"whyChooseUs": [
 		{
-			"title": "Experienced Professionals",
-			"description": "Backed by years of experience and expertise in the best exterior cleaning and maintenance practices.",
-			"icon": "🎯"
+			"icon": "⏰",
+			"title": "Time-Saving",
+			"description": "Save valuable time while we deliver professional results with attention to detail and efficiency."
 		},
 		{
-			"title": "Time-Saving Service",
-			"description": "Save time while we restore your property promptly without losing attention to detail.",
-			"icon": "⏰"
+			"icon": "🛡️",
+			"title": "Professional & Safe",
+			"description": "We use the latest equipment and best practices delivered by trained, insured professionals."
 		},
 		{
-			"title": "Fully Equipped & Safe",
-			"description": "Latest cleaning equipment and eco-friendly products delivered by insured professionals.",
-			"icon": "🛡️"
+			"icon": "🎯",
+			"title": "Experienced Team",
+			"description": "Backed by years of experience and expertise in industry best practices and customer service."
 		},
 		{
-			"title": "100% Satisfaction",
-			"description": "We stand behind our work with a complete satisfaction guarantee on every service.",
-			"icon": "😊"
+			"icon": "😊",
+			"title": "Customer Focused",
+			"description": "Committed to your satisfaction with friendly, reliable service. We're proud of our customer reviews."
 		}
 	],
 	"serviceHighlights": [
 		{
-			"title": "Premium Results",
-			"description": "We deliver consistently outstanding results using professional-grade equipment and proven techniques.",
-			"icon": "🏆"
+			"value": "500+",
+			"label": "Happy Customers",
+			"icon": "😊"
 		},
 		{
-			"title": "Latest Equipment",
-			"description": "State-of-the-art cleaning technology ensures efficient, safe, and effective service every time.",
-			"icon": "⚙️"
+			"value": "1,000+",
+			"label": "Projects Completed",
+			"icon": "✅"
 		},
 		{
-			"title": "Eco-Friendly",
-			"description": "Environmentally responsible cleaning solutions that are safe for your family, pets, and plants.",
-			"icon": "🌱"
+			"value": "100%",
+			"label": "Satisfaction Rate",
+			"icon": "⭐"
 		},
 		{
-			"title": "Attention to Detail",
-			"description": "Meticulous attention to every aspect of your cleaning project, from preparation to final inspection.",
-			"icon": "✨"
+			"value": "24hr",
+			"label": "Response Time",
+			"icon": "⚡"
 		}
 	],
 	"seo": {
-		"title": "Professional Cleaning Services Vancouver Surrey Burnaby | Splash n' Shine",
-		"description": "Professional exterior cleaning services in Vancouver, Surrey, Burnaby & Fraser Valley. Window cleaning, pressure washing, house washing, gutter cleaning & more!",
-		"keywords": "cleaning services, window cleaning, pressure washing, house washing, gutter cleaning, roof cleaning, Vancouver, Surrey, Burnaby, Richmond, Fraser Valley",
-		"ogImage": "/assets/services-overview.webp"
+		"title": "Professional Services | Your Business Name",
+		"description": "Professional services with experienced teams, latest equipment, and guaranteed satisfaction. Free estimates available!",
+		"keywords": "professional services, quality service, local business, experienced team, guaranteed satisfaction",
+		"ogImage": "/assets/og-image-services.jpg"
 	}
 }
