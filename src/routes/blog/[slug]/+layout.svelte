@@ -25,7 +25,7 @@
 {#if suggestions.length > 0}
   <section class="bg-muted/20 py-16 sm:py-20 lg:py-24">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div use:fadeIn>
+      <div in:fadeIn>
         <div class="text-center mb-12">
           <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             More Cleaning
@@ -38,7 +38,7 @@
         
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {#each suggestions as suggestion (suggestion._id)}
-            <div use:fadeIn>
+            <div in:fadeIn>
               <Card class="group h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <Link href="/blog/{suggestion.slug.current}" class="block h-full">
                   <CardHeader class="pb-3">

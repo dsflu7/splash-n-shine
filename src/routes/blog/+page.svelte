@@ -65,7 +65,7 @@
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="space-y-8">
         {#each data.blogs as blog (blog._id)}
-          <div use:fadeIn>
+          <div in:fadeIn>
             <Card class="group overflow-hidden transition-all duration-300 hover:shadow-lg">
               <Link href="/blog/{blog.slug.current}" class="flex flex-col md:flex-row">
                 <!-- Blog Image -->

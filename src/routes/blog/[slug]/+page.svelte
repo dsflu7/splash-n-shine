@@ -75,7 +75,7 @@
 
   <!-- Article Content -->
   <article class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 {data.blog.image?.asset?.url ? '' : 'mt-24'}">
-    <div use:fadeIn>
+    <div in:fadeIn>
       <!-- Breadcrumbs -->
       <div class="mb-8">
         <Breadcrumb.Root>
@@ -199,53 +199,72 @@
   </article>
 </div>
 
-<style type="postcss">
+<style>
   /* Enhanced prose styling for better readability */
   :global(.prose h2) {
-    @apply text-2xl font-bold mt-8 mb-4 text-foreground;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
   
   :global(.prose h3) {
-    @apply text-xl font-semibold mt-6 mb-3 text-foreground;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
   }
   
   :global(.prose p) {
-    @apply mb-4 leading-relaxed text-justify;
+    margin-bottom: 1rem;
+    line-height: 1.625;
+    text-align: justify;
   }
   
   :global(.prose ul) {
-    @apply mb-4 pl-6;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
   }
   
   :global(.prose li) {
-    @apply mb-2;
+    margin-bottom: 0.5rem;
   }
   
   :global(.prose strong) {
-    @apply font-semibold text-foreground;
+    font-weight: 600;
   }
   
   :global(.prose em) {
-    @apply italic;
+    font-style: italic;
   }
   
   :global(.prose a) {
-    @apply text-primary hover:text-primary/80 underline;
+    text-decoration: underline;
   }
   
   :global(.prose blockquote) {
-    @apply border-l-4 border-primary pl-4 italic text-muted-foreground;
+    border-left: 4px solid var(--primary);
+    padding-left: 1rem;
+    font-style: italic;
   }
   
   :global(.prose code) {
-    @apply bg-muted px-1 py-0.5 rounded text-sm font-mono;
+    background-color: var(--muted);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-family: monospace;
   }
   
   :global(.prose pre) {
-    @apply bg-muted p-4 rounded-lg overflow-x-auto;
+    background-color: var(--muted);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
   }
   
   :global(.prose img) {
-    @apply rounded-lg shadow-md;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
 </style>
