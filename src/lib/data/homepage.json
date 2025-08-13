@@ -2,33 +2,33 @@
   "whyChooseUs": [
     {
       "icon": "⏰",
-      "title": "Time-saving",
-      "description": "You save time while we restore your property promptly without losing attention to detail."
+      "title": "Time-Saving",
+      "description": "Save valuable time while we deliver professional results with attention to detail and efficiency."
     },
     {
       "icon": "🛡️",
-      "title": "Equipped & Safe",
-      "description": "We carry the latest cleaning equipment and eco-friendly products delivered by insured professionals."
+      "title": "Professional & Safe",
+      "description": "We use the latest equipment and best practices delivered by trained, insured professionals."
     },
     {
       "icon": "🎯",
-      "title": "Experienced",
-      "description": "Backed by years of experience and expertise in the best exterior cleaning and maintenance practices."
+      "title": "Experienced Team",
+      "description": "Backed by years of experience and expertise in industry best practices and customer service."
     },
     {
       "icon": "😊",
-      "title": "Friendly & Reliable",
-      "description": "Committed to customer satisfaction with a smile. We're proud of our customer reviews."
+      "title": "Customer Focused",
+      "description": "Committed to your satisfaction with friendly, reliable service. We're proud of our customer reviews."
     }
   ],
   "companyStats": [
     {
-      "value": "300+",
+      "value": "500+",
       "label": "Happy Customers",
       "icon": "😊"
     },
     {
-      "value": "1,200+",
+      "value": "1,000+",
       "label": "Projects Completed",
       "icon": "✅"
     },
@@ -47,13 +47,13 @@
     {
       "step": "01",
       "title": "Get A Free Estimate",
-      "description": "Fill out your request or call us to get your comprehensive free estimate.",
+      "description": "Contact us or fill out our form to get your comprehensive free estimate.",
       "icon": "📋",
-      "details": "Our expert team will assess your property's needs and provide a detailed, transparent quote with no hidden fees."
+      "details": "Our expert team will assess your needs and provide a detailed, transparent quote with no hidden fees."
     },
     {
       "step": "02", 
-      "title": "Get Scheduled",
+      "title": "Schedule Service",
       "description": "Once you approve your quote, we'll work with you to find the perfect time.",
       "icon": "📅",
       "details": "Flexible scheduling that works around your lifestyle with professional, punctual service teams."
@@ -61,9 +61,9 @@
     {
       "step": "03",
       "title": "Relax & Enjoy",
-      "description": "Work done right, results delivered. Your satisfaction is guaranteed.",
+      "description": "Professional work delivered right, results guaranteed. Your satisfaction is our priority.",
       "icon": "✨",
-      "details": "Sit back while our experienced professionals transform your property with guaranteed satisfaction."
+      "details": "Sit back while our experienced professionals deliver exceptional results with guaranteed satisfaction."
     }
   ]
 }

@@ -5,23 +5,21 @@
 
   const siteMap = {
     Services: [
-      { label: "Pressure Washing", route: "/services/pressure-washing" },
-      { label: "House Washing", route: "/services/house-washing" },
-      { label: "Roof Cleaning", route: "/services/roof-cleaning" },
-      { label: "Gutter Cleaning", route: "/services/gutter-cleaning" },
-      { label: "Window Washing", route: "/services/window-washing" },
+      { label: "Primary Service", route: "/services/primary-service" },
+      { label: "Secondary Service", route: "/services/secondary-service" },
+      { label: "Premium Service", route: "/services/premium-service" },
+      { label: "Maintenance Service", route: "/services/maintenance-service" },
+      { label: "Specialized Service", route: "/services/specialized-service" },
       { label: "All Services", route: "/services" },
     ],
     Company: [
       { label: "Our Story", route: "/our-story" },
-      { label: "Gallery", route: "/gallery" },
-      { label: "Blog", route: "/blog" },
       { label: "Contact", route: "/contact" },
     ],
     Locations: [
-      { label: "Vancouver", route: "/locations/vancouver" },
-      { label: "Surrey", route: "/locations/surrey" },
-      { label: "Richmond", route: "/locations/richmond" },
+      { label: "Downtown", route: "/locations/downtown" },
+      { label: "Suburbs", route: "/locations/suburbs" },
+      { label: "Business District", route: "/locations/business-district" },
       { label: "All Locations", route: "/locations" },
     ],
     Legal: [
@@ -31,12 +29,9 @@
   };
 
   const socialLinks = [
-    { label: "Instagram", url: "https://www.instagram.com/splashnshine.ca/" },
-    {
-      label: "TikTok",
-      url: "https://www.tiktok.com/@splashnshine.ca?_t=ZM-8uAbspTLuI1&_r=1",
-    },
-    { label: "Facebook", url: "https://www.facebook.com/105341482673651" },
+    { label: "Instagram", url: "https://www.instagram.com/yourbusiness/" },
+    { label: "Facebook", url: "https://www.facebook.com/yourbusiness" },
+    { label: "Twitter", url: "https://twitter.com/yourbusiness" },
   ];
 </script>
 
@@ -59,9 +54,7 @@
           <p
             class="text-muted-foreground text-center lg:text-left max-w-md leading-relaxed"
           >
-            Professional exterior cleaning services across Metro Vancouver. Your
-            trusted partner for pressure washing, house washing, and property
-            maintenance.
+            Professional services delivering exceptional results. Your trusted partner for quality service and reliable solutions.
           </p>
         </div>
 

@@ -1,44 +1,44 @@
 [
   {
-    "title": "Window Cleaning Vancouver",
-    "description": "Professional window cleaning services throughout Vancouver with same-day availability.",
-    "href": "/window-cleaning-vancouver",
-    "service": "Window Cleaning",
-    "location": "Vancouver"
+    "title": "Primary Service - Downtown Area",
+    "description": "Professional primary services throughout the downtown area with flexible scheduling.",
+    "href": "/primary-service-downtown",
+    "service": "Primary Service",
+    "location": "Downtown"
   },
   {
-    "title": "Pressure Washing Surrey",
-    "description": "Expert pressure washing services in Surrey for driveways, homes, and commercial properties.",
-    "href": "/pressure-washing-surrey",
-    "service": "Pressure Washing",
-    "location": "Surrey"
+    "title": "Secondary Service - Suburbs", 
+    "description": "Expert secondary services for suburban areas including residential and commercial properties.",
+    "href": "/secondary-service-suburbs",
+    "service": "Secondary Service",
+    "location": "Suburbs"
   },
   {
-    "title": "House Washing Burnaby",
-    "description": "Complete house washing services in Burnaby to restore your home's curb appeal and value.",
-    "href": "/house-washing-burnaby",
-    "service": "House Washing",
-    "location": "Burnaby"
+    "title": "Premium Service - Business District",
+    "description": "Complete premium services in the business district to maintain your property's professional appearance.",
+    "href": "/premium-service-business-district",
+    "service": "Premium Service", 
+    "location": "Business District"
   },
   {
-    "title": "Gutter Cleaning Richmond",
-    "description": "Professional gutter cleaning in Richmond to protect your home from water damage year-round.",
-    "href": "/gutter-cleaning-richmond",
-    "service": "Gutter Cleaning",
-    "location": "Richmond"
+    "title": "Maintenance Service - Residential Areas",
+    "description": "Professional maintenance services for residential areas to protect your investment year-round.",
+    "href": "/maintenance-service-residential",
+    "service": "Maintenance Service",
+    "location": "Residential Areas"
   },
   {
-    "title": "Roof Cleaning North Vancouver",
-    "description": "Safe roof cleaning and moss removal services throughout North Vancouver communities.",
-    "href": "/roof-cleaning-north-vancouver",
-    "service": "Roof Cleaning",
-    "location": "North Vancouver"
+    "title": "Specialized Service - Industrial Zone",
+    "description": "Advanced specialized services for industrial properties with customized solutions.",
+    "href": "/specialized-service-industrial",
+    "service": "Specialized Service",
+    "location": "Industrial Zone"
   },
   {
-    "title": "Commercial Cleaning West Vancouver",
-    "description": "Professional commercial cleaning services for West Vancouver businesses and properties.",
-    "href": "/commercial-cleaning-west-vancouver",
-    "service": "Commercial Cleaning",
-    "location": "West Vancouver"
+    "title": "Commercial Service - Corporate District",
+    "description": "Professional commercial services for corporate district businesses and office buildings.",
+    "href": "/commercial-service-corporate",
+    "service": "Commercial Service",
+    "location": "Corporate District"
   }
 ]

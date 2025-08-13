@@ -9,40 +9,29 @@
   // Mobile menu state
   let mobileMenuOpen = $state(false);
 
-  // Navigation structure with complete services and locations
+  // Navigation structure - customize for your business
   const navigation = {
     Services: [
-      { label: "Window Cleaning", route: "/services/window-cleaning" },
-      { label: "Pressure Washing", route: "/services/pressure-washing" },
-      { label: "Gutter Cleaning", route: "/services/gutter-cleaning" },
-      { label: "House Washing", route: "/services/house-washing" },
-      { label: "Roof Cleaning", route: "/services/roof-cleaning" },
-      { label: "Concrete Cleaning", route: "/services/concrete-cleaning" },
-      {
-        label: "Deck & Fence Cleaning",
-        route: "/services/deck-fence-cleaning",
-      },
-      {
-        label: "Solar Panel Cleaning",
-        route: "/services/solar-panel-cleaning",
-      },
+      { label: "Primary Service", route: "/services/primary-service" },
+      { label: "Secondary Service", route: "/services/secondary-service" },
+      { label: "Premium Service", route: "/services/premium-service" },
+      { label: "Maintenance Service", route: "/services/maintenance-service" },
+      { label: "Specialized Service", route: "/services/specialized-service" },
+      { label: "Commercial Service", route: "/services/commercial-service" },
       { label: "All Services", route: "/services" },
     ],
     Company: [
-      { label: "Gallery", route: "/gallery" },
       { label: "Our Story", route: "/our-story" },
       { label: "Privacy Policy", route: "/privacy-policy" },
       { label: "Terms & Conditions", route: "/terms-and-conditions" },
     ],
     Locations: [
-      { label: "Vancouver", route: "/locations/vancouver" },
-      { label: "Surrey", route: "/locations/surrey" },
-      { label: "Burnaby", route: "/locations/burnaby" },
-      { label: "Richmond", route: "/locations/richmond" },
-      { label: "Fraser Valley", route: "/locations/fraser-valley" },
-      { label: "Langley", route: "/locations/langley" },
-      { label: "Coquitlam", route: "/locations/coquitlam" },
-      { label: "North Vancouver", route: "/locations/north-vancouver" },
+      { label: "Downtown", route: "/locations/downtown" },
+      { label: "Suburbs", route: "/locations/suburbs" },
+      { label: "Business District", route: "/locations/business-district" },
+      { label: "Residential Areas", route: "/locations/residential" },
+      { label: "Industrial Zone", route: "/locations/industrial" },
+      { label: "Corporate District", route: "/locations/corporate" },
       { label: "All Locations", route: "/locations" },
     ],
   };
@@ -51,7 +40,6 @@
     { label: "Services", items: navigation.Services },
     { label: "Company", items: navigation.Company },
     { label: "Locations", items: navigation.Locations },
-    { label: "Blog", route: "/blog" },
     //     { label: "Contact", route: "/contact" },
   ];
 
@@ -71,7 +59,7 @@
       <div class="hidden md:flex items-center space-x-6 text-sm">
         <div class="flex items-center space-x-2">
           <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-          <span class="font-medium">Professional Cleaning Services</span>
+          <span class="font-medium">Professional Services</span>
         </div>
         <span class="text-primary-foreground/60">|</span>
         <span class="font-medium">Licensed & Insured</span>
