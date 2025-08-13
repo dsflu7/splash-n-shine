@@ -70,8 +70,8 @@
           </Link>
         </Button>
         <Button size="lg" variant="outline" class="hover:border-blue-300/50 hover:scale-105 transition-all duration-300">
-          <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
-            Call Now: (604) XXX-XXXX
+          <Link href="tel:+1-778-804-5911" class="flex items-center gap-2">
+            Call Now: (778) 804-5911
           </Link>
         </Button>
       </div>

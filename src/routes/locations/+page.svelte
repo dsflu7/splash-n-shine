@@ -133,7 +133,7 @@
 						
 						<Link href={location.href}>
 							<Button variant="outline" class="w-full hover:border-blue-300/50 transition-colors duration-300">
-								Learn More
+								View {location.name} Services
 							</Button>
 						</Link>
 					</div>

@@ -6,24 +6,18 @@
 	import CTA from "$lib/components/CTA.svelte";
 	import Infographic from "$lib/components/Infographic.svelte";
 	import { onMount } from 'svelte';
-	import { fadeIn } from "$lib/utils/anims.js";
 
 	// Import static data
 	import homepageData from "$lib/data/homepage.json";
 	import servicesPreviewData from "$lib/data/services-preview.json";
 	import serviceLocationsData from "$lib/data/service-locations.json";
+	import landingHero from "$lib/assets/landing-hero.webp"
 
 	let QuoteForm: any = $state(null);
 	let reviewsIframeVisible = $state(false);
 	let reviewsSection: HTMLElement;
-	let heroVisible = $state(false);
 
 	onMount(() => {
-		// Trigger hero animation
-		setTimeout(() => {
-			heroVisible = true;
-		}, 100);
-
 		if (reviewsSection) {
 			const observer = new IntersectionObserver(
 				async (entries) => {
@@ -48,15 +42,18 @@
 	<title>Professional Exterior Cleaning Services | {PUBLIC_COMPANY_NAME}</title>
 	<meta name="description" content="Professional window cleaning, pressure washing, house washing & gutter cleaning services in Vancouver, Surrey, Burnaby. Free estimates & satisfaction guaranteed!" />
 	<meta name="keywords" content="cleaning services, window cleaning, pressure washing, house washing, gutter cleaning, roof cleaning, Vancouver, Surrey, Burnaby, Richmond" />
+	
+	<!-- Preload hero image for better LCP performance -->
+	<link rel="preload" href={landingHero} as="image" fetchpriority="high" />
 </svelte:head>
 
 <!-- Hero Section -->
 <section class="relative py-20 md:py-28 overflow-hidden">
 	<!-- Background Image -->
 	<div class="absolute inset-0">
-		<img 
-			src="https://cdn.sanity.io/files/ws2fgpe5/production/d17878e36cac2b9c3a96661f939a60ce91c8e919.webp"
-			alt="Beautiful clean home exterior after professional cleaning"
+		<img
+			src={landingHero}
+			alt="Professional exterior cleaning services - beautiful clean home after pressure washing and window cleaning"
 			class="w-full h-full object-cover"
 			fetchpriority="high"
 			width="1920"
@@ -67,14 +64,13 @@
 	
 	<!-- Hero Content -->
 	<div class="relative max-w-7xl mx-auto px-[6%] text-center text-white z-10">
-		{#if heroVisible}
-		<h1 class="text-4xl md:text-6xl font-bold mb-6 font-[Cantarell] leading-tight" in:fadeIn={{ duration: 800, delay: 200 }}>
+		<h1 class="text-4xl md:text-6xl font-bold mb-6 font-[Cantarell] leading-tight">
 			Let Your Home <span class="text-primary">Shine</span>
 		</h1>
-		<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed" in:fadeIn={{ duration: 600, delay: 400 }}>
+		<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
 			Professional exterior cleaning services with <strong>experienced teams</strong>, <strong>latest equipment</strong>, and <strong>guaranteed satisfaction</strong>
 		</p>
-		<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8" in:fadeIn={{ duration: 500, delay: 600 }}>
+		<div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
 			<Link href="/contact">
 				<Button size="lg" class="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-4 hover:scale-105 transition-all duration-300">
 					Get Free Estimate
@@ -86,10 +82,9 @@
 				</Button>
 			</Link>
 		</div>
-		{/if}
 		
 		<!-- Quick Stats -->
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto text-center" in:fadeIn={{ duration: 600, delay: 800 }}>
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto text-center">
 			<div class="bg-black/30 backdrop-blur-sm rounded-lg p-4 border border-white/10 hover:border-blue-400/30 transition-all duration-300 hover:scale-105">
 				<div class="text-2xl font-bold text-primary">100%</div>
 				<div class="text-sm">Satisfaction</div>
@@ -155,7 +150,7 @@
 						</p>
 						<Link href={service.href}>
 							<Button variant="outline" class="w-full hover:border-blue-300/50 transition-colors duration-300">
-								Learn More
+								View {service.title} Services
 							</Button>
 						</Link>
 					</div>
@@ -229,16 +224,16 @@
 		<div class="space-y-12">
 			<!-- House Washing Before/After -->
 			<BeforeAfterComparison
-				beforeImage="https://cdn.sanity.io/files/ws2fgpe5/production/1792e570b24374a784ba3db66a9a89c233a93e18.jpg"
-				afterImage="https://cdn.sanity.io/files/ws2fgpe5/production/5de4e0f59ab64d6994f54898e1ea799554c6b08f.jpg"
+				beforeImage="https://cdn.sanity.io/files/ws2fgpe5/production/1792e570b24374a784ba3db66a9a89c233a93e18.jpg?w=800&h=450&fit=crop&auto=format&q=85"
+				afterImage="https://cdn.sanity.io/files/ws2fgpe5/production/5de4e0f59ab64d6994f54898e1ea799554c6b08f.jpg?w=800&h=450&fit=crop&auto=format&q=85"
 				altText="House exterior cleaning transformation showing dramatic improvement"
 				title="House Washing Transformation"
 				className="mb-12"
 			/>
 			
 			<BeforeAfterComparison
-				beforeImage="https://cdn.sanity.io/files/ws2fgpe5/production/4eb6bc0c0429bd9229b86dbec6aec01d8aa1e7d6.webp"
-				afterImage="https://cdn.sanity.io/files/ws2fgpe5/production/94f4132b51090e478da9820a1835189c20a9ae19.webp"
+				beforeImage="https://cdn.sanity.io/files/ws2fgpe5/production/4eb6bc0c0429bd9229b86dbec6aec01d8aa1e7d6.webp?w=800&h=450&fit=crop&auto=format&q=85"
+				afterImage="https://cdn.sanity.io/files/ws2fgpe5/production/94f4132b51090e478da9820a1835189c20a9ae19.webp?w=800&h=450&fit=crop&auto=format&q=85"
 				altText="Roof cleaning transformation showing removal of moss, algae, and debris for improved appearance and longevity"
 				title="Roof Cleaning Transformation"
 			/>

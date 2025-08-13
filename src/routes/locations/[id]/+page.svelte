@@ -89,8 +89,8 @@
           </Link>
         </Button>
         <Button size="lg" variant="outline" class="hover:scale-105 hover:border-blue-300/50 transition-all duration-300">
-          <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
-            Call (604) XXX-XXXX
+          <Link href="tel:+1-778-804-5911" class="flex items-center gap-2">
+            Call (778) 804-5911
           </Link>
         </Button>
       </div>
@@ -117,7 +117,7 @@
                 <div class="flex flex-col gap-3">
                   <Button variant="outline" size="sm" class="w-full hover:border-blue-300/50 transition-colors duration-300">
                     <Link href="/services/{service.id}">
-                      Learn More
+                      View {service.name} Details
                     </Link>
                   </Button>
                   <Button size="sm" class="w-full hover:scale-105 transition-all duration-300">
@@ -221,8 +221,8 @@
           </Link>
         </Button>
         <Button size="lg" variant="outline">
-          <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
-            Call Today: (604) XXX-XXXX
+          <Link href="tel:+1-778-804-5911" class="flex items-center gap-2">
+            Call Today: (778) 804-5911
           </Link>
         </Button>
       </div>

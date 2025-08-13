@@ -91,8 +91,8 @@
           </Link>
         </Button>
         <Button size="lg" variant="outline">
-          <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
-            Call Now: (604) XXX-XXXX
+          <Link href="tel:+1-778-804-5911" class="flex items-center gap-2">
+            Call Now: (778) 804-5911
           </Link>
         </Button>
       </div>
@@ -263,8 +263,8 @@
           </Link>
         </Button>
         <Button size="lg" variant="outline">
-          <Link href="tel:+1-604-XXX-XXXX" class="flex items-center gap-2">
-            Call (604) XXX-XXXX Now
+          <Link href="tel:+1-778-804-5911" class="flex items-center gap-2">
+            Call (778) 804-5911 Now
           </Link>
         </Button>
       </div>

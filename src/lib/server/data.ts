@@ -252,7 +252,7 @@ export function generateServiceStructuredData(service: Service, location?: Locat
       "@type": "LocalBusiness",
       "name": "Splash & Shine Cleaning Services",
       "url": "https://splashandshine.ca",
-      "telephone": "+1-604-XXX-XXXX",
+      "telephone": "+1-778-804-5911",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": location?.name || "Vancouver",

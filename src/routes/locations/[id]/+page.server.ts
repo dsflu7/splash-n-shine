@@ -26,7 +26,7 @@ export const load: PageServerLoad = async ({ params, url }) => {
     "name": `Splash & Shine Cleaning Services - ${location.name}`,
     "description": location.description,
     "url": url.href,
-    "telephone": "+1-604-XXX-XXXX",
+    "telephone": "+1-778-804-5911",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": location.name,

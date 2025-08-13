@@ -10,7 +10,7 @@
 				"Sill & frame cleaning",
 				"Streak-free guarantee"
 			],
-			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/5eff2b73137d1c4a1936381e17515d23af4477bc.webp",
+			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/5eff2b73137d1c4a1936381e17515d23af4477bc.webp?w=400&h=300&fit=crop&auto=format&q=80",
 			"href": "/services/window-cleaning",
 			"popular": true,
 			"icon": "🪟",
@@ -33,7 +33,7 @@
 				"Deck & patio cleaning",
 				"Building exterior wash"
 			],
-			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/3c97d10d7b69ceec5d190891c35c99e0eee2f210.webp",
+			"image": "https://cdn.sanity.io/files/ws2fgpe5/production/3c97d10d7b69ceec5d190891c35c99e0eee2f210.webp?w=400&h=300&fit=crop&auto=format&q=80",
 			"href": "/services/pressure-washing",
 			"popular": false,
 			"icon": "🚿",

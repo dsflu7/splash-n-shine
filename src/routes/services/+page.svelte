@@ -163,7 +163,7 @@
             </ul>
 
             <Link href={service.href}>
-              <Button variant="outline" class="w-full hover:border-blue-300/50 transition-colors duration-300">Learn More</Button>
+              <Button variant="outline" class="w-full hover:border-blue-300/50 transition-colors duration-300">View {service.title} Details</Button>
             </Link>
           </div>
         </div>
