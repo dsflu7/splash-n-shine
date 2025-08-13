@@ -43,7 +43,6 @@
 	<meta name="description" content="Professional window cleaning, pressure washing, house washing & gutter cleaning services in Vancouver, Surrey, Burnaby. Free estimates & satisfaction guaranteed!" />
 	<meta name="keywords" content="cleaning services, window cleaning, pressure washing, house washing, gutter cleaning, roof cleaning, Vancouver, Surrey, Burnaby, Richmond" />
 	
-	<!-- Preload hero image for better LCP performance -->
 	<link rel="preload" href={landingHero} as="image" fetchpriority="high" />
 </svelte:head>
 

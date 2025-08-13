@@ -14,12 +14,14 @@
 		title?: string;
 		subtitle?: string;
 		showServiceSelection?: boolean;
+		useIframe?: boolean;
 	}
 
 	let { 
 		title = "Get Your Free Estimate", 
 		subtitle = "Tell us about your project and we'll provide a comprehensive quote within 24 hours.",
-		showServiceSelection = true 
+		showServiceSelection = true,
+		useIframe = true
 	}: Props = $props();
 
 	const services: Service[] = [
@@ -164,7 +166,37 @@
 		</p>
 	</div>
 
-	<form onsubmit={handleSubmit} class="p-6 space-y-8">
+	{#if useIframe}
+		<!-- Iframe Form -->
+		<div class="p-6 h-[1400px]">
+			<p class="text-center text-sm mt-4">
+				If the form below doesn't load, please click <a
+					class="italic underline"
+					href="https://api.leadconnectorhq.com/widget/form/iqHTKrAbOOGjMJuQrvYW">here</a
+				>
+			</p>
+
+			<iframe
+				src="https://api.leadconnectorhq.com/widget/form/iqHTKrAbOOGjMJuQrvYW"
+				style="width:100%;height:100%;border:none;border-radius:3px"
+				id="inline-iqHTKrAbOOGjMJuQrvYW"
+				data-layout={"{'id':'INLINE'}"}
+				data-trigger-type="alwaysShow"
+				data-trigger-value=""
+				data-activation-type="alwaysActivated"
+				data-activation-value=""
+				data-deactivation-type="neverDeactivate"
+				data-deactivation-value=""
+				data-form-name="Website Form"
+				data-height="1179"
+				data-layout-iframe-id="inline-iqHTKrAbOOGjMJuQrvYW"
+				data-form-id="iqHTKrAbOOGjMJuQrvYW"
+				title="Website Form"
+			></iframe>
+		</div>
+	{:else}
+		<!-- Original Form -->
+		<form onsubmit={handleSubmit} class="p-6 space-y-8">
 		
 		{#if showServiceSelection}
 			<!-- Service Selection -->
@@ -393,4 +425,5 @@
 			</p>
 		</div>
 	</form>
+	{/if}
 </div>
