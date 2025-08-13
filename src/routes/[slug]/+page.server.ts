@@ -12,7 +12,14 @@ import {
   type Location
 } from '$lib/server/data.js';
 
-export const load: PageServerLoad = async ({ params, url }) => {
+// Disable prerendering to ensure fresh data on navigation
+export const prerender = false;
+
+export const load: PageServerLoad = async ({ params, url, depends }) => {
+  // Add dependency to ensure data reloads when navigating between service-location combinations
+  depends('data:service-location');
+  depends(`data:service-location:${params.slug}`);
+  
   // Parse the combined service-location slug
   const slug = params.slug;
   const parts = slug.split('-');

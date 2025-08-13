@@ -26,12 +26,19 @@
   
   let { data }: Props = $props();
   
-  const { service, location, keywords, metaTitle, metaDescription, serviceStructuredData, faqStructuredData } = data;
+  // Make data reactive to params changes using Svelte 5 syntax
+  const service = $derived(data.service);
+  const location = $derived(data.location);
+  const keywords = $derived(data.keywords);
+  const metaTitle = $derived(data.metaTitle);
+  const metaDescription = $derived(data.metaDescription);
+  const serviceStructuredData = $derived(data.serviceStructuredData);
+  const faqStructuredData = $derived(data.faqStructuredData);
   
   // Get location-specific testimonial if available
-  const localTestimonial = location.testimonials?.find((t) => 
+  const localTestimonial = $derived(location.testimonials?.find((t) => 
     t.service.toLowerCase().includes(service.name.toLowerCase().split(' ')[0])
-  ) || location.testimonials?.[0];
+  ) || location.testimonials?.[0]);
 </script>
 
 <svelte:head>

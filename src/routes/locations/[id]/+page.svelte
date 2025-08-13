@@ -16,16 +16,21 @@
   
   let { data }: Props = $props();
   
-  const { location, services, metaTitle, metaDescription, locationStructuredData } = data;
+  // Make data reactive to params changes using Svelte 5 syntax
+  const location = $derived(data.location);
+  const services = $derived(data.services);
+  const metaTitle = $derived(data.metaTitle);
+  const metaDescription = $derived(data.metaDescription);
+  const locationStructuredData = $derived(data.locationStructuredData);
   
   // Group services by category
-  const servicesByCategory = services.reduce((acc, service) => {
+  const servicesByCategory = $derived(services.reduce((acc, service) => {
     if (!acc[service.category]) {
       acc[service.category] = [];
     }
     acc[service.category].push(service);
     return acc;
-  }, {} as Record<string, Service[]>);
+  }, {} as Record<string, Service[]>));
 </script>
 
 <svelte:head>

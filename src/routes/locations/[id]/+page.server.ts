@@ -9,7 +9,14 @@ import {
   type Location
 } from '$lib/server/data.js';
 
-export const load: PageServerLoad = async ({ params, url }) => {
+// Disable prerendering to ensure fresh data on navigation
+export const prerender = false;
+
+export const load: PageServerLoad = async ({ params, url, depends }) => {
+  // Add dependency to ensure data reloads when navigating between locations
+  depends('data:location');
+  depends(`data:location:${params.id}`);
+  
   const location = getLocation(params.id);
   
   if (!location) {

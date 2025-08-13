@@ -21,8 +21,14 @@
   
   let { data }: Props = $props();
   
-  const { service, locations, metaTitle, metaDescription, serviceStructuredData, faqStructuredData } = data;
-  const primaryAreas = locations.slice(0, 6); // Show top 6 service areas
+  // Make data reactive to params changes using Svelte 5 syntax
+  const service = $derived(data.service);
+  const locations = $derived(data.locations);
+  const metaTitle = $derived(data.metaTitle);
+  const metaDescription = $derived(data.metaDescription);
+  const serviceStructuredData = $derived(data.serviceStructuredData);
+  const faqStructuredData = $derived(data.faqStructuredData);
+  const primaryAreas = $derived(locations.slice(0, 6)); // Show top 6 service areas
 </script>
 
 <svelte:head>
