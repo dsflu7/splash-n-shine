@@ -12,6 +12,7 @@ applyTo: "**"
 - Follow consistent naming conventions
 - Prioritize code clarity over brevity
 - Use TypeScript when possible for better type safety
+- DO NOT MAKE .md FILES EVERY FUCKING TIME YOU MAKE CHANGES PLEASE.
 
 ## Project Architecture & Patterns
 

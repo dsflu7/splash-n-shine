@@ -4,103 +4,25 @@
 	import Link from '$lib/components/Link.svelte';
 	import CTA from '$lib/components/CTA.svelte';
   import Infographic from '$lib/components/Infographic.svelte';
+	import locationsData from '$lib/data/locations.json';
 
-	const primaryServiceAreas = [
-		{
-			name: 'Vancouver',
-			population: '662,248',
-			description: 'Professional cleaning services throughout Vancouver including downtown, Kitsilano, West End, and all neighborhoods.',
-			services: ['Window Cleaning', 'Pressure Washing', 'House Washing', 'Gutter Cleaning'],
-			image: '/assets/locations/vancouver-hero.webp',
-			href: '/locations/vancouver'
-		},
-		{
-			name: 'Surrey',
-			population: '568,322',
-			description: 'Comprehensive exterior cleaning services for Surrey homes and businesses from Guildford to South Surrey.',
-			services: ['Roof Cleaning', 'Concrete Cleaning', 'Window Cleaning', 'Pressure Washing'],
-			image: '/assets/locations/surrey-hero.webp',
-			href: '/locations/surrey'
-		},
-		{
-			name: 'Burnaby',
-			population: '249,125',
-			description: 'Expert cleaning services for Burnaby residents including North Burnaby, Brentwood, and Deer Lake areas.',
-			services: ['House Washing', 'Gutter Cleaning', 'Solar Panel Cleaning', 'Deck Cleaning'],
-			image: '/assets/locations/burnaby-hero.webp',
-			href: '/locations/burnaby'
-		}
-	];
-
-	const allLocations = [
-		{ name: 'Richmond', href: '/locations/richmond', population: '209,937' },
-		{ name: 'Fraser Valley', href: '/locations/fraser-valley', population: '300,000+' },
-		{ name: 'Langley', href: '/locations/langley', population: '132,603' },
-		{ name: 'Coquitlam', href: '/locations/coquitlam', population: '148,625' },
-		{ name: 'North Vancouver', href: '/locations/north-vancouver', population: '88,168' },
-		{ name: 'West Vancouver', href: '/locations/west-vancouver', population: '42,473' },
-		{ name: 'New Westminster', href: '/locations/new-westminster', population: '78,916' },
-		{ name: 'Port Coquitlam', href: '/locations/port-coquitlam', population: '61,498' },
-		{ name: 'Maple Ridge', href: '/locations/maple-ridge', population: '90,990' },
-		{ name: 'Delta', href: '/locations/delta', population: '108,455' },
-		{ name: 'White Rock', href: '/locations/white-rock', population: '21,939' },
-		{ name: 'Pitt Meadows', href: '/locations/pitt-meadows', population: '19,146' }
-	];
-
-	const serviceAreas = [
-		{
-			title: 'Metro Vancouver Core',
-			description: 'Downtown Vancouver, West End, Yaletown, Coal Harbour, and surrounding urban areas.',
-			icon: '🏙️'
-		},
-		{
-			title: 'Fraser Valley Region',
-			description: 'Langley, Maple Ridge, Abbotsford, Chilliwack, and growing suburban communities.',
-			icon: '🌲'
-		},
-		{
-			title: 'North Shore',
-			description: 'North Vancouver, West Vancouver, and mountainside communities with specialized access.',
-			icon: '⛰️'
-		},
-		{
-			title: 'South of Fraser',
-			description: 'Surrey, Delta, Richmond, White Rock, and all communities south of the Fraser River.',
-			icon: '🌊'
-		}
-	];
-
-	const whyLocal = [
-		{
-			title: 'Local Knowledge',
-			description: 'We understand BC weather patterns, local building styles, and community-specific cleaning challenges.',
-			icon: '🏠'
-		},
-		{
-			title: 'Quick Response',
-			description: 'Local teams mean faster response times and flexible scheduling that works with your lifestyle.',
-			icon: '⚡'
-		},
-		{
-			title: 'Community Focused',
-			description: 'We\'re your neighbors too. Our reputation in each community matters to us personally.',
-			icon: '👥'
-		},
-		{
-			title: 'Weather Expertise',
-			description: 'We know when to clean for best results and how to handle BC\'s unique weather conditions.',
-			icon: '🌦️'
-		}
-	];
+	const { 
+		primaryServiceAreas, 
+		allLocations, 
+		serviceAreas, 
+		whyLocal, 
+		locationStats,
+		seo 
+	} = locationsData;
 </script>
 
 <svelte:head>
-	<title>Cleaning Services Locations Vancouver Surrey Burnaby | {PUBLIC_COMPANY_NAME}</title>
-	<meta name="description" content="Professional cleaning services across Metro Vancouver, Surrey, Burnaby, Richmond, Fraser Valley & more. Local teams with 15+ service areas throughout BC!" />
-	<meta name="keywords" content="cleaning services Vancouver, Surrey cleaning, Burnaby cleaning, Richmond cleaning, Fraser Valley cleaning, Metro Vancouver, BC cleaning services" />
-	<meta property="og:title" content="Cleaning Services Locations - Vancouver, Surrey, Burnaby | {PUBLIC_COMPANY_NAME}" />
-	<meta property="og:description" content="Local cleaning teams serving 15+ locations across Metro Vancouver and Fraser Valley with specialized area knowledge." />
-	<meta property="og:image" content="https://www.{PUBLIC_DOMAIN}/assets/locations-overview.webp" />
+	<title>{seo.title}</title>
+	<meta name="description" content={seo.description} />
+	<meta name="keywords" content={seo.keywords} />
+	<meta property="og:title" content={seo.title} />
+	<meta property="og:description" content={seo.description} />
+	<meta property="og:image" content="https://www.{PUBLIC_DOMAIN}{seo.ogImage}" />
 	<meta property="og:url" content="https://www.{PUBLIC_DOMAIN}/locations" />
 	<meta property="og:type" content="website" />
 	<link rel="canonical" href="https://www.{PUBLIC_DOMAIN}/locations" />
@@ -292,28 +214,11 @@
 		<Infographic
 			title="Extensive Local Coverage"
 			subtitle="Professional cleaning services with true local expertise across BC's largest metropolitan area"
-			stats={[
-				{
-					value: "15+",
-					label: "Service Locations",
-					icon: "📍"
-				},
-				{
-					value: "1.5M+",
-					label: "Residents Served",
-					icon: "👥"
-				},
-				{
-					value: "4",
-					label: "Major Regions",
-					icon: "🗺️"
-				},
-				{
-					value: "Local",
-					label: "Expert Knowledge",
-					icon: "🏆"
-				}
-			]}
+			stats={locationStats.map(stat => ({
+				value: stat.value,
+				label: stat.description,
+				icon: stat.icon
+			}))}
 			layout="grid"
 		/>
 	</div>

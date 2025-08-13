@@ -1,0 +1,121 @@
+{
+  "primaryServiceAreas": [
+    {
+      "id": "vancouver",
+      "name": "Vancouver",
+      "population": "662,248",
+      "description": "Professional cleaning services throughout Vancouver including downtown, Kitsilano, West End, and all neighborhoods.",
+      "services": ["Window Cleaning", "Pressure Washing", "House Washing", "Gutter Cleaning"],
+      "image": "/assets/locations/vancouver-hero.webp",
+      "href": "/locations/vancouver"
+    },
+    {
+      "id": "surrey",
+      "name": "Surrey",
+      "population": "568,322",
+      "description": "Comprehensive exterior cleaning services for Surrey homes and businesses from Guildford to South Surrey.",
+      "services": ["Roof Cleaning", "Concrete Cleaning", "Window Cleaning", "Pressure Washing"],
+      "image": "/assets/locations/surrey-hero.webp",
+      "href": "/locations/surrey"
+    },
+    {
+      "id": "burnaby",
+      "name": "Burnaby",
+      "population": "249,125",
+      "description": "Expert cleaning services for Burnaby residents including North Burnaby, Brentwood, and Deer Lake areas.",
+      "services": ["House Washing", "Gutter Cleaning", "Solar Panel Cleaning", "Deck Cleaning"],
+      "image": "/assets/locations/burnaby-hero.webp",
+      "href": "/locations/burnaby"
+    }
+  ],
+  "allLocations": [
+    { "name": "Richmond", "href": "/locations/richmond", "population": "209,937" },
+    { "name": "Fraser Valley", "href": "/locations/fraser-valley", "population": "300,000+" },
+    { "name": "Langley", "href": "/locations/langley", "population": "132,603" },
+    { "name": "Coquitlam", "href": "/locations/coquitlam", "population": "148,625" },
+    { "name": "North Vancouver", "href": "/locations/north-vancouver", "population": "88,168" },
+    { "name": "West Vancouver", "href": "/locations/west-vancouver", "population": "42,473" },
+    { "name": "New Westminster", "href": "/locations/new-westminster", "population": "78,916" },
+    { "name": "Port Coquitlam", "href": "/locations/port-coquitlam", "population": "61,498" },
+    { "name": "Maple Ridge", "href": "/locations/maple-ridge", "population": "90,990" },
+    { "name": "Delta", "href": "/locations/delta", "population": "108,455" },
+    { "name": "White Rock", "href": "/locations/white-rock", "population": "21,939" },
+    { "name": "Pitt Meadows", "href": "/locations/pitt-meadows", "population": "19,146" }
+  ],
+  "serviceAreas": [
+    {
+      "title": "Metro Vancouver Core",
+      "description": "Downtown Vancouver, West End, Yaletown, Coal Harbour, and surrounding urban areas.",
+      "icon": "🏙️"
+    },
+    {
+      "title": "Fraser Valley Region",
+      "description": "Langley, Maple Ridge, Abbotsford, Chilliwack, and growing suburban communities.",
+      "icon": "🌲"
+    },
+    {
+      "title": "North Shore",
+      "description": "North Vancouver, West Vancouver, and mountainside communities with specialized access.",
+      "icon": "⛰️"
+    },
+    {
+      "title": "South of Fraser",
+      "description": "Surrey, Delta, Richmond, White Rock, and all communities south of the Fraser River.",
+      "icon": "🌊"
+    }
+  ],
+  "whyLocal": [
+    {
+      "title": "Local Knowledge",
+      "description": "We understand BC weather patterns, local building styles, and community-specific cleaning challenges.",
+      "icon": "🏠"
+    },
+    {
+      "title": "Quick Response",
+      "description": "Local teams mean faster response times and flexible scheduling that works with your lifestyle.",
+      "icon": "⚡"
+    },
+    {
+      "title": "Community Focused",
+      "description": "We're your neighbors too. Our reputation in each community matters to us personally.",
+      "icon": "👥"
+    },
+    {
+      "title": "Weather Expertise",
+      "description": "We know when to clean for best results and how to handle BC's unique weather conditions.",
+      "icon": "🌦️"
+    }
+  ],
+  "locationStats": [
+    {
+      "title": "Service Areas",
+      "value": "15+",
+      "description": "Communities served across Metro Vancouver",
+      "icon": "📍"
+    },
+    {
+      "title": "Local Teams",
+      "value": "8",
+      "description": "Dedicated cleaning teams in your area",
+      "icon": "👥"
+    },
+    {
+      "title": "Coverage Area",
+      "value": "2,800km²",
+      "description": "Total service coverage across BC",
+      "icon": "🗺️"
+    },
+    {
+      "title": "Response Time",
+      "value": "24hrs",
+      "description": "Average quote response time",
+      "icon": "🏆"
+    }
+  ],
+  "seo": {
+    "title": "Cleaning Services Locations Vancouver Surrey Burnaby | Splash n' Shine",
+    "description": "Professional cleaning services across Metro Vancouver, Surrey, Burnaby, Richmond, Fraser Valley & more. Local teams with 15+ service areas throughout BC!",
+    "keywords": "cleaning services Vancouver, Surrey cleaning, Burnaby cleaning, Richmond cleaning, Fraser Valley cleaning, Metro Vancouver, BC cleaning services",
+    "ogImage": "/assets/locations-overview.webp"
+  }
+}

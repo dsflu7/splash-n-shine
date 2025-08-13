@@ -9,154 +9,10 @@
   import Infographic from "$lib/components/Infographic.svelte";
   import CTA from "$lib/components/CTA.svelte";
   import ProcessSteps from "$lib/components/ProcessSteps.svelte";
+  import servicesData from "$lib/data/services.json";
 
-  const services = [
-    {
-      title: "Window Cleaning",
-      description:
-        "Crystal-clean windows inside and out, including screens and sills for a spotless, streak-free finish.",
-      features: [
-        "Interior & exterior cleaning",
-        "Screen cleaning",
-        "Sill & frame cleaning",
-        "Streak-free guarantee",
-      ],
-      image: "/assets/services/window-cleaning-hero.webp",
-      href: "/services/window-cleaning",
-      popular: true,
-    },
-    {
-      title: "Pressure Washing",
-      description:
-        "Professional high-pressure cleaning to remove dirt, grime, and stains from driveways, sidewalks, decks, and exterior surfaces.",
-      features: [
-        "Driveway cleaning",
-        "Sidewalk restoration",
-        "Deck & patio cleaning",
-        "Building exterior wash",
-      ],
-      image: "/assets/services/pressure-washing-hero.webp",
-      href: "/services/pressure-washing",
-    },
-    {
-      title: "House Washing",
-      description:
-        "Complete exterior house washing to restore your home's curb appeal and protect your investment.",
-      features: [
-        "Siding cleaning",
-        "Trim & detail work",
-        "Soft wash technology",
-        "Eco-friendly solutions",
-      ],
-      image: "/assets/services/house-washing-hero.webp",
-      href: "/services/house-washing",
-    },
-    {
-      title: "Gutter Cleaning",
-      description:
-        "Complete gutter cleaning and maintenance to protect your home from water damage and ensure proper drainage.",
-      features: [
-        "Debris removal",
-        "Downspout clearing",
-        "Gutter inspection",
-        "Minor repair identification",
-      ],
-      image: "/assets/services/gutter-cleaning-hero.webp",
-      href: "/services/gutter-cleaning",
-    },
-    {
-      title: "Roof Cleaning",
-      description:
-        "Safe, effective roof cleaning to remove moss, algae, and debris while preserving your roof's integrity.",
-      features: [
-        "Moss removal",
-        "Algae treatment",
-        "Debris clearing",
-        "Gentle soft washing",
-      ],
-      image: "/assets/services/roof-cleaning-hero.webp",
-      href: "/services/roof-cleaning",
-    },
-    {
-      title: "Concrete Cleaning",
-      description:
-        "Deep cleaning of concrete surfaces including driveways, walkways, patios, and parking areas.",
-      features: [
-        "Oil stain removal",
-        "Deep cleaning",
-        "Surface restoration",
-        "Sealing preparation",
-      ],
-      image: "/assets/services/concrete-cleaning-hero.webp",
-      href: "/services/concrete-cleaning",
-    },
-    {
-      title: "Deck & Fence Cleaning",
-      description:
-        "Restore and protect your outdoor wood and composite surfaces with specialized cleaning techniques.",
-      features: [
-        "Wood restoration",
-        "Composite cleaning",
-        "Stain preparation",
-        "Weatherproofing prep",
-      ],
-      image: "/assets/services/deck-fence-cleaning-hero.webp",
-      href: "/services/deck-fence-cleaning",
-    },
-    {
-      title: "Solar Panel Cleaning",
-      description:
-        "Maximize energy efficiency with professional solar panel cleaning and maintenance services.",
-      features: [
-        "Panel efficiency optimization",
-        "Safe cleaning methods",
-        "Performance improvement",
-        "Regular maintenance",
-      ],
-      image: "/assets/services/solar-panel-cleaning-hero.webp",
-      href: "/services/solar-panel-cleaning",
-    },
-    {
-      title: "Commercial Cleaning",
-      description:
-        "Professional cleaning services for businesses, storefronts, and commercial properties.",
-      features: [
-        "Storefront cleaning",
-        "Building maintenance",
-        "Parking lot cleaning",
-        "Regular service schedules",
-      ],
-      image: "/assets/services/commercial-cleaning-hero.webp",
-      href: "/services/commercial-cleaning",
-    },
-  ];
-
-  const whyChooseUs = [
-    {
-      title: "Experienced Professionals",
-      description:
-        "Backed by years of experience and expertise in the best exterior cleaning and maintenance practices.",
-      icon: "🎯",
-    },
-    {
-      title: "Time-Saving Service",
-      description:
-        "Save time while we restore your property promptly without losing attention to detail.",
-      icon: "⏰",
-    },
-    {
-      title: "Fully Equipped & Safe",
-      description:
-        "Latest cleaning equipment and eco-friendly products delivered by insured professionals.",
-      icon: "🛡️",
-    },
-    {
-      title: "Friendly & Reliable",
-      description:
-        "Committed to customer satisfaction with a smile. Check out our client reviews.",
-      icon: "😊",
-    },
-  ];
+  const { services, whyChooseUs, serviceHighlights, seo } = servicesData;
+   
 
   const process = [
     {
@@ -181,28 +37,12 @@
 </script>
 
 <svelte:head>
-  <title>Professional Cleaning Services Vancouver | {PUBLIC_COMPANY_NAME}</title
-  >
-  <meta
-    name="description"
-    content="Professional window cleaning, pressure washing, house washing & gutter cleaning services in Vancouver, Surrey, Burnaby. 9 specialized services with guaranteed results!"
-  />
-  <meta
-    name="keywords"
-    content="cleaning services Vancouver, window cleaning, pressure washing, house washing, gutter cleaning, roof cleaning, Surrey, Burnaby"
-  />
-  <meta
-    property="og:title"
-    content="Professional Cleaning Services Vancouver | {PUBLIC_COMPANY_NAME}"
-  />
-  <meta
-    property="og:description"
-    content="9 specialized exterior cleaning services with experienced teams and guaranteed satisfaction across Metro Vancouver."
-  />
-  <meta
-    property="og:image"
-    content="https://www.{PUBLIC_DOMAIN}/assets/services-overview.webp"
-  />
+  <title>{seo.title}</title>
+  <meta name="description" content={seo.description} />
+  <meta name="keywords" content={seo.keywords} />
+  <meta property="og:title" content={seo.title} />
+  <meta property="og:description" content={seo.description} />
+  <meta property="og:image" content="https://www.{PUBLIC_DOMAIN}{seo.ogImage}" />
   <meta property="og:url" content="https://www.{PUBLIC_DOMAIN}/services" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://www.{PUBLIC_DOMAIN}/services" />
@@ -338,28 +178,15 @@
     <Infographic
       title="Our Comprehensive Capabilities"
       subtitle="Professional equipment and expertise for every cleaning challenge"
-      stats={[
-        {
-          value: "9",
-          label: "Core Services",
-          icon: "🏆",
-        },
-        {
-          value: "Pro",
-          label: "Equipment Grade",
-          icon: "⚙️",
-        },
-        {
-          value: "Eco",
-          label: "Friendly Solutions",
-          icon: "🌱",
-        },
-        {
-          value: "100%",
-          label: "Guaranteed Results",
-          icon: "✨",
-        },
-      ]}
+      stats={serviceHighlights.map(item => ({
+        value: item.title.includes('Premium') ? '9' : 
+               item.title.includes('Latest') ? 'Pro' :
+               item.title.includes('Eco') ? 'Eco' : '100%',
+        label: item.title.includes('Premium') ? 'Core Services' :
+               item.title.includes('Latest') ? 'Equipment Grade' :
+               item.title.includes('Eco') ? 'Friendly Solutions' : 'Guaranteed Results',
+        icon: item.icon
+      }))}
       layout="grid"
     />
   </div>
