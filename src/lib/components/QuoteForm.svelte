@@ -168,7 +168,7 @@
 
 	{#if useIframe}
 		<!-- Iframe Form -->
-		<div class="p-6 h-[1400px]">
+		<div class="md:p-6 h-[1400px]">
 			<p class="text-center text-sm mt-4">
 				If the form below doesn't load, please click <a
 					class="italic underline"

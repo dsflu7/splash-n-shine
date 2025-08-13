@@ -256,7 +256,7 @@
 		{#if reviewsIframeVisible}
 			<div class="">
 				<iframe
-					class="lc_reviews_widget w-full h-[450px]"
+					class="lc_reviews_widget w-full h-[600px]"
 					src="https://reputationhub.site/reputation/widgets/review_widget/BlR0PXXBkzNERvcWVL4F"
 					frameborder="0"
 					scrolling="no"
@@ -372,7 +372,7 @@
 
 <!-- Quote Form Section -->
 <section class="py-10 md:py-12 bg-background">
-	<div class="max-w-5xl mx-auto px-[6%]">
+	<div class="max-w-5xl mx-auto md:px-[6%]">
 		<div class="text-center mb-8">
 			<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
 				Ready to Transform Your Property?
