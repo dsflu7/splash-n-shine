@@ -14,6 +14,8 @@ export const client = createClient({
   stega: false, // Disable preview mode for production
 });
 
+
+
 // TypeScript interfaces for gallery
 export interface GalleryProject {
   _id: string;
