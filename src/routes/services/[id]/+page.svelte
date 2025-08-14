@@ -60,7 +60,7 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="bg-background py-12 lg:py-16">
+<section class="bg-background py-gutter-lg">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-4xl lg:text-5xl font-bold mb-6 text-foreground font-[Helvetica]">
@@ -86,7 +86,7 @@
 </section>
 
 <!-- Service Benefits -->
-<section class="py-16 bg-background">
+<section class="py-gutter-lg bg-background">
   <div class="container mx-auto px-4">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground font-[Helvetica]">
@@ -111,7 +111,7 @@
 </section>
 
 <!-- Before & After Results -->
-<section class="py-16 bg-primary/4">
+<section class="py-gutter-lg bg-primary/4">
 	<div class="container mx-auto px-4">
 		<div class="max-w-6xl mx-auto">
 			<h2 class="text-3xl lg:text-4xl font-bold text-center mb-4 text-foreground font-[Helvetica]">
@@ -162,7 +162,7 @@
 />
 
 <!-- Service Areas -->
-<section class="py-16 bg-background">
+<section class="py-gutter-lg bg-background">
   <div class="container mx-auto px-4">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground font-[Helvetica]">
@@ -211,7 +211,7 @@
 </section>
 
 <!-- FAQ Section -->
-<section class="py-16 bg-primary/3">
+<section class="py-gutter-lg bg-primary/3">
 	<div class="container mx-auto px-4">
 		<div class="max-w-4xl mx-auto">
 			<h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground font-[Helvetica]">

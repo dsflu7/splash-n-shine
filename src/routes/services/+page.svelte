@@ -80,7 +80,7 @@
 
 <!-- Hero Section -->
 <section
-  class="relative bg-primary/10 py-16 md:py-24"
+  class="relative bg-primary/10 py-gutter-xl"
 >
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
@@ -107,7 +107,7 @@
 </section>
 
 <!-- Services Grid -->
-<section class="py-16 md:py-24 bg-background">
+<section class="py-gutter-lg bg-background">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
@@ -174,7 +174,7 @@
 </section>
 
 <!-- Service Capabilities Infographic -->
-<section class="py-16 md:py-20 bg-background">
+<section class="py-gutter-lg bg-background">
   <div class="container mx-auto px-4">
     <Infographic
       title="Our Comprehensive Capabilities"
@@ -194,7 +194,7 @@
 </section>
 
 <!-- Why Choose Us -->
-<section class="py-16 md:py-24 bg-primary/4">
+<section class="py-gutter-lg bg-primary/4">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
