@@ -3,267 +3,267 @@
   
   <!-- Main Pages -->
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/</loc>
+    <loc>https://www.splashnshine.ca/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   
   <!-- Services Overview -->
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services</loc>
+    <loc>https://www.splashnshine.ca/services</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <!-- Locations Overview -->
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/locations</loc>
+    <loc>https://www.splashnshine.ca/locations</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <!-- Individual Service Pages -->
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/window-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/window-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/pressure-washing</loc>
+    <loc>https://www.splashnshine.ca/services/pressure-washing</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/house-washing</loc>
+    <loc>https://www.splashnshine.ca/services/house-washing</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/gutter-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/gutter-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/roof-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/roof-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/concrete-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/concrete-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/deck-fence-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/deck-fence-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/solar-panel-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/solar-panel-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/commercial-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/commercial-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/driveway-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/driveway-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/deck-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/deck-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/full-house-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/full-house-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/post-construction-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/post-construction-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/move-in-move-out-cleaning</loc>
+    <loc>https://www.splashnshine.ca/services/move-in-move-out-cleaning</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/services/holiday-lighting-installation</loc>
+    <loc>https://www.splashnshine.ca/services/holiday-lighting-installation</loc>
     <priority>0.7</priority>
     <changefreq>yearly</changefreq>
   </url>
   
   <!-- Priority Location Pages -->
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/locations/vancouver</loc>
+    <loc>https://www.splashnshine.ca/locations/vancouver</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/locations/surrey</loc>
+    <loc>https://www.splashnshine.ca/locations/surrey</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/locations/burnaby</loc>
+    <loc>https://www.splashnshine.ca/locations/burnaby</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/locations/richmond</loc>
+    <loc>https://www.splashnshine.ca/locations/richmond</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/locations/fraser-valley</loc>
+    <loc>https://www.splashnshine.ca/locations/fraser-valley</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/locations/langley</loc>
+    <loc>https://www.splashnshine.ca/locations/langley</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/locations/coquitlam</loc>
+    <loc>https://www.splashnshine.ca/locations/coquitlam</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/locations/north-vancouver</loc>
+    <loc>https://www.splashnshine.ca/locations/north-vancouver</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <!-- High-Value Service-Location Combinations -->
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/window-cleaning-vancouver</loc>
+    <loc>https://www.splashnshine.ca/window-cleaning-vancouver</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/window-cleaning-surrey</loc>
+    <loc>https://www.splashnshine.ca/window-cleaning-surrey</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/window-cleaning-burnaby</loc>
+    <loc>https://www.splashnshine.ca/window-cleaning-burnaby</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/pressure-washing-vancouver</loc>
+    <loc>https://www.splashnshine.ca/pressure-washing-vancouver</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/pressure-washing-surrey</loc>
+    <loc>https://www.splashnshine.ca/pressure-washing-surrey</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/gutter-cleaning-vancouver</loc>
+    <loc>https://www.splashnshine.ca/gutter-cleaning-vancouver</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/house-washing-vancouver</loc>
+    <loc>https://www.splashnshine.ca/house-washing-vancouver</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/roof-cleaning-vancouver</loc>
+    <loc>https://www.splashnshine.ca/roof-cleaning-vancouver</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/house-washing-richmond</loc>
+    <loc>https://www.splashnshine.ca/house-washing-richmond</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/gutter-cleaning-burnaby</loc>
+    <loc>https://www.splashnshine.ca/gutter-cleaning-burnaby</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/deck-fence-cleaning-langley</loc>
+    <loc>https://www.splashnshine.ca/deck-fence-cleaning-langley</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/concrete-cleaning-surrey</loc>
+    <loc>https://www.splashnshine.ca/concrete-cleaning-surrey</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <!-- About Pages -->
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/our-story</loc>
+    <loc>https://www.splashnshine.ca/our-story</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <!-- Contact & Legal Pages -->
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/contact</loc>
+    <loc>https://www.splashnshine.ca/contact</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   
   <!-- Gallery Page -->
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/gallery</loc>
+    <loc>https://www.splashnshine.ca/gallery</loc>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/privacy-policy</loc>
+    <loc>https://www.splashnshine.ca/privacy-policy</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   
   <url>
-    <loc>https://www.{PUBLIC_DOMAIN}/terms-and-conditions</loc>
+    <loc>https://www.splashnshine.ca/terms-and-conditions</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>

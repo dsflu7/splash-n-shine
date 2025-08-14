@@ -4,8 +4,5 @@ Disallow: /api/
 Disallow: /.well-known/
 Disallow: /admin/
 
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
 # Sitemap location
-Sitemap: https://www.{PUBLIC_DOMAIN}/sitemap.xml
+Sitemap: https://www.splashnshine.ca/sitemap.xml
