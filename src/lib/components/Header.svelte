@@ -5,6 +5,7 @@
   import PhoneCall from "./icons/PhoneCall.svelte";
   import { Button } from "./ui/button/index.js";
   import * as NavigationMenu from "./ui/navigation-menu/index.js";
+  import TopBar from "./TopBar.svelte";
 
   // Mobile menu state
   let mobileMenuOpen = $state(false);
@@ -64,30 +65,8 @@
   }
 </script>
 
-<!-- Top Bar with Phone CTA -->
-<div class="bg-primary text-primary-foreground py-3">
-  <div class="max-w-7xl mx-auto px-[6%]">
-    <div class="flex items-center justify-center md:justify-between">
-      <div class="hidden md:flex items-center space-x-6 text-sm">
-        <div class="flex items-center space-x-2">
-          <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-          <span class="font-medium">Professional Cleaning Services</span>
-        </div>
-        <span class="text-primary-foreground/60">|</span>
-        <span class="font-medium">Licensed & Insured</span>
-      </div>
-      
-      <a
-        href="tel:{PUBLIC_PHONE}"
-        class="group flex items-center space-x-3 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105"
-        aria-label="Call {PUBLIC_COMPANY_NAME} at {PUBLIC_PHONE}"
-      >
-        <PhoneCall color="currentColor" class="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
-        <span class="font-semibold">Call Now: {PUBLIC_PHONE}</span>
-      </a>
-    </div>
-  </div>
-</div>
+<!-- Top Bar with City Animation and Quick Quote -->
+<TopBar />
 
 <!-- Main Header -->
 <header class="bg-background border-b border-border sticky top-0 z-50">
