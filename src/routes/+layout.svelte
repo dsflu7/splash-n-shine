@@ -23,6 +23,22 @@
 
 <svelte:head>
   <link rel="icon" href={favicon} />
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-S6214ND4P9"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-S6214ND4P9");
+  </script>
+
 </svelte:head>
 
 <svelte:window bind:scrollY />
