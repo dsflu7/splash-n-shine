@@ -1,6 +1,7 @@
 <script lang="ts">
   import { PUBLIC_COMPANY_NAME, PUBLIC_DOMAIN } from "$env/static/public";
   import logo from "$lib/assets/logo.png";
+  import { Leaf, Star, Handshake, House } from "@lucide/svelte";
 </script>
 
 <svelte:head>
@@ -180,7 +181,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="p-6 bg-card rounded-lg border border-border">
               <div class="flex items-center mb-3">
-                <span class="text-2xl mr-3">🌱</span>
+                <Leaf size={24} class="text-primary mr-3" />
                 <h3
                   class="text-xl font-medium text-foreground font-[Helvetica]"
                 >
@@ -196,7 +197,7 @@
 
             <div class="p-6 bg-card rounded-lg border border-border">
               <div class="flex items-center mb-3">
-                <span class="text-2xl mr-3">⭐</span>
+                <Star size={24} class="text-primary mr-3" />
                 <h3
                   class="text-xl font-medium text-foreground font-[Helvetica]"
                 >
@@ -211,7 +212,7 @@
 
             <div class="p-6 bg-card rounded-lg border border-border">
               <div class="flex items-center mb-3">
-                <span class="text-2xl mr-3">🤝</span>
+                <Handshake size={24} class="text-primary mr-3" />
                 <h3
                   class="text-xl font-medium text-foreground font-[Helvetica]"
                 >
@@ -226,7 +227,7 @@
 
             <div class="p-6 bg-card rounded-lg border border-border">
               <div class="flex items-center mb-3">
-                <span class="text-2xl mr-3">🏠</span>
+                <House size={24} class="text-primary mr-3" />
                 <h3
                   class="text-xl font-medium text-foreground font-[Helvetica]"
                 >

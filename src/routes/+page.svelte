@@ -5,7 +5,50 @@
   import Link from "$lib/components/Link.svelte";
   import CTA from "$lib/components/CTA.svelte";
   import Infographic from "$lib/components/Infographic.svelte";
+  import {
+    Star,
+    Sparkles,
+    Target,
+    Clock,
+    Shield,
+    Smile,
+    CheckCircle,
+    Zap,
+    ClipboardList,
+    Calendar,
+    Users,
+    Droplets,
+    House,
+    Building2,
+    HardHat,
+    Waves,
+  } from "@lucide/svelte";
   import { onMount } from "svelte";
+
+  // Icon mappings for homepage data
+  const homepageIcons: Record<string, any> = {
+    "⏰": Clock,
+    "🛡️": Shield,
+    "🎯": Target,
+    "😊": Smile,
+    "✅": CheckCircle,
+    "⭐": Star,
+    "⚡": Zap,
+    "📋": ClipboardList,
+    "📅": Calendar,
+    "✨": Sparkles,
+  };
+
+  // Service icon mappings
+  const serviceIcons: Record<string, any> = {
+    "window-cleaning": Sparkles,
+    "pressure-washing": Droplets,
+    "house-washing": House,
+    "gutter-cleaning": Building2,
+    "roof-cleaning": HardHat,
+    "commercial-cleaning": Building2,
+    "deck-cleaning": Waves,
+  };
 
   // Import static data
   import homepageData from "$lib/data/homepage.json";
@@ -149,6 +192,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {#each servicesPreviewData as service}
+        {@const IconComponent = serviceIcons[service.icon]}
         <div
           class="group bg-card relative rounded-lg overflow-hidden shadow-sm border border-border hover:shadow-lg hover:border-blue-200/30 transition-all duration-300"
         >
@@ -177,9 +221,11 @@
           <div class="p-6">
             <div class="flex items-center mb-3">
               <div
-                class="text-2xl mr-3 group-hover:scale-110 transition-transform duration-300"
+                class="text-2xl mr-3 group-hover:scale-110 transition-transform duration-300 text-primary"
               >
-                {service.icon}
+                {#if IconComponent}
+                  <IconComponent size={24} />
+                {/if}
               </div>
               <h3
                 class="text-xl font-semibold text-foreground font-[Helvetica] group-hover:text-primary transition-colors duration-300"
@@ -229,13 +275,16 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {#each homepageData.whyChooseUs as value}
+        {@const IconComponent = homepageIcons[value.icon]}
         <div
-          class="text-center group p-6 rounded-lg border border-transparent hover:border-blue-200/30 hover:bg-card/50 transition-all duration-300"
+          class="text-center group p-6 rounded-lg border border-transparent hover:border-blue-200/30 hover:bg-card/50 transition-all duration-300 flex flex-col items-center"
         >
           <div
-            class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+            class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 text-primary"
           >
-            {value.icon}
+            {#if IconComponent}
+              <IconComponent size={32} />
+            {/if}
           </div>
           <h3
             class="text-xl font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300"
@@ -258,6 +307,7 @@
       title="Trusted by Your Neighbors"
       subtitle="Our track record speaks for itself with satisfied customers across Metro Vancouver"
       stats={homepageData.companyStats}
+      iconMapping={homepageIcons}
     />
   </div>
 </section>
@@ -346,7 +396,7 @@
         class="flex items-center justify-center h-[600px] bg-background rounded-lg border border-border"
       >
         <div class="text-center">
-          <div class="text-4xl mb-4">⭐</div>
+          <Star size={48} class="text-primary mx-auto mb-4" />
           <p class="text-muted-foreground">Loading customer reviews...</p>
         </div>
       </div>
@@ -361,7 +411,7 @@
       <div
         class="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6"
       >
-        <span class="mr-2">✨</span>
+        <Sparkles size={16} class="mr-2 text-primary" />
         Our Simple Process
       </div>
       <h2
@@ -389,6 +439,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
         {#if homepageData?.process}
           {#each homepageData.process as step, index}
+            {@const IconComponent = homepageIcons[step.icon]}
             <div class="relative text-center group">
               <!-- Mobile connection line -->
               {#if index < homepageData.process.length - 1}
@@ -410,7 +461,16 @@
                 <div
                   class="relative mx-auto mb-6 w-20 h-20 bg-primary text-primary-foreground rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
                 >
-                  <div class="text-3xl filter drop-shadow-sm">{step.icon}</div>
+                  <div class="text-3xl filter drop-shadow-sm">
+                    {#if IconComponent}
+                      <IconComponent
+                        size={24}
+                        class="text-primary-foreground"
+                      />
+                    {:else}
+                      {step.icon}
+                    {/if}
+                  </div>
 
                   <!-- Step number badge -->
                   <div
@@ -459,7 +519,7 @@
         class="inline-flex flex-col items-center space-y-6 p-8 bg-blue-50/20 rounded-2xl border border-blue-200/30"
       >
         <div class="flex items-center space-x-2">
-          <span class="text-2xl">🎯</span>
+          <Target size={24} class="text-primary" />
           <div class="text-lg font-medium text-primary">
             Ready to get started?
           </div>
@@ -519,6 +579,13 @@
       />
     {:else}
       <div class="flex justify-center py-16">
+        <Link
+          href="/contact"
+          class="block w-full text-center py-3 px-4 rounded-lg border border-border hover:bg-accent hover:text-accent-foreground transition-colors font-medium"
+          aria-label="Request a free quote"
+        >
+          Get Free Quote
+        </Link>
         <div
           class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"
         ></div>

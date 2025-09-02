@@ -4,6 +4,7 @@
   import { cn } from "$lib/utils";
   import { generateGalleryStructuredData } from "$lib/seo-utils";
   import BeforeAfterComparison from "$lib/components/BeforeAfterComparison.svelte";
+  import { MapPin, Target, Paintbrush } from "@lucide/svelte";
 
   interface Props {
     data: PageData;
@@ -287,8 +288,11 @@
                   <!-- Project Meta -->
                   <div class="text-right">
                     {#if project.location}
-                      <div class="text-sm text-muted-foreground mb-1">
-                        📍 {project.location.name}
+                      <div
+                        class="text-sm text-muted-foreground mb-1 flex items-center gap-1"
+                      >
+                        <MapPin size={14} class="text-primary" />
+                        {project.location.name}
                       </div>
                     {/if}
                     <div class="text-sm text-muted-foreground mb-2">
@@ -470,7 +474,7 @@
           class="bg-white text-primary hover:bg-white/90"
         >
           <a href="/contact" class="flex items-center gap-2">
-            <span>🎯</span>
+            <Target size={18} class="text-primary" />
             Get Free Quote
           </a>
         </Button>
@@ -480,7 +484,7 @@
           class="border-white text-white hover:bg-white/10"
         >
           <a href="/services" class="flex items-center gap-2">
-            <span>🧽</span>
+            <Paintbrush size={18} class="text-white" />
             View Services
           </a>
         </Button>
