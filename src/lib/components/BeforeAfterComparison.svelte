@@ -1,179 +1,173 @@
 <script lang="ts">
-  import { gsap } from "gsap";
-  import { Draggable } from "gsap/Draggable";
-  import { onMount, onDestroy } from "svelte";
-
   interface Props {
-    beforeImage: string;
-    afterImage: string;
-    altText: string;
-    title?: string;
-    className?: string;
+    position?: number;
+    class?: string;
+    left?: import("svelte").Snippet;
+    right?: import("svelte").Snippet;
   }
 
   let {
-    beforeImage,
-    afterImage,
-    altText,
-    title = "Before & After Transformation",
-    className = "",
+    position = $bindable(0.5),
+    class: className,
+    left,
+    right,
   }: Props = $props();
 
-  let sliderPosition = $state(50);
-  let containerRef: HTMLDivElement;
-  let sliderRef: HTMLDivElement;
-  let draggableInstance: Draggable[];
+  const formatter = Intl.NumberFormat("en", {
+    style: "percent",
+    minimumFractionDigits: 6,
+  });
 
-  onMount(() => {
-    if (!containerRef || !sliderRef) return;
+  function drag(node: HTMLElement) {
+    let down = false;
+    let start = 0;
 
-    // Register GSAP plugin
-    gsap.registerPlugin(Draggable);
+    function onDown(e: PointerEvent) {
+      if (e.isPrimary) {
+        down = true;
+        start = node.parentElement!.clientWidth * position;
+        node.setPointerCapture(e.pointerId);
+      }
+    }
 
-    // Create draggable instance
-    draggableInstance = Draggable.create(sliderRef, {
-      type: "x",
-      bounds: containerRef,
-      onDrag: function () {
-        const containerWidth = containerRef.offsetWidth;
-        const sliderLeft = this.x;
-        const percentage = (sliderLeft / containerWidth) * 100;
-        sliderPosition = Math.max(0, Math.min(100, percentage));
+    function onMove(e: PointerEvent) {
+      if (e.isPrimary && down) {
+        start += e.offsetX - 2; // half of handle width
+        position = Math.max(
+          Math.min(start / node.parentElement!.clientWidth, 1),
+          0
+        );
+      }
+    }
+
+    function onUp(e: PointerEvent) {
+      if (e.isPrimary) {
+        down = false;
+        node.releasePointerCapture(e.pointerId);
+      }
+    }
+
+    node.addEventListener("pointerdown", onDown, { passive: true });
+    node.addEventListener("pointermove", onMove, { passive: true });
+    node.addEventListener("pointerup", onUp, { passive: true });
+    node.addEventListener("pointercancel", onUp, { passive: true });
+
+    return {
+      destroy() {
+        node.removeEventListener("pointerdown", onDown);
+        node.removeEventListener("pointermove", onMove);
+        node.removeEventListener("pointerup", onUp);
+        node.removeEventListener("pointercancel", onUp);
       },
-      cursor: "ew-resize",
-      allowContextMenu: true,
-    });
-
-    // Set initial position
-    const initialX = (sliderPosition / 100) * containerRef.offsetWidth;
-    gsap.set(sliderRef, { x: initialX });
-  });
-
-  onDestroy(() => {
-    // Clean up draggable instances
-    if (draggableInstance) {
-      draggableInstance.forEach((instance) => instance.kill());
-    }
-  });
-
-  function handleKeyDown(event: KeyboardEvent) {
-    if (event.key === "ArrowLeft") {
-      sliderPosition = Math.max(0, sliderPosition - 5);
-      updateSliderVisualPosition();
-    } else if (event.key === "ArrowRight") {
-      sliderPosition = Math.min(100, sliderPosition + 5);
-      updateSliderVisualPosition();
-    }
-  }
-
-  function updateSliderVisualPosition() {
-    if (!containerRef || !sliderRef) return;
-    const newX = (sliderPosition / 100) * containerRef.offsetWidth;
-    gsap.set(sliderRef, { x: newX });
-  }
-
-  function handleContainerClick(event: MouseEvent) {
-    if (!containerRef || event.target === sliderRef) return;
-
-    const rect = containerRef.getBoundingClientRect();
-    const clickX = event.clientX - rect.left;
-    const percentage = (clickX / rect.width) * 100;
-    sliderPosition = Math.max(0, Math.min(100, percentage));
-
-    // Animate to new position
-    const newX = (sliderPosition / 100) * containerRef.offsetWidth;
-    gsap.to(sliderRef, {
-      duration: 0.3,
-      x: newX,
-      ease: "power2.out",
-    });
+    };
   }
 </script>
 
-<div class="w-full max-w-4xl mx-auto {className}">
-  {#if title}
-    <h3
-      class="text-2xl font-bold text-foreground text-center mb-6 font-[Helvetica]"
-    >
-      {title}
-    </h3>
-  {/if}
-
+<div
+  class={className}
+  id="container"
+  style:--position={formatter.format(position)}
+>
   <div
-    bind:this={containerRef}
-    class="relative overflow-hidden rounded-lg shadow-lg bg-card border border-border aspect-[4/3] md:aspect-[16/9] cursor-ew-resize select-none"
-    onclick={handleContainerClick}
-    onkeydown={handleKeyDown}
-    tabindex="0"
-    role="slider"
-    aria-label="Before and after comparison slider"
-    aria-valuemin="0"
-    aria-valuemax="100"
-    aria-valuenow={sliderPosition}
+    class={className}
+    id="left"
+    draggable="false"
+    ondragstart={() => false}
+    role="img"
   >
-    <!-- After Image (Background) -->
-    <div class="absolute inset-0">
-      <img
-        src={afterImage}
-        alt="After - {altText}"
-        class="w-full h-full object-cover"
-        loading="lazy"
-        decoding="async"
-      />
-      <!-- After Label -->
-      <div
-        class="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-semibold shadow-lg"
-      >
-        After
-      </div>
-    </div>
-
-    <!-- Before Image (Clipped) -->
-    <div
-      class="absolute inset-0 transition-all duration-75 ease-out"
-      style="clip-path: inset(0 {100 - sliderPosition}% 0 0)"
-    >
-      <img
-        src={beforeImage}
-        alt="Before - {altText}"
-        class="w-full h-full object-cover"
-        loading="lazy"
-        decoding="async"
-      />
-      <!-- Before Label -->
-      <div
-        class="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-semibold shadow-lg"
-      >
-        Before
-      </div>
-    </div>
-
-    <!-- Slider Handle -->
-    <div
-      bind:this={sliderRef}
-      class="absolute top-0 bottom-0 w-1 bg-primary shadow-lg"
-      style="left: {sliderPosition}%"
-    >
-      <!-- Handle Circle -->
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-primary rounded-full shadow-lg border-2 border-primary-foreground flex items-center justify-center cursor-ew-resize hover:scale-110 transition-transform duration-200 touch-none"
-      >
-        <!-- Drag Lines -->
-        <div class="flex space-x-0.5">
-          <div class="w-0.5 h-4 bg-primary-foreground rounded-full"></div>
-          <div class="w-0.5 h-4 bg-primary-foreground rounded-full"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Keyboard Instructions (Hidden) -->
-    <div class="sr-only">
-      Use arrow keys to move the slider and compare before and after images
-    </div>
+    {#if left}{@render left()}{/if}
+  </div>
+  <div
+    class={className}
+    id="right"
+    draggable="false"
+    ondragstart={() => false}
+    role="img"
+  >
+    {#if right}{@render right()}{/if}
   </div>
 
-  <!-- Usage Instructions -->
-  <p class="text-center text-sm text-muted-foreground mt-4">
-    Drag the slider or use arrow keys to compare before and after results
-  </p>
+  <span id="handle" use:drag>
+    <svg
+      id="left-handle"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+        clip-rule="evenodd"
+      />
+    </svg>
+
+    <svg
+      id="right-handle"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </span>
 </div>
+
+<style>
+  #container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  #left {
+    position: absolute;
+  }
+
+  #right {
+    clip-path: inset(0 0 0 var(--position));
+    pointer-events: none; /* allow slotted elements to listen to whatever events they want */
+  }
+
+  /* handle size: 24px - 20px borders = 4px visible */
+  #handle {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: calc(var(--position) - 12px); /* position based on middle of handle */
+    height: 100%;
+    width: 24px;
+    background-color: #fff9;
+    background-clip: padding-box; /* so background color isn't applied to border */
+    border-left: 10px solid transparent; /* borders for bigger hit target */
+    border-right: 10px solid transparent;
+    cursor: col-resize;
+    touch-action: none;
+  }
+
+  svg {
+    display: block;
+    position: absolute;
+    color: #fff9;
+    background-color: #0006;
+    width: 24px;
+    height: 24px;
+    top: calc(50% - 12px);
+    left: calc(50%);
+  }
+
+  #left-handle {
+    left: calc(50% - 26px);
+    border-radius: 100% 0 0 100%;
+  }
+  #right-handle {
+    left: calc(50% + 2px);
+    border-radius: 0 100% 100% 0;
+  }
+</style>
