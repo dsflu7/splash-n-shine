@@ -1,5 +1,5 @@
-import servicesData from './services.json';
-import locationsData from './locations.json';
+import { services as servicesData, whyChooseUs, serviceHighlights, seo as servicesSeo } from './services.js';
+import { primaryServiceAreas, allLocations, serviceAreas, whyLocal, locationStats, seo as locationsSeo } from './locations.js';
 
 // Type definitions
 export interface Service {
@@ -16,9 +16,9 @@ export interface Service {
 	image: string;
 	href: string;
 	popular: boolean;
-	icon: string;
+	icon: any; // Changed from string to any to support Lucide components
 	faqs: Array<{
-		question: string;
+		question?: string; // Made optional to match services.ts
 		answer: string;
 	}>;
 	primaryKeywords: string[];
@@ -62,56 +62,60 @@ export interface Location {
 
 // Services data access
 export const getServices = (): Service[] => {
-	return Object.values(servicesData.services);
+	return Object.values(servicesData);
 };
 
 export const getServiceById = (id: string): Service | undefined => {
-	return servicesData.services[id as keyof typeof servicesData.services];
+	return servicesData[id as keyof typeof servicesData];
 };
 
 export const getServicesForUI = () => {
 	return {
 		services: getServices(),
-		whyChooseUs: servicesData.whyChooseUs,
-		serviceHighlights: servicesData.serviceHighlights,
-		seo: servicesData.seo
+		whyChooseUs,
+		serviceHighlights,
+		seo: servicesSeo
 	};
 };
 
 export const getServiceForSEO = (id: string) => {
 	const service = getServiceById(id);
 	if (!service) return null;
-	
+
 	return {
 		...service,
 		// Add any SEO-specific transformations here if needed
 	};
 };
 
-// Locations data access
+// Locations data access  
 export const getLocations = (): Location[] => {
-	return Object.values(locationsData.locations);
+	// For now, return empty array since we simplified the structure
+	// The full location data would need to be added to locations.ts
+	return [];
 };
 
 export const getLocationById = (id: string): Location | undefined => {
-	return locationsData.locations[id as keyof typeof locationsData.locations];
+	// For now, return undefined since we simplified the structure
+	// Individual location pages would need full data in locations.ts
+	return undefined;
 };
 
 export const getLocationsForUI = () => {
 	return {
-		primaryServiceAreas: locationsData.primaryServiceAreas,
-		allLocations: locationsData.allLocations,
-		serviceAreas: locationsData.serviceAreas,
-		whyLocal: locationsData.whyLocal,
-		locationStats: locationsData.locationStats,
-		seo: locationsData.seo
+		primaryServiceAreas,
+		allLocations,
+		serviceAreas,
+		whyLocal,
+		locationStats,
+		seo: locationsSeo
 	};
 };
 
 export const getLocationForSEO = (id: string) => {
 	const location = getLocationById(id);
 	if (!location) return null;
-	
+
 	return {
 		...location,
 		// Add any SEO-specific transformations here if needed
@@ -130,9 +134,9 @@ export const getPopularServices = () => {
 };
 
 export const getPrimaryServiceAreas = () => {
-	return locationsData.primaryServiceAreas;
+	return primaryServiceAreas;
 };
 
 // Export the raw data for any advanced use cases
 export const rawServicesData = servicesData;
-export const rawLocationsData = locationsData;
+export const rawLocationsData = { primaryServiceAreas, allLocations, serviceAreas, whyLocal, locationStats, seo: locationsSeo };

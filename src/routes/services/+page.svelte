@@ -9,11 +9,10 @@
   import Infographic from "$lib/components/Infographic.svelte";
   import CTA from "$lib/components/CTA.svelte";
   import ProcessSteps from "$lib/components/ProcessSteps.svelte";
-	import { getServicesForUI } from "$lib/data";
+  import { getServicesForUI } from "$lib/data";
 
-  	const servicesData = getServicesForUI();
-	const { services, whyChooseUs, serviceHighlights, seo } = servicesData;
-   
+  const servicesData = getServicesForUI();
+  const { services, whyChooseUs, serviceHighlights, seo } = servicesData;
 
   const process = [
     {
@@ -43,7 +42,10 @@
   <meta name="keywords" content={seo.keywords} />
   <meta property="og:title" content={seo.title} />
   <meta property="og:description" content={seo.description} />
-  <meta property="og:image" content="https://www.{PUBLIC_DOMAIN}{seo.ogImage}" />
+  <meta
+    property="og:image"
+    content="https://www.{PUBLIC_DOMAIN}{seo.ogImage}"
+  />
   <meta property="og:url" content="https://www.{PUBLIC_DOMAIN}/services" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://www.{PUBLIC_DOMAIN}/services" />
@@ -79,12 +81,12 @@
 `}
 
 <!-- Hero Section -->
-<section
-  class="relative bg-primary/10 py-16 md:py-24"
->
+<section class="relative bg-primary/10 py-16 md:py-24">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 font-[Helvetica]">
+      <h1
+        class="text-4xl md:text-6xl font-bold text-foreground mb-6 font-[Helvetica]"
+      >
         Let Your Property <span class="text-primary">Shine</span>
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -94,10 +96,18 @@
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <Link href="/contact">
-          <Button size="lg" class="text-lg px-8 hover:scale-105 transition-all duration-300">Get Free Estimate</Button>
+          <Button
+            size="lg"
+            class="text-lg px-8 hover:scale-105 transition-all duration-300"
+            >Get Free Estimate</Button
+          >
         </Link>
         <Link href={`tel:${PUBLIC_PHONE}`}>
-          <Button variant="outline" size="lg" class="text-lg px-8 hover:scale-105 hover:border-blue-300/50 transition-all duration-300">
+          <Button
+            variant="outline"
+            size="lg"
+            class="text-lg px-8 hover:scale-105 hover:border-blue-300/50 transition-all duration-300"
+          >
             Call {PUBLIC_PHONE}
           </Button>
         </Link>
@@ -110,7 +120,9 @@
 <section class="py-16 md:py-24 bg-background">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]"
+      >
         Choose What Your Property Needs
       </h2>
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -147,7 +159,9 @@
           </div>
 
           <div class="p-6">
-            <h3 class="text-xl font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300">
+            <h3
+              class="text-xl font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300"
+            >
               {service.title}
             </h3>
             <p class="text-muted-foreground mb-4 leading-relaxed">
@@ -157,14 +171,20 @@
             <ul class="space-y-2 mb-6">
               {#each service.features as feature}
                 <li class="flex items-center text-sm text-muted-foreground">
-                  <div class="w-2 h-2 bg-primary rounded-full mr-3 group-hover:bg-blue-400 transition-colors duration-300"></div>
+                  <div
+                    class="w-2 h-2 bg-primary rounded-full mr-3 group-hover:bg-blue-400 transition-colors duration-300"
+                  ></div>
                   {feature}
                 </li>
               {/each}
             </ul>
 
             <Link href={service.href}>
-              <Button variant="outline" class="w-full hover:border-blue-300/50 transition-colors duration-300">View {service.title} Details</Button>
+              <Button
+                variant="outline"
+                class="w-full hover:border-blue-300/50 transition-colors duration-300"
+                >View {service.title} Details</Button
+              >
             </Link>
           </div>
         </div>
@@ -179,14 +199,22 @@
     <Infographic
       title="Our Comprehensive Capabilities"
       subtitle="Professional equipment and expertise for every cleaning challenge"
-      stats={serviceHighlights.map(item => ({
-        value: item.title.includes('Premium') ? '9' : 
-               item.title.includes('Latest') ? 'Pro' :
-               item.title.includes('Eco') ? 'Eco' : '100%',
-        label: item.title.includes('Premium') ? 'Core Services' :
-               item.title.includes('Latest') ? 'Equipment Grade' :
-               item.title.includes('Eco') ? 'Friendly Solutions' : 'Guaranteed Results',
-        icon: item.icon
+      stats={serviceHighlights.map((item) => ({
+        value: item.title.includes("Premium")
+          ? "9"
+          : item.title.includes("Latest")
+            ? "Pro"
+            : item.title.includes("Eco")
+              ? "Eco"
+              : "100%",
+        label: item.title.includes("Premium")
+          ? "Core Services"
+          : item.title.includes("Latest")
+            ? "Equipment Grade"
+            : item.title.includes("Eco")
+              ? "Friendly Solutions"
+              : "Guaranteed Results",
+        icon: item.icon,
       }))}
       layout="grid"
     />
@@ -197,7 +225,9 @@
 <section class="py-16 md:py-24 bg-primary/4">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-foreground mb-4 font-[Helvetica]"
+      >
         Why Choose {PUBLIC_COMPANY_NAME}?
       </h2>
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -208,13 +238,18 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {#each whyChooseUs as item}
-        <div class="text-center group p-6 rounded-lg border border-transparent hover:border-blue-200/30 hover:bg-card/50 transition-all duration-300">
+        {@const IconComponent = item.icon}
+        <div
+          class="text-center group p-6 rounded-lg border border-transparent hover:border-blue-200/30 hover:bg-card/50 transition-all duration-300"
+        >
           <div
-            class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
+            class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center"
           >
-            {item.icon}
+            <IconComponent class="w-10 h-10 text-primary" />
           </div>
-          <h3 class="text-lg font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300">
+          <h3
+            class="text-lg font-semibold text-foreground mb-3 font-[Helvetica] group-hover:text-primary transition-colors duration-300"
+          >
             {item.title}
           </h3>
           <p class="text-muted-foreground leading-relaxed">

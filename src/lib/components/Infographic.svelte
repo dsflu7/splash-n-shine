@@ -2,7 +2,7 @@
   interface Stat {
     value: string;
     label: string;
-    icon: string;
+    icon: any; // Changed from string to any to accept Lucide components
     color?: string;
   }
 
@@ -12,7 +12,6 @@
     stats: Stat[];
     layout?: "horizontal" | "vertical" | "grid";
     className?: string;
-    iconMapping?: Record<string, any>;
   }
 
   let {
@@ -21,7 +20,6 @@
     stats,
     layout = "grid",
     className = "",
-    iconMapping = {},
   }: Props = $props();
 
   const getLayoutClasses = () => {
@@ -57,7 +55,6 @@
 
   <div class={getLayoutClasses()}>
     {#each stats as stat}
-      {@const IconComponent = iconMapping[stat.icon]}
       <div class="text-center group">
         <div class="relative mb-4">
           <!-- Background circle -->
@@ -66,7 +63,8 @@
           >
             <!-- Icon -->
             <div class="text-3xl {stat.color || 'text-primary'}">
-              {#if IconComponent}
+              {#if typeof stat.icon === "function" || typeof stat.icon === "object"}
+                {@const IconComponent = stat.icon}
                 <IconComponent size={24} />
               {:else}
                 {stat.icon}
