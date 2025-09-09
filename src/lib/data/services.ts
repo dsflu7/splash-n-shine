@@ -145,6 +145,84 @@ export const services: Record<string, Service> = {
 		],
 		beforeAfterExamples: []
 	},
+	"window-washing": {
+		id: "window-washing",
+		title: "Window Washing",
+		name: "Window Washing",
+		category: "Exterior Cleaning",
+		description: "Professional window washing services for residential and commercial properties with thorough cleaning and water-fed pole system.",
+		shortDescription: "Expert window washing using advanced water-fed pole systems",
+		longDescription: "Experience the difference with our professional window washing services. Using state-of-the-art water-fed pole systems and purified water, we deliver superior cleaning results while ensuring the safety of our technicians and your property.",
+		features: [
+			"Water-fed pole system",
+			"Purified water cleaning",
+			"Safe ground-level operation",
+			"No ladder work required",
+			"Environmentally friendly process"
+		],
+		benefits: [
+			"Superior cleaning with purified water system",
+			"Safer cleaning process - no ladders required",
+			"Longer-lasting results with spot-free finish",
+			"Environmentally friendly - no chemicals needed",
+			"Professional equipment and trained technicians",
+			"Comprehensive service including frames and sills"
+		],
+		process: [
+			"Property assessment and window inspection",
+			"Setup of water-fed pole system with purified water",
+			"Systematic cleaning from ground level for safety",
+			"Thorough cleaning of glass, frames, and sills",
+			"Quality check and spot-free rinse",
+			"Final inspection and customer satisfaction review"
+		],
+		image: "https://cdn.sanity.io/files/ws2fgpe5/production/5eff2b73137d1c4a1936381e17515d23af4477bc.webp?w=400&h=300&fit=crop&auto=format&q=80",
+		href: "/services/window-washing",
+		popular: false,
+		icon: Shower,
+		faqs: [
+			{
+				question: "What is the difference between window washing and window cleaning?",
+				answer: "Window washing typically uses water-fed pole systems with purified water for a spot-free finish, while traditional window cleaning uses squeegees and cleaning solutions. Both methods are effective, but window washing offers safer ground-level operation."
+			},
+			{
+				question: "How does the water-fed pole system work?",
+				answer: "Our water-fed pole system uses purified water that's free of minerals and impurities. This allows us to clean windows from the ground up to 3-4 stories safely, leaving a spot-free finish as the pure water dries naturally."
+			},
+			{
+				question: "Is window washing safe for all types of windows?",
+				answer: "Yes, our water-fed pole system is safe for all window types including double-glazed, tinted, and modern energy-efficient windows. The soft brush heads and pure water won't damage any window surfaces."
+			},
+			{
+				question: "How often should I have my windows washed?",
+				answer: "We recommend window washing every 2-3 months for optimal results. The frequency may vary based on your location, environmental factors, and personal preferences."
+			},
+			{
+				question: "Do you still clean the inside of windows with this method?",
+				answer: "The water-fed pole system is primarily for exterior cleaning. For interior windows, we use traditional hand-cleaning methods with professional squeegees and eco-friendly solutions."
+			}
+		],
+		primaryKeywords: [
+			"window washing",
+			"window washing near me",
+			"professional window washing",
+			"water fed pole window cleaning"
+		],
+		secondaryKeywords: [
+			"window washing services",
+			"commercial window washing",
+			"residential window washing",
+			"pure water window cleaning",
+			"spot free window cleaning"
+		],
+		localKeywords: [
+			"window washing vancouver",
+			"window washing surrey",
+			"window washing burnaby",
+			"window washing richmond"
+		],
+		beforeAfterExamples: []
+	},
 	"pressure-washing": {
 		id: "pressure-washing",
 		title: "Pressure Washing",
