@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import { 
-  getService, 
+import {
+  getService,
   getLocationsList,
   generateServiceMetaTitle,
   generateServiceMetaDescription,
@@ -19,19 +19,22 @@ export const load: PageServerLoad = async ({ params, url, depends }) => {
   depends('data:service');
   depends(`data:service:${params.id}`);
   const service = getService(params.id);
-  
+
   if (!service) {
     throw error(404, `Service "${params.id}" not found`);
   }
-  
+
+  // Remove the icon field to make the service data serializable
+  const { icon, ...serializableService } = service;
+
   const locations = getLocationsList();
   const metaTitle = generateServiceMetaTitle(service);
   const metaDescription = generateServiceMetaDescription(service);
   const serviceStructuredData = generateServiceStructuredData(service, undefined, url.href);
   const faqStructuredData = generateFAQStructuredData(service.faqs);
-  
+
   return {
-    service,
+    service: serializableService,
     locations,
     metaTitle,
     metaDescription,

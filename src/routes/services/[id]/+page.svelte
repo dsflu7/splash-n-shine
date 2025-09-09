@@ -15,7 +15,7 @@
 
   interface Props {
     data: {
-      service: Service;
+      service: Omit<Service, "icon">; // Icon field is removed on server side
       locations: Location[];
       metaTitle: string;
       metaDescription: string;
